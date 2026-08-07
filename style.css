@@ -1,0 +1,227 @@
+/* ===========================
+   기본 설정
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#edf5ef;
+    color:#333;
+    line-height:1.6;
+}
+
+/* ===========================
+   헤더
+=========================== */
+
+header{
+    background:linear-gradient(135deg,#2e7d32,#43a047);
+    color:#fff;
+    text-align:center;
+    padding:40px 20px;
+}
+
+header h1{
+    font-size:32px;
+    margin-bottom:10px;
+}
+
+header p{
+    font-size:16px;
+    opacity:.9;
+}
+
+/* ===========================
+   전체 컨테이너
+=========================== */
+
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:20px;
+}
+
+/* ===========================
+   현재위치 카드
+=========================== */
+
+.location-card{
+
+    background:#fff;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    margin-bottom:25px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+    text-align:center;
+
+}
+
+.location-card h2{
+
+    color:#2e7d32;
+
+    margin-bottom:10px;
+
+}
+
+.location-card h3{
+
+    font-size:28px;
+
+    margin-bottom:10px;
+
+}
+
+.phone{
+
+    margin-top:15px;
+
+    color:#666;
+
+}
+
+/* ===========================
+   메뉴
+=========================== */
+
+.menu-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:15px;
+
+    margin-bottom:25px;
+
+}
+
+.menu-card{
+
+    background:#fff;
+
+    border-radius:18px;
+
+    text-decoration:none;
+
+    color:#2e7d32;
+
+    padding:25px;
+
+    text-align:center;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+    transition:.25s;
+
+    font-size:34px;
+
+}
+
+.menu-card span{
+
+    display:block;
+
+    margin-top:10px;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+}
+
+.menu-card:hover{
+
+    transform:translateY(-5px);
+
+    background:#43a047;
+
+    color:white;
+
+}
+
+/* ===========================
+   공지사항
+=========================== */
+
+.notice-card{
+
+    background:#fff;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+}
+
+.notice-card h2{
+
+    color:#2e7d32;
+
+    margin-bottom:15px;
+
+}
+
+.notice-card ul{
+
+    padding-left:20px;
+
+}
+
+.notice-card li{
+
+    margin-bottom:10px;
+
+}
+
+/* ===========================
+   Footer
+=========================== */
+
+footer{
+
+    text-align:center;
+
+    color:#777;
+
+    padding:30px;
+
+}
+
+/* ===========================
+   모바일
+=========================== */
+
+@media(max-width:600px){
+
+.menu-grid{
+
+grid-template-columns:1fr;
+
+}
+
+header h1{
+
+font-size:28px;
+
+}
+
+.location-card h3{
+
+font-size:24px;
+
+}
+
+}
