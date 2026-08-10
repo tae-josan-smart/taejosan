@@ -334,3 +334,131 @@ font-size:24px;
     background:#43a047;
     transform:translateY(-2px);
 }
+
+/* ===========================
+   긴급신고
+=========================== */
+
+.emergency-card{
+    border-left:6px solid #d32f2f;
+}
+
+.emergency-card h2{
+    color:#d32f2f;
+    margin-bottom:12px;
+}
+
+.emergency-description{
+    margin-bottom:20px;
+}
+
+.emergency-button{
+    display:block;
+    width:100%;
+    padding:16px 20px;
+
+    background:#d32f2f;
+    color:white;
+
+    text-align:center;
+    text-decoration:none;
+
+    border-radius:14px;
+
+    font-size:18px;
+    font-weight:bold;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.12);
+
+    transition:all .25s ease;
+}
+
+.emergency-button:hover{
+    background:#b71c1c;
+    transform:translateY(-2px);
+}
+
+.emergency-notice{
+    margin-top:25px;
+}
+
+.emergency-notice h2{
+    color:#d32f2f;
+}
+
+.emergency-notice li{
+    margin-bottom:10px;
+}
+
+/* ===========================
+   편의시설
+=========================== */
+
+.facility-title{
+    color:#2e7d32;
+    margin-bottom:18px;
+}
+
+
+/* 카페 사진 슬라이드 */
+
+.photo-slider{
+    display:flex;
+
+    overflow-x:auto;
+
+    scroll-snap-type:x mandatory;
+
+    gap:0;
+
+    border-radius:18px;
+
+    margin-bottom:0;
+
+    scrollbar-width:none;
+}
+
+.photo-slider::-webkit-scrollbar{
+    display:none;
+}
+
+.photo-slider img{
+    flex:0 0 100%;
+
+    width:100%;
+    height:260px;
+
+    object-fit:cover;
+
+    scroll-snap-align:start;
+
+    display:block;
+}
+
+
+/* 일반 시설 이미지 */
+
+.facility-image{
+    width:100%;
+
+    height:260px;
+
+    object-fit:cover;
+
+    display:block;
+
+    border-radius:18px;
+}
+
+
+/* 사진 안내 문구 */
+
+.photo-guide{
+    margin-top:15px;
+
+    font-size:13px;
+
+    color:#777;
+
+    text-align:center;
+}
