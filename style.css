@@ -302,3 +302,35 @@ font-size:24px;
     border-radius:18px;
     
 }
+
+/* ===========================
+   페이지 하단 메인으로 돌아가기
+=========================== */
+
+.back-button{
+    display:block;
+    width:100%;
+    max-width:500px;
+    margin:30px auto 10px;
+    padding:16px 20px;
+
+    background:#2e7d32;
+    color:white;
+
+    text-align:center;
+    text-decoration:none;
+
+    border-radius:15px;
+
+    font-size:17px;
+    font-weight:bold;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+    transition:all .25s ease;
+}
+
+.back-button:hover{
+    background:#43a047;
+    transform:translateY(-2px);
+}
