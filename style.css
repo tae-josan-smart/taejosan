@@ -559,3 +559,125 @@ footer {
 .discount-free h3 {
     color: #1565c0;
 }
+
+/* =========================
+   사진 스와이프 갤러리
+========================= */
+
+.photo-gallery {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    border-radius: 14px;
+    background: #f3f3f3;
+}
+
+.gallery-track {
+    display: flex;
+    width: 100%;
+    transition: transform 0.35s ease;
+}
+
+.gallery-track img {
+    width: 100%;
+    min-width: 100%;
+    height: 260px;
+    object-fit: cover;
+    display: block;
+    flex-shrink: 0;
+}
+
+
+/* 사진 아래 점 */
+
+.gallery-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 0;
+    background: #fff;
+}
+
+.gallery-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #ccc;
+    display: block;
+    cursor: pointer;
+}
+
+.gallery-dot.active {
+    background: #333;
+}
+
+
+/* 정보 박스 */
+
+.info-box {
+    margin-top: 15px;
+    padding: 15px;
+    background: #f5f7f5;
+    border-radius: 10px;
+    border-left: 4px solid #4d8c52;
+}
+
+.info-box p {
+    margin: 7px 0;
+    line-height: 1.6;
+}
+
+
+/* 이용시간 */
+
+.time-box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.time-item {
+    display: grid;
+    grid-template-columns: 70px 1fr 60px;
+    align-items: center;
+    gap: 8px;
+    padding: 14px;
+    background: #f5f7f5;
+    border-radius: 10px;
+}
+
+.time-item strong {
+    font-size: 16px;
+}
+
+.time-item span {
+    font-weight: bold;
+}
+
+.time-item small {
+    text-align: right;
+    color: #666;
+}
+
+
+/* 모바일 */
+
+@media (max-width: 600px) {
+
+    .gallery-track img {
+        height: 230px;
+    }
+
+    .time-item {
+        grid-template-columns: 65px 1fr;
+    }
+
+    .time-item small {
+        grid-column: 2;
+        text-align: left;
+        margin-top: -5px;
+    }
+
+}
