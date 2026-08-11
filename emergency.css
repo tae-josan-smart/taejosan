@@ -220,3 +220,23 @@ footer {
         font-size: 17px;
     }
 }
+
+/* ===========================
+   112 파란색 스타일
+=========================== */
+
+.emergency-112 {
+    border-left-color: #1565c0;
+}
+
+.emergency-112 h2 {
+    color: #1565c0;
+}
+
+.emergency-112 .emergency-button {
+    background: #1565c0;
+}
+
+.emergency-112 .emergency-button:hover {
+    background: #0d47a1;
+}
