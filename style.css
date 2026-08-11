@@ -462,3 +462,40 @@ font-size:24px;
 
     text-align:center;
 }
+
+/* ===========================
+긴급신고 페이지
+=========================== */
+
+.emergency-card {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+}
+
+.emergency-notice {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+}
+
+.emergency-button {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    margin: 15px auto 0;
+    padding: 14px 20px;
+    
+    background: #d32f2f;
+    color: white;
+    
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    
+    border-radius: 12px;
+}
+
+.emergency-description {
+    margin-bottom: 10px;
+}

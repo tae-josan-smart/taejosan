@@ -1,0 +1,222 @@
+/* ===========================
+   긴급신고 페이지
+=========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f8f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ===========================
+   헤더
+=========================== */
+
+header {
+    background: linear-gradient(135deg, #2e7d32, #43a047);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+header h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+/* ===========================
+   전체 영역
+=========================== */
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* ===========================
+   현재 위치
+=========================== */
+
+.location-card {
+    background: white;
+    border-radius: 24px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.location-card h2 {
+    color: #2e7d32;
+    margin-bottom: 10px;
+}
+
+.location-card h3 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+/* ===========================
+   긴급신고 카드
+=========================== */
+
+.emergency-card {
+    background: white;
+    border-radius: 24px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    border-left: 6px solid #d32f2f;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.card-content {
+    padding: 25px;
+}
+
+.emergency-card h2 {
+    color: #d32f2f;
+    margin-bottom: 12px;
+}
+
+.emergency-description {
+    margin-bottom: 20px;
+}
+
+/* ===========================
+   119 / 112 버튼
+=========================== */
+
+.emergency-button {
+    display: block;
+    width: 100%;
+    padding: 16px 20px;
+
+    background: #d32f2f;
+    color: white;
+
+    text-align: center;
+    text-decoration: none;
+
+    border-radius: 14px;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+
+    transition: all 0.25s ease;
+}
+
+.emergency-button:hover {
+    background: #b71c1c;
+    transform: translateY(-2px);
+}
+
+/* ===========================
+   신고 전 확인사항
+=========================== */
+
+.notice-card {
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+    margin-top: 25px;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.emergency-notice h2 {
+    color: #d32f2f;
+    margin-bottom: 15px;
+}
+
+.emergency-notice ul {
+    padding-left: 20px;
+}
+
+.emergency-notice li {
+    margin-bottom: 10px;
+}
+
+/* ===========================
+   메인으로 돌아가기
+=========================== */
+
+.back-button {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+
+    margin: 30px auto 10px;
+    padding: 16px 20px;
+
+    background: #2e7d32;
+    color: white;
+
+    text-align: center;
+    text-decoration: none;
+
+    border-radius: 15px;
+
+    font-size: 17px;
+    font-weight: bold;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+
+    transition: all 0.25s ease;
+}
+
+.back-button:hover {
+    background: #43a047;
+    transform: translateY(-2px);
+}
+
+/* ===========================
+   Footer
+=========================== */
+
+footer {
+    text-align: center;
+    color: #777;
+    padding: 30px;
+}
+
+/* ===========================
+   모바일
+=========================== */
+
+@media (max-width: 600px) {
+
+    header h1 {
+        font-size: 28px;
+    }
+
+    .location-card h3 {
+        font-size: 24px;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    .card-content {
+        padding: 20px;
+    }
+
+    .emergency-button {
+        font-size: 17px;
+    }
+}
