@@ -2,500 +2,515 @@
    기본 설정
 =========================== */
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-    font-family:Arial, Helvetica, sans-serif;
-    background:#f5f8f4;
-    color:#333;
-    line-height:1.6;
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f8f4;
+    color: #333;
+    line-height: 1.6;
 }
+
 
 /* ===========================
    헤더
 =========================== */
 
-header{
-    background:linear-gradient(135deg,#2e7d32,#43a047);
-    color:#fff;
-    text-align:center;
-    padding:40px 20px;
+header {
+    background: linear-gradient(135deg, #2e7d32, #43a047);
+    color: #fff;
+    text-align: center;
+    padding: 40px 20px;
 }
 
-header h1{
-    font-size:32px;
-    margin-bottom:10px;
+header h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
 }
 
-header p{
-    font-size:16px;
-    opacity:.9;
+header p {
+    font-size: 16px;
+    opacity: 0.9;
 }
+
 
 /* ===========================
    전체 컨테이너
 =========================== */
 
-.container{
-    max-width:900px;
-    margin:auto;
-    padding:20px;
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
 }
+
 
 /* ===========================
-   현재위치 카드
+   현재 위치 카드
 =========================== */
 
-.location-card{
-
-    background:#fff;
-
-    border-radius:24px;
-
-    padding:25px;
-
-    margin-bottom:25px;
-
-    box-shadow:0 10px 30px rgba(0,0,0,.08);
-
-    text-align:center;
-
+.location-card {
+    background: #fff;
+    border-radius: 24px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    text-align: center;
 }
 
-.location-card h2{
-
-    color:#2e7d32;
-
-    margin-bottom:10px;
-
+.location-card h2 {
+    color: #2e7d32;
+    margin-bottom: 10px;
 }
 
-.location-card h3{
-
-    font-size:28px;
-
-    margin-bottom:10px;
-
+.location-card h3 {
+    font-size: 28px;
+    margin-bottom: 10px;
 }
 
-.phone{
-
-    margin-top:15px;
-
-    color:#666;
-
+.phone {
+    margin-top: 15px;
+    color: #666;
 }
+
 
 /* ===========================
-   메뉴
+   메인 메뉴
 =========================== */
 
-.menu-grid{
+.menu-grid {
+    display: grid;
 
-    display:grid;
+    /* PC에서도 2열 */
+    grid-template-columns: repeat(2, 1fr);
 
-    grid-template-columns:repeat(2,1fr);
-
-    gap:15px;
-
-    margin-bottom:25px;
-
+    gap: 15px;
+    margin-bottom: 25px;
 }
 
-.menu-card{
+.menu-card {
+    background: #fff;
 
-    background:#fff;
+    border-radius: 22px;
 
-    border-radius:22px;
+    text-decoration: none;
 
-    text-decoration:none;
+    color: #2e7d32;
 
-    color:#2e7d32;
+    padding: 28px;
 
-    padding:28px;
+    text-align: center;
 
-    text-align:center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 
-    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transition: all 0.35s ease;
 
-    transition:all .35s ease;
-
-    font-size:34px;
-
+    font-size: 34px;
 }
 
-.menu-card span{
+.menu-card span {
+    display: block;
 
-    display:block;
+    margin-top: 10px;
 
-    margin-top:10px;
+    font-size: 16px;
 
-    font-size:16px;
-
-    font-weight:bold;
-
+    font-weight: bold;
 }
 
-.menu-card:hover{
+.menu-card:hover {
+    transform: translateY(-8px) scale(1.03);
 
-    transform:translateY(-8px) scale(1.03);
+    background: #43a047;
 
-    background:#43a047;
+    color: white;
 
-    color:white;
-
-    box-shadow:0 18px 35px rgba(0,0,0,.18);
-
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.18);
 }
+
 
 /* ===========================
    공지사항
 =========================== */
 
-.notice-card{
+.notice-card {
+    background: #fff;
 
-    background:#fff;
+    border-radius: 20px;
 
-    border-radius:20px;
+    padding: 25px;
 
-    padding:25px;
-
-    box-shadow:0 5px 15px rgba(0,0,0,.08);
-
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
 }
 
-.notice-card h2{
+.notice-card h2 {
+    color: #2e7d32;
 
-    color:#2e7d32;
-
-    margin-bottom:15px;
-
+    margin-bottom: 15px;
 }
 
-.notice-card ul{
-
-    padding-left:20px;
-
+.notice-card ul {
+    padding-left: 20px;
 }
 
-.notice-card li{
-
-    margin-bottom:10px;
-
+.notice-card li {
+    margin-bottom: 10px;
 }
+
 
 /* ===========================
-   Footer
+   일반 카드
 =========================== */
 
-footer{
+.card {
+    background: #fff;
 
-    text-align:center;
+    border-radius: 24px;
 
-    color:#777;
+    overflow: hidden;
 
-    padding:30px;
+    margin-bottom: 30px;
 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
+
 
 /* ===========================
-   모바일
+   카드 이미지
 =========================== */
 
-@media(max-width:600px){
+.card img {
+    width: 100%;
 
-.menu-grid{
+    height: 230px;
 
-grid-template-columns:1fr;
+    object-fit: cover;
 
+    display: block;
 }
 
-header h1{
 
-font-size:28px;
+/* ===========================
+   카드 내용
+=========================== */
 
+.card-content {
+    padding: 25px;
 }
 
-.location-card h3{
+.card-content h2 {
+    color: #2e7d32;
 
-font-size:24px;
-
+    margin-bottom: 15px;
 }
 
+.card-content p {
+    margin-bottom: 20px;
 }
 
-.card{
-
-    background:#fff;
-
-    border-radius:24px;
-
-    overflow:hidden;
-
-    margin-bottom:30px;
-
-    box-shadow:0 10px 30px rgba(0,0,0,.08);
-
+.card-content ul {
+    padding-left: 20px;
 }
 
-.card img{
-
-    width:100%;
-
-    height:250px;
-
-    object-fit:cover;
-
-    display:block;
-
+.card-content li {
+    margin-bottom: 8px;
 }
 
-.card-content{
 
-    padding:25px;
+/* ===========================
+   메인 / 큰 이미지
+=========================== */
 
+.hero-image {
+    width: 100%;
+
+    height: 350px;
+
+    object-fit: contain;
+
+    background: #f5f5f5;
+
+    border-radius: 18px;
 }
 
-.card-content h2{
-
-    color:#2e7d32;
-
-    margin-bottom:15px;
-
-}
-
-.card-content p{
-
-    margin-bottom:20px;
-
-}
-
-.card-content ul{
-
-    padding-left:20px;
-
-}
-
-.card-content li{
-
-    margin-bottom:8px;
-
-}
-
-.card img{
-    width:100%;
-    height:230px;
-    object-fit:cover;
-    border-radius:15px;
-
-}
-
-.hero-image{
-    width:100%;
-    height:350px;
-    object-fit:contain;
-    background:#f5f5f5;
-    border-radius:18px;
-    
-}
 
 /* ===========================
    페이지 하단 메인으로 돌아가기
 =========================== */
 
-.back-button{
-    display:block;
-    width:100%;
-    max-width:500px;
-    margin:30px auto 10px;
-    padding:16px 20px;
+.back-button {
+    display: block;
 
-    background:#2e7d32;
-    color:white;
+    width: 100%;
 
-    text-align:center;
-    text-decoration:none;
+    max-width: 500px;
 
-    border-radius:15px;
+    margin: 30px auto 10px;
 
-    font-size:17px;
-    font-weight:bold;
+    padding: 16px 20px;
 
-    box-shadow:0 5px 15px rgba(0,0,0,.08);
+    background: #2e7d32;
 
-    transition:all .25s ease;
+    color: white;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    border-radius: 15px;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+
+    transition: all 0.25s ease;
 }
 
-.back-button:hover{
-    background:#43a047;
-    transform:translateY(-2px);
+.back-button:hover {
+    background: #43a047;
+
+    transform: translateY(-2px);
 }
 
-/* ===========================
-   긴급신고
-=========================== */
-
-.emergency-card{
-    border-left:6px solid #d32f2f;
-}
-
-.emergency-card h2{
-    color:#d32f2f;
-    margin-bottom:12px;
-}
-
-.emergency-description{
-    margin-bottom:20px;
-}
-
-.emergency-button{
-    display:block;
-    width:100%;
-    padding:16px 20px;
-
-    background:#d32f2f;
-    color:white;
-
-    text-align:center;
-    text-decoration:none;
-
-    border-radius:14px;
-
-    font-size:18px;
-    font-weight:bold;
-
-    box-shadow:0 5px 15px rgba(0,0,0,.12);
-
-    transition:all .25s ease;
-}
-
-.emergency-button:hover{
-    background:#b71c1c;
-    transform:translateY(-2px);
-}
-
-.emergency-notice{
-    margin-top:25px;
-}
-
-.emergency-notice h2{
-    color:#d32f2f;
-}
-
-.emergency-notice li{
-    margin-bottom:10px;
-}
 
 /* ===========================
    편의시설
 =========================== */
 
-.facility-title{
-    color:#2e7d32;
-    margin-bottom:18px;
+.facility-title {
+    color: #2e7d32;
+
+    margin-bottom: 18px;
 }
 
 
-/* 카페 사진 슬라이드 */
+/* ===========================
+   카페 사진 슬라이드
+=========================== */
 
-.photo-slider{
-    display:flex;
+.photo-slider {
+    display: flex;
 
-    overflow-x:auto;
+    overflow-x: auto;
 
-    scroll-snap-type:x mandatory;
+    scroll-snap-type: x mandatory;
 
-    gap:0;
+    gap: 0;
 
-    border-radius:18px;
+    border-radius: 18px;
 
-    margin-bottom:0;
+    margin-bottom: 0;
 
-    scrollbar-width:none;
+    scrollbar-width: none;
 }
 
-.photo-slider::-webkit-scrollbar{
-    display:none;
+.photo-slider::-webkit-scrollbar {
+    display: none;
 }
 
-.photo-slider img{
-    flex:0 0 100%;
+.photo-slider img {
+    flex: 0 0 100%;
 
-    width:100%;
-    height:260px;
+    width: 100%;
 
-    object-fit:cover;
+    height: 260px;
 
-    scroll-snap-align:start;
+    object-fit: cover;
 
-    display:block;
-}
+    scroll-snap-align: start;
 
-
-/* 일반 시설 이미지 */
-
-.facility-image{
-    width:100%;
-
-    height:260px;
-
-    object-fit:cover;
-
-    display:block;
-
-    border-radius:18px;
+    display: block;
 }
 
 
-/* 사진 안내 문구 */
+/* ===========================
+   일반 시설 이미지
+=========================== */
 
-.photo-guide{
-    margin-top:15px;
+.facility-image {
+    width: 100%;
 
-    font-size:13px;
+    height: 260px;
 
-    color:#777;
+    object-fit: cover;
 
-    text-align:center;
+    display: block;
+
+    border-radius: 18px;
+}
+
+
+/* ===========================
+   사진 안내 문구
+=========================== */
+
+.photo-guide {
+    margin-top: 15px;
+
+    font-size: 13px;
+
+    color: #777;
+
+    text-align: center;
+}
+
+
+/* ===========================
+   Footer
+=========================== */
+
+footer {
+    text-align: center;
+
+    color: #777;
+
+    padding: 30px;
+}
+
+
+/* ===========================
+   모바일
+=========================== */
+
+@media (max-width: 600px) {
+
+    header {
+        padding: 30px 15px;
+    }
+
+    header h1 {
+        font-size: 28px;
+    }
+
+    header p {
+        font-size: 15px;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    .location-card {
+        padding: 20px;
+    }
+
+    .location-card h3 {
+        font-size: 24px;
+    }
+
+
+    /* ---------------------------
+       모바일도 메뉴 2열 유지
+    --------------------------- */
+
+    .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 12px;
+    }
+
+    .menu-card {
+        padding: 20px 10px;
+
+        border-radius: 18px;
+
+        font-size: 30px;
+    }
+
+    .menu-card span {
+        margin-top: 8px;
+
+        font-size: 14px;
+
+        line-height: 1.4;
+
+        word-break: keep-all;
+    }
+
+
+    /* ---------------------------
+       카드
+    --------------------------- */
+
+    .card {
+        margin-bottom: 20px;
+
+        border-radius: 20px;
+    }
+
+    .card img {
+        height: 220px;
+    }
+
+    .card-content {
+        padding: 20px;
+    }
+
+
+    /* ---------------------------
+       큰 이미지
+    --------------------------- */
+
+    .hero-image {
+        height: 260px;
+    }
+
+
+    /* ---------------------------
+       편의시설 이미지
+    --------------------------- */
+
+    .photo-slider img {
+        height: 230px;
+    }
+
+    .facility-image {
+        height: 230px;
+    }
+
+
+    /* ---------------------------
+       메인으로 돌아가기
+    --------------------------- */
+
+    .back-button {
+        font-size: 16px;
+
+        padding: 14px 15px;
+    }
 }
 
 /* ===========================
-긴급신고 페이지
+   모바일 메뉴 2열 고정
 =========================== */
 
-.emergency-card {
-    display: block;
-    visibility: visible;
-    opacity: 1;
-}
+@media screen and (max-width: 600px) {
 
-.emergency-notice {
-    display: block;
-    visibility: visible;
-    opacity: 1;
-}
+    .menu-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 12px !important;
+        width: 100% !important;
+    }
 
-.emergency-button {
-    display: block;
-    width: 100%;
-    max-width: 500px;
-    margin: 15px auto 0;
-    padding: 14px 20px;
-    
-    background: #d32f2f;
-    color: white;
-    
-    text-align: center;
-    text-decoration: none;
-    font-weight: bold;
-    
-    border-radius: 12px;
-}
+    .menu-card {
+        width: 100% !important;
+        min-width: 0 !important;
+        padding: 20px 8px !important;
+        font-size: 30px !important;
+    }
 
-.emergency-description {
-    margin-bottom: 10px;
+    .menu-card span {
+        display: block !important;
+        font-size: 14px !important;
+        line-height: 1.4 !important;
+        word-break: keep-all !important;
+    }
+
 }
