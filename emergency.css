@@ -222,21 +222,38 @@ footer {
 }
 
 /* ===========================
-   112 파란색 스타일
+   119 / 112 색상 구분
 =========================== */
 
-.emergency-112 {
-    border-left-color: #1565c0;
+/* 119 */
+.emergency-card:not(.emergency-112) {
+    border-left: 6px solid #d32f2f;
 }
 
-.emergency-112 h2 {
+.emergency-card:not(.emergency-112) h2 {
+    color: #d32f2f;
+}
+
+a.emergency-button.emergency-119-button {
+    background-color: #d32f2f !important;
+    color: #ffffff !important;
+}
+
+
+/* 112 */
+.emergency-card.emergency-112 {
+    border-left: 6px solid #1565c0;
+}
+
+.emergency-card.emergency-112 h2 {
     color: #1565c0;
 }
 
-.emergency-112 .emergency-button {
-    background: #1565c0;
+a.emergency-button.emergency-112-button {
+    background-color: #1565c0 !important;
+    color: #ffffff !important;
 }
 
-.emergency-112 .emergency-button:hover {
-    background: #0d47a1;
+a.emergency-button.emergency-112-button:hover {
+    background-color: #0d47a1 !important;
 }
