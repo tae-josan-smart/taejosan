@@ -12,15 +12,102 @@
 
     <link rel="stylesheet" href="style.css">
 
+    <style>
+
+        /* ============================
+           사진 갤러리
+        ============================ */
+
+        .gallery {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            background: #f2f2f2;
+        }
+
+        .gallery-track {
+            display: flex;
+            overflow-x: auto;
+
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .gallery-track::-webkit-scrollbar {
+            display: none;
+        }
+
+        .gallery-track img {
+            flex: 0 0 100%;
+            width: 100%;
+            height: 300px;
+
+            object-fit: cover;
+
+            scroll-snap-align: start;
+
+            display: block;
+        }
+
+        /* 스와이프 안내 */
+
+        .swipe-guide {
+            position: absolute;
+
+            right: 12px;
+            bottom: 12px;
+
+            background: rgba(0, 0, 0, 0.55);
+            color: white;
+
+            padding: 6px 10px;
+
+            border-radius: 20px;
+
+            font-size: 12px;
+        }
+
+        /* 사진 개수 안내 */
+
+        .gallery-count {
+            text-align: center;
+
+            padding: 8px 0;
+
+            font-size: 13px;
+
+            color: #777;
+
+            background: #fff;
+        }
+
+
+        /* ============================
+           모바일
+        ============================ */
+
+        @media (max-width: 600px) {
+
+            .gallery-track img {
+                height: 240px;
+            }
+
+        }
+
+    </style>
+
 </head>
 
 
 <body>
 
 
-<!-- ===========================
-     페이지 헤더
-=========================== -->
+<!-- ============================
+     헤더
+============================ -->
 
 <header>
 
@@ -37,9 +124,9 @@
 <div class="container">
 
 
-<!-- ===========================
+<!-- ============================
      산림레포츠단지 소개
-=========================== -->
+============================ -->
 
 <div class="card">
 
@@ -56,8 +143,7 @@
 
         <p>
             태조산 산림레포츠단지는 숲속 자연환경을 활용하여
-            다양한 체험과 휴식을 함께 즐길 수 있는
-            복합 레포츠 공간입니다.
+            다양한 체험과 휴식을 함께 즐길 수 있는 복합 레포츠 공간입니다.
         </p>
 
     </div>
@@ -66,47 +152,43 @@
 
 
 
-<!-- ===========================
-     운영 안내
-=========================== -->
-
-<div class="notice-card">
-
-    <h2>📌 운영 안내</h2>
-
-    <ul>
-
-        <li>
-            🚫 휴장일 :
-            <strong>매주 화요일</strong>
-        </li>
-
-        <li>
-            🌦 기상상황 및 운영여건에 따라
-            운영이 변경될 수 있습니다.
-        </li>
-
-        <li>
-            🎟 온라인 예약자를 고려하여
-            현장 발권이 진행될 수 있습니다.
-        </li>
-
-    </ul>
-
-</div>
-
-
-
-<!-- ===========================
-     숲모험
-=========================== -->
+<!-- ============================
+     성인 숲모험
+     기존 1장 + 새 2장
+============================ -->
 
 <div class="card">
 
-    <img
-        src="images/forest-adventure.jpg"
-        alt="숲모험"
-        class="facility-image">
+    <div class="gallery">
+
+        <div class="gallery-track">
+
+            <!-- 기존 사진 -->
+            <img
+                src="images/forest-adventure.jpg"
+                alt="성인 숲모험">
+
+            <!-- 새 사진 -->
+            <img
+                src="images/adult-forest-1.jpg"
+                alt="성인 숲모험">
+
+            <img
+                src="images/adult-forest-2.jpg"
+                alt="성인 숲모험">
+
+        </div>
+
+        <div class="swipe-guide">
+            ← 좌우로 밀어보세요 →
+        </div>
+
+    </div>
+
+    <div class="gallery-count">
+        사진 3장 · 좌우로 스와이프
+    </div>
+
 
     <div class="card-content">
 
@@ -135,11 +217,9 @@
                 📏 신장 :
                 <strong>150~190cm</strong>
                 <br>
-            </li>
-
-            <li>
-                ⭐ 권장 신장 :
-                <strong>160cm 이상</strong>
+                <small>
+                    ※ 160cm 이상 권장
+                </small>
             </li>
 
             <li>
@@ -147,10 +227,6 @@
                 <strong>45~90kg</strong>
             </li>
 
-            <li>
-                🎟 발권마감 :
-                <strong>이용 40분 전</strong>
-            </li>
 
         </ul>
 
@@ -166,6 +242,13 @@
                 착용되지 않을 경우 체험이 제한될 수 있습니다.
             </p>
 
+            <p>
+                ⏰
+                <strong>
+                    발권 마감 40분 전까지 이용 가능합니다.
+                </strong>
+            </p>
+
         </div>
 
     </div>
@@ -174,16 +257,43 @@
 
 
 
-<!-- ===========================
+<!-- ============================
      짚코스터
-=========================== -->
+     기존 사진 삭제 + 새 3장
+============================ -->
 
 <div class="card">
 
-    <img
-        src="images/zipcoaster.jpg"
-        alt="짚코스터"
-        class="facility-image">
+    <div class="gallery">
+
+        <div class="gallery-track">
+
+            <!-- 기존 짚코스터 사진은 삭제 -->
+
+            <img
+                src="images/zipcoaster-1.jpg"
+                alt="짚코스터">
+
+            <img
+                src="images/zipcoaster-2.jpg"
+                alt="짚코스터">
+
+            <img
+                src="images/zipcoaster-3.jpg"
+                alt="짚코스터">
+
+        </div>
+
+        <div class="swipe-guide">
+            ← 좌우로 밀어보세요 →
+        </div>
+
+    </div>
+
+    <div class="gallery-count">
+        사진 3장 · 좌우로 스와이프
+    </div>
+
 
     <div class="card-content">
 
@@ -198,34 +308,8 @@
         <ul>
 
             <li>
-                💰 이용요금 :
-                <strong>7,000원</strong>
-            </li>
-
-            <li>
                 📏 신장 :
                 <strong>150cm 이상</strong>
-            </li>
-
-            <li>
-                ⚖️ 체중 :
-                <strong>45~90kg</strong>
-            </li>
-
-            <li>
-                🦺 50kg 미만 이용자는
-                중량조끼 착용
-                (현장 제공)
-            </li>
-
-            <li>
-                🎟 발권마감 :
-                <strong>이용 10분 전</strong>
-            </li>
-
-            <li>
-                ⚠ 만 70세 이상 고위험 이용자는
-                입장이 제한될 수 있습니다.
             </li>
 
         </ul>
@@ -242,6 +326,13 @@
                 착용되지 않을 경우 체험이 제한될 수 있습니다.
             </p>
 
+            <p>
+                ⏰
+                <strong>
+                    발권 마감 40분 전까지 이용 가능합니다.
+                </strong>
+            </p>
+
         </div>
 
     </div>
@@ -250,16 +341,43 @@
 
 
 
-<!-- ===========================
+<!-- ============================
      공중네트
-=========================== -->
+     기존 1장 + 새 2장
+============================ -->
 
 <div class="card">
 
-    <img
-        src="images/net.jpg"
-        alt="공중네트"
-        class="facility-image">
+    <div class="gallery">
+
+        <div class="gallery-track">
+
+            <!-- 기존 사진 -->
+            <img
+                src="images/net.jpg"
+                alt="공중네트">
+
+            <!-- 새 사진 -->
+            <img
+                src="images/net-1.jpg"
+                alt="공중네트">
+
+            <img
+                src="images/net-2.jpg"
+                alt="공중네트">
+
+        </div>
+
+        <div class="swipe-guide">
+            ← 좌우로 밀어보세요 →
+        </div>
+
+    </div>
+
+    <div class="gallery-count">
+        사진 3장 · 좌우로 스와이프
+    </div>
+
 
     <div class="card-content">
 
@@ -271,49 +389,28 @@
         </p>
 
 
-        <h3 class="facility-title">
-            청소년·성인
-        </h3>
-
         <ul>
 
             <li>
-                💰 이용요금 :
-                <strong>5,000원</strong>
-            </li>
-
-            <li>
                 📏 신장 :
-                <strong>120cm 이상</strong>
+                <strong>
+                    120cm 미만은 보호자 동반 시 이용 가능
+                </strong>
             </li>
 
             <li>
-                ⚖️ 체중 :
-                <strong>90kg 이하</strong>
-            </li>
-
-        </ul>
-
-
-        <h3 class="facility-title">
-            어린이
-        </h3>
-
-        <ul>
-
-            <li>
-                💰 이용요금 :
-                <strong>3,000원</strong>
+                👶 어린이 :
+                <strong>5세부터 11세까지</strong>
             </li>
 
             <li>
-                👶 연령 :
-                <strong>만 5~11세</strong>
+                🧑 청소년 :
+                <strong>12세부터 18세까지</strong>
             </li>
 
             <li>
-                📏 신장 :
-                <strong>120cm 미만은 보호자 동반 시 이용 가능</strong>
+                👨 성인 :
+                <strong>19세부터 64세까지</strong>
             </li>
 
         </ul>
@@ -322,7 +419,7 @@
         <div class="notice-card">
 
             <p>
-                ⚠ 신장·체중 조건을 충족해야 체험이 가능합니다.
+                ⚠ 신장·체중 조건을 모두 충족해야 체험이 가능합니다.
             </p>
 
             <p>
@@ -338,25 +435,51 @@
 
 
 
-<!-- ===========================
+<!-- ============================
      어린이 숲모험
-=========================== -->
+     기존 1장 + 새 2장
+============================ -->
 
 <div class="card">
 
-    <img
-        src="images/forest-adventure-kids.jpg"
-        alt="어린이 숲모험"
-        class="facility-image">
+    <div class="gallery">
+
+        <div class="gallery-track">
+
+            <!-- 기존 사진 -->
+            <img
+                src="images/forest-adventure-kids.jpg"
+                alt="어린이 숲모험">
+
+            <!-- 새 사진 -->
+            <img
+                src="images/kids-forest-1.jpg"
+                alt="어린이 숲모험">
+
+            <img
+                src="images/kids-forest-2.jpg"
+                alt="어린이 숲모험">
+
+        </div>
+
+        <div class="swipe-guide">
+            ← 좌우로 밀어보세요 →
+        </div>
+
+    </div>
+
+    <div class="gallery-count">
+        사진 3장 · 좌우로 스와이프
+    </div>
+
 
     <div class="card-content">
 
         <h2>🧒 어린이 숲모험</h2>
 
         <p>
-            어린이가 숲속에서 다양한 시설을
-            체험할 수 있도록 구성된
-            어린이 체험공간입니다.
+            어린이가 숲속에서 안전하게 다양한 시설을
+            체험할 수 있도록 구성된 어린이 체험공간입니다.
         </p>
 
 
@@ -364,7 +487,9 @@
 
             <li>
                 🎒 이용대상 :
-                <strong>초등학교 1학년 이상 ~ 6학년 이하</strong>
+                <strong>
+                    초등학교 1학년 이상 ~ 6학년 이하
+                </strong>
             </li>
 
             <li>
@@ -378,8 +503,10 @@
         <div class="notice-card">
 
             <p>
-                👨‍👩‍👧 미취학 아동은
-                보호자 동반이 필요합니다.
+                👨‍👩‍👧
+                <strong>
+                    미취학 아동은 보호자 동반이 필요합니다.
+                </strong>
             </p>
 
         </div>
@@ -390,16 +517,43 @@
 
 
 
-<!-- ===========================
+<!-- ============================
      키즈놀이터
-=========================== -->
+     기존 1장 + 새 2장
+============================ -->
 
 <div class="card">
 
-    <img
-        src="images/kids-playground.jpg"
-        alt="키즈놀이터"
-        class="facility-image">
+    <div class="gallery">
+
+        <div class="gallery-track">
+
+            <!-- 기존 사진 -->
+            <img
+                src="images/kids-playground.jpg"
+                alt="키즈놀이터">
+
+            <!-- 새 사진 -->
+            <img
+                src="images/kids-playground-1.jpg"
+                alt="키즈놀이터">
+
+            <img
+                src="images/kids-playground-2.jpg"
+                alt="키즈놀이터">
+
+        </div>
+
+        <div class="swipe-guide">
+            ← 좌우로 밀어보세요 →
+        </div>
+
+    </div>
+
+    <div class="gallery-count">
+        사진 3장 · 좌우로 스와이프
+    </div>
+
 
     <div class="card-content">
 
@@ -424,14 +578,34 @@
             </li>
 
             <li>
-                🧦 <strong>양말 착용 필수</strong>
+                🧦
+                <strong>
+                    양말 착용 필수
+                </strong>
             </li>
 
             <li>
-                👨‍👩‍👧 <strong>보호자 동반 필수</strong>
+                👨‍👩‍👧
+                보호자 동반이 필요합니다.
             </li>
 
         </ul>
+
+
+        <div class="notice-card">
+
+            <p>
+                ⚠ 안전한 이용을 위해 이용수칙을 준수해주세요.
+            </p>
+
+            <p>
+                🧦
+                <strong>
+                    키즈놀이터는 양말 착용이 필수입니다.
+                </strong>
+            </p>
+
+        </div>
 
     </div>
 
@@ -439,9 +613,9 @@
 
 
 
-<!-- ===========================
+<!-- ============================
      통합권
-=========================== -->
+============================ -->
 
 <div class="card">
 
@@ -450,17 +624,12 @@
         <h2>🎫 통합권</h2>
 
         <p>
-            짚코스터, 공중네트, 숲모험을
-            하나의 이용권으로 이용할 수 있습니다.
+            여러 산림레포츠 시설을 하나의 이용권으로
+            이용할 수 있는 통합 이용권입니다.
         </p>
 
 
         <ul>
-
-            <li>
-                💰 이용요금 :
-                <strong>12,000원</strong>
-            </li>
 
             <li>
                 📏 신장 :
@@ -472,31 +641,18 @@
                 <strong>160cm 이상</strong>
             </li>
 
-            <li>
-                ⚖️ 체중 :
-                <strong>45~90kg</strong>
-            </li>
-
-            <li>
-                🦺 50kg 미만 이용자는
-                중량조끼 착용
-                (현장 제공)
-            </li>
-
-            <li>
-                ⚠ 만 70세 이상 고위험 이용자는
-                입장이 제한될 수 있습니다.
-            </li>
-
         </ul>
 
 
         <div class="notice-card">
 
-            <h3>🎯 권장 이용 순서</h3>
+            <p>
+                ⚠ 신장·체중 조건을 모두 충족해야 체험이 가능합니다.
+            </p>
 
             <p>
-                숲모험 → 짚코스터 → 공중네트
+                ⚠ 조건을 충족하더라도 장비가 올바르게
+                착용되지 않을 경우 체험이 제한될 수 있습니다.
             </p>
 
         </div>
@@ -518,9 +674,9 @@
 
 
 
-<!-- ===========================
+<!-- ============================
      감면 및 이용안내
-=========================== -->
+============================ -->
 
 <div class="card">
 
@@ -530,12 +686,11 @@
 
         <p>
             감면 대상에 해당하는 경우
-            관련 증빙서류 확인 후
-            이용요금 감면이 적용됩니다.
+            증빙서류 확인 후 이용요금 감면이 적용됩니다.
         </p>
 
 
-        <!-- 30% 감면 -->
+        <!-- 30% -->
 
         <div class="discount-box">
 
@@ -543,7 +698,9 @@
 
             <ul>
 
-                <li>천안시민</li>
+                <li>
+                    천안시민
+                </li>
 
                 <li>
                     다자녀가정
@@ -576,7 +733,7 @@
         </div>
 
 
-        <!-- 40% 감면 -->
+        <!-- 40% -->
 
         <div class="discount-box discount-40">
 
@@ -620,7 +777,9 @@
 
         <div class="notice-card">
 
-            <h3>📄 감면 이용 시 필요한 서류</h3>
+            <h3>
+                📄 감면 이용 시 필요한 서류
+            </h3>
 
             <ul>
 
@@ -651,8 +810,7 @@
 
                 <li>
                     <strong>국가보훈대상자</strong> :
-                    국가보훈등록증,
-                    국가유공자 유족증 등
+                    국가보훈등록증, 국가유공자 유족증 등
                 </li>
 
             </ul>
@@ -664,7 +822,9 @@
 
         <div class="notice-card">
 
-            <h3>⚠ 중복감면 안내</h3>
+            <h3>
+                ⚠ 중복감면 안내
+            </h3>
 
             <p>
                 천안시민 감면과 다른 감면 대상에
@@ -680,83 +840,59 @@
 
 
 
-<!-- ===========================
-     이용객 준수사항
-=========================== -->
+<!-- ============================
+     이용 유의사항
+============================ -->
 
 <div class="card">
 
     <div class="card-content">
 
-        <h2>⚠ 이용객 준수사항</h2>
-
-
-        <h3 class="facility-title">
-            🚫 이용이 제한되는 경우
-        </h3>
+        <h2>⚠ 이용 유의사항</h2>
 
         <ul>
 
             <li>
-                고소공포증, 공황장애
+                당일 현장 기상 상황에 따라
+                관리자 판단으로 이용이 취소될 수 있습니다.
             </li>
 
             <li>
-                임산부
+                <strong>
+                    10인 이상 단체
+                </strong>
+                이용 시 매표소로 문의해주세요.
             </li>
 
             <li>
-                음주자
+                시설 이용 전 개인물품은
+                카페 내 물품보관소에 보관해주세요.
             </li>
 
             <li>
-                최근 수술 이력
-                (1개월 이내)
+                어린이 숲모험은
+                <strong>
+                    무료 개방시설
+                </strong>
+                입니다.
             </li>
 
             <li>
-                심혈관질환 및
-                근골격계질환
-                (디스크, 골절 등)
+                어린이 숲모험은
+                <strong>
+                    초등학교 1학년부터 6학년까지
+                </strong>
+                이용 가능합니다.
             </li>
 
             <li>
-                기타 안내원의
-                안전 지시 사항을 위반하는 경우
-            </li>
-
-        </ul>
-
-
-        <h3 class="facility-title">
-            👕 복장 제한 및 권장사항
-        </h3>
-
-        <ul>
-
-            <li>
-                🚫 치마, 슬리퍼, 구두,
-                크록스, 샌들 착용 제한
-            </li>
-
-            <li>
-                🚫 장신구 및 긴 손톱
-            </li>
-
-            <li>
-                🚫 기타 위험요인을 유발할 수 있는 의상
-            </li>
-
-            <li>
-                👕 긴팔 및 긴바지 착용 권장
-            </li>
-
-            <li>
-                💇 긴 머리는 머리끈 착용 권장
-            </li>
-
-            <li>
-                🧦 양말 착용
+                <strong>
+                    매주 화요일은 휴장일
+                </strong>
+                입니다.
+                <br>
+                ※ 화요일이 공휴일인 경우
+                휴장일이 달라질 수 있습니다.
             </li>
 
         </ul>
@@ -767,9 +903,9 @@
 
 
 
-<!-- ===========================
-     예약 및 이용문의
-=========================== -->
+<!-- ============================
+     예약 안내
+============================ -->
 
 <div class="card">
 
@@ -779,8 +915,9 @@
 
         <p>
             산림레포츠 시설 이용 및 예약은
-            아래 공식 예약 페이지에서 확인할 수 있습니다.
+            아래 예약 페이지에서 확인할 수 있습니다.
         </p>
+
 
         <a
             href="https://www.foresttrip.go.kr/indvz/main.do?hmpgId=ID08030004"
@@ -798,9 +935,9 @@
 
 
 
-<!-- ===========================
+<!-- ============================
      메인으로 돌아가기
-=========================== -->
+============================ -->
 
 <a
     href="index.html"
@@ -815,9 +952,9 @@
 
 
 
-<!-- ===========================
+<!-- ============================
      Footer
-=========================== -->
+============================ -->
 
 <footer>
 
