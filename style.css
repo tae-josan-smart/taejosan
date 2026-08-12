@@ -736,3 +736,375 @@ footer {
         padding: 18px;
     }
 }
+
+/* =========================================
+   태조산공원 안내
+========================================= */
+
+.park-header {
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 22px 20px;
+}
+
+.header-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.back-btn {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #f1f5f2;
+    color: #245c35;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 22px;
+    flex-shrink: 0;
+}
+
+.park-header h1 {
+    margin: 0;
+    color: #214d2d;
+    font-size: 28px;
+}
+
+.park-header p {
+    margin: 6px 0 0;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+
+/* 전체 */
+
+.park-guide {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 35px 20px 70px;
+}
+
+
+/* 섹션 제목 */
+
+.section-title {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 20px;
+}
+
+.section-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 38px;
+    height: 38px;
+
+    border-radius: 12px;
+
+    background: #245c35;
+    color: white;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    flex-shrink: 0;
+}
+
+.section-title h2 {
+    margin: 0;
+    color: #1f2937;
+    font-size: 23px;
+}
+
+.section-title p {
+    margin: 5px 0 0;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+
+/* 지도 */
+
+.map-card {
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid #e5e7eb;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+}
+
+.park-map {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+
+.map-notice {
+    margin-top: 12px;
+
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+
+    padding: 14px 16px;
+
+    border-radius: 12px;
+
+    background: #f4f8f4;
+    color: #526158;
+
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.map-notice span {
+    color: #28723e;
+    font-weight: bold;
+}
+
+
+/* 이동 동선 */
+
+.route-section {
+    margin-top: 55px;
+}
+
+.route-flow {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    overflow-x: auto;
+    padding: 8px 2px 15px;
+}
+
+.route-item {
+    min-width: 150px;
+
+    padding: 15px;
+
+    border: 1px solid #e1e7e2;
+    border-radius: 14px;
+
+    background: white;
+}
+
+.route-item span {
+    display: inline-flex;
+
+    width: 25px;
+    height: 25px;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #e9f1eb;
+    color: #28623a;
+
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.route-item strong {
+    display: block;
+    margin-top: 8px;
+
+    color: #1f2937;
+    font-size: 15px;
+}
+
+.route-item small {
+    display: block;
+    margin-top: 4px;
+
+    color: #777;
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+.route-highlight {
+    border-color: #2d8a45;
+    background: #f2f8f3;
+}
+
+.route-highlight span {
+    background: #2d8a45;
+    color: white;
+}
+
+.route-arrow {
+    color: #9ca3af;
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+
+/* 시설 */
+
+.facility-section {
+    margin-top: 55px;
+}
+
+.facility-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.facility-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    padding: 18px;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+
+    background: white;
+
+    text-decoration: none;
+    color: inherit;
+
+    transition: 0.2s ease;
+}
+
+.facility-card:hover {
+    transform: translateY(-2px);
+    border-color: #83a98b;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+.facility-icon {
+    width: 46px;
+    height: 46px;
+
+    border-radius: 13px;
+
+    background: #edf5ee;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 22px;
+
+    flex-shrink: 0;
+}
+
+.facility-card h3 {
+    margin: 0;
+
+    font-size: 16px;
+    color: #26382b;
+}
+
+.facility-card p {
+    margin: 5px 0 0;
+
+    color: #777;
+    font-size: 13px;
+}
+
+.facility-arrow {
+    margin-left: auto;
+
+    color: #9ca3af;
+    font-size: 20px;
+}
+
+
+/* 하부시설 */
+
+.lower-section {
+    margin-top: 55px;
+}
+
+.lower-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.lower-card {
+    padding: 20px;
+
+    border-radius: 15px;
+
+    background: #f7f8f7;
+    border: 1px solid #e5e7eb;
+}
+
+.lower-card h3 {
+    margin: 0 0 7px;
+
+    color: #2b5736;
+    font-size: 16px;
+}
+
+.lower-card p {
+    margin: 0;
+
+    color: #666;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+
+/* 푸터 */
+
+.park-footer {
+    padding: 25px 20px;
+
+    background: #f3f5f3;
+
+    text-align: center;
+
+    color: #777;
+    font-size: 12px;
+}
+
+
+/* 모바일 */
+
+@media (max-width: 700px) {
+
+    .park-header h1 {
+        font-size: 22px;
+    }
+
+    .park-guide {
+        padding: 25px 14px 50px;
+    }
+
+    .section-title h2 {
+        font-size: 20px;
+    }
+
+    .facility-grid,
+    .lower-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .route-flow {
+        gap: 7px;
+    }
+
+    .route-item {
+        min-width: 135px;
+    }
+
+}
