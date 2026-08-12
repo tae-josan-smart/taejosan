@@ -11,7 +11,7 @@ content="width=device-width, initial-scale=1.0">
 <title>편의시설</title>
 
 <link rel="stylesheet"
-href="style.css">
+href="style.css?v=20260812">
 
 </head>
 
@@ -41,27 +41,43 @@ href="style.css">
 <h2 class="facility-title">☕ 카페</h2>
 
 
-<!-- 카페 사진 슬라이드 -->
+<!-- 카페 사진 스와이프 -->
 
-<div class="photo-slider">
+<div class="photo-gallery">
 
-<img
-src="images/cafe-outside.JPG"
-alt="카페 외부 전경">
+    <div class="gallery-track">
 
-<img
-src="images/cafe-inside.jpg"
-alt="카페 내부 전경">
+        <img
+        src="images/cafe-outside.JPG"
+        alt="카페 외부 전경">
+
+        <img
+        src="images/cafe-inside.jpg"
+        alt="카페 내부 전경">
+
+    </div>
+
+
+    <div class="gallery-dots">
+
+        <span class="gallery-dot active"></span>
+
+        <span class="gallery-dot"></span>
+
+    </div>
 
 </div>
 
 
+
 <div class="card-content">
+
 
 <p>
 태조산공원 이용 중 잠시 쉬어가며
 음료와 휴식을 즐길 수 있는 공간입니다.
 </p>
+
 
 
 <ul>
@@ -76,9 +92,11 @@ alt="카페 내부 전경">
 
 </ul>
 
+
 <p class="photo-guide">
 사진을 좌우로 넘겨 카페의 외부와 내부 모습을 확인해보세요.
 </p>
+
 
 </div>
 
@@ -92,42 +110,92 @@ alt="카페 내부 전경">
 
 <div class="card">
 
-    <img
+
+<h2 class="facility-title">🌲 숲속쉼터</h2>
+
+
+<!-- 숲속쉼터 사진 스와이프 -->
+
+<div class="photo-gallery">
+
+    <div class="gallery-track">
+
+        <!-- 기존 사진 -->
+
+        <img
         src="images/forest-rest.jpg"
-        alt="숲속쉼터">
+        alt="숲속쉼터 전경">
 
-    <div class="card-content">
 
-        <h2>🌲 숲속쉼터</h2>
+        <!-- 추가 사진 1 -->
 
-        <p>
-            숲속에서 잠시 쉬어가며
-            책을 읽고 여유로운 시간을 보낼 수 있는
-            작은 도서관 형태의 휴식공간입니다.
-        </p>
+        <img
+        src="images/forest-shelter-1.jpg"
+        alt="숲속쉼터 내부">
 
-        <ul>
 
-            <li>
-                🕙 이용시간 :
-                <strong>10:00 AM ~ 05:30 PM</strong>
-            </li>
+        <!-- 추가 사진 2 -->
 
-            <li>
-                🌙 야간개장 시 확대 운영
-            </li>
-
-            <li>
-                🚫 음식물 취식 금지
-            </li>
-
-            <li>
-                🥤 물 및 음료 섭취 가능
-            </li>
-
-        </ul>
+        <img
+        src="images/forest-shelter-2.jpg"
+        alt="숲속쉼터 휴게공간">
 
     </div>
+
+
+    <div class="gallery-dots">
+
+        <span class="gallery-dot active"></span>
+
+        <span class="gallery-dot"></span>
+
+        <span class="gallery-dot"></span>
+
+    </div>
+
+</div>
+
+
+
+<div class="card-content">
+
+
+<p>
+숲속에서 잠시 쉬어가며
+책을 읽고 여유로운 시간을 보낼 수 있는
+작은 도서관 형태의 휴식공간입니다.
+</p>
+
+
+
+<ul>
+
+<li>
+🕙 이용시간 :
+<strong>10:00 AM ~ 05:30 PM</strong>
+</li>
+
+<li>
+🌙 야간개장 시 확대 운영
+</li>
+
+<li>
+🚫 음식물 취식 금지
+</li>
+
+<li>
+🥤 물 및 음료 섭취 가능
+</li>
+
+</ul>
+
+
+<p class="photo-guide">
+사진을 좌우로 넘겨 숲속쉼터의 모습을 확인해보세요.
+</p>
+
+
+</div>
 
 </div>
 
@@ -154,6 +222,45 @@ class="back-button">
 © Cheonan Urban Corporation
 
 </footer>
+
+
+
+<script>
+
+/* ===========================
+   사진 위치 표시
+=========================== */
+
+document.querySelectorAll('.photo-gallery').forEach(function(gallery) {
+
+    const track = gallery.querySelector('.gallery-track');
+
+    const dots = gallery.querySelectorAll('.gallery-dot');
+
+    if (!track || !dots.length) return;
+
+
+    track.addEventListener('scroll', function() {
+
+        const index = Math.round(
+            track.scrollLeft / track.clientWidth
+        );
+
+
+        dots.forEach(function(dot, i) {
+
+            dot.classList.toggle(
+                'active',
+                i === index
+            );
+
+        });
+
+    });
+
+});
+
+</script>
 
 
 </body>
