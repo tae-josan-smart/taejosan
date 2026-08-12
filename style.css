@@ -57,6 +57,131 @@ header p {
     padding: 20px;
 }
 
+/* ===========================
+   현재 위치
+=========================== */
+
+.location-card {
+    background: white;
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 20px;
+
+    box-shadow:
+        0 5px 20px
+        rgba(0, 0, 0, 0.06);
+}
+
+.location-card h2 {
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.location-card h3 {
+    margin-bottom: 3px;
+}
+
+.location-card p {
+    margin: 2px 0;
+}
+
+.location-card .phone {
+    margin-top: 5px;
+}
+
+
+/* ===========================
+   메인 메뉴
+=========================== */
+
+.menu-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 15px;
+
+    margin-bottom: 20px;
+}
+
+.menu-card {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 110px;
+
+    background: white;
+
+    border-radius: 18px;
+
+    padding: 18px;
+
+    text-decoration: none;
+
+    color: #333;
+
+    font-size: 30px;
+
+    box-shadow:
+        0 5px 20px
+        rgba(0, 0, 0, 0.06);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.menu-card span {
+    margin-top: 8px;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    color: #333;
+}
+
+.menu-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 25px
+        rgba(0, 0, 0, 0.10);
+}
+
+
+/* ===========================
+   모바일
+=========================== */
+
+@media (max-width: 600px) {
+
+    .menu-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 12px;
+    }
+
+    .menu-card {
+        min-height: 100px;
+
+        font-size: 26px;
+
+        padding: 15px;
+    }
+
+    .menu-card span {
+        font-size: 14px;
+    }
+
+}
+
 
 /* ===========================
    카드
