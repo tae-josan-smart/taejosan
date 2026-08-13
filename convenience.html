@@ -11,7 +11,215 @@ content="width=device-width, initial-scale=1.0">
 <title>편의시설</title>
 
 <link rel="stylesheet"
-href="style.css?v=20260813">
+href="style.css?v=20260812">
+
+
+<style>
+
+/* ============================
+   편의시설 상세 화면
+============================ */
+
+.detail-page {
+    display: none;
+}
+
+
+/* 상세 화면일 때 */
+
+body.detail-mode .facility-menu {
+    display: none;
+}
+
+body.detail-mode .detail-page {
+    display: block;
+}
+
+
+/* ============================
+   상세페이지 제목
+============================ */
+
+.detail-title {
+    color: #247b32;
+    margin-bottom: 10px;
+}
+
+.detail-description {
+    margin-bottom: 20px;
+    line-height: 1.7;
+}
+
+
+/* ============================
+   사진
+============================ */
+
+.detail-photo {
+    width: 100%;
+    display: block;
+    border-radius: 12px;
+}
+
+
+/* ============================
+   사진 갤러리
+============================ */
+
+.photo-gallery {
+    width: 100%;
+    overflow: hidden;
+}
+
+.gallery-track {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+}
+
+.gallery-track::-webkit-scrollbar {
+    display: none;
+}
+
+.gallery-track img {
+    min-width: 100%;
+    width: 100%;
+    scroll-snap-align: start;
+    object-fit: cover;
+}
+
+
+/* ============================
+   사진 점
+============================ */
+
+.gallery-dots {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 10px;
+}
+
+.gallery-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #ccc;
+}
+
+.gallery-dot.active {
+    background: #247b32;
+}
+
+
+/* ============================
+   안내 카드
+============================ */
+
+.notice-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 20px;
+    margin-top: 14px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.05);
+}
+
+.notice-card h3 {
+    color: #247b32;
+    margin-top: 0;
+}
+
+.notice-card p {
+    line-height: 1.7;
+    margin: 7px 0;
+}
+
+
+/* ============================
+   상세페이지 하단 버튼
+============================ */
+
+.detail-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.detail-buttons a {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 15px 20px;
+    border-radius: 10px;
+    background: #2d8435;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 5px 12px rgba(0,0,0,0.08);
+}
+
+.detail-buttons a:hover {
+    background: #236b2b;
+}
+
+
+/* ============================
+   위치 / 정보 박스
+============================ */
+
+.info-box {
+    background: #fff;
+    border-radius: 14px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.05);
+}
+
+.info-box h2 {
+    color: #247b32;
+    margin-top: 0;
+}
+
+.info-box ul {
+    padding-left: 20px;
+}
+
+.info-box li {
+    margin: 9px 0;
+    line-height: 1.6;
+}
+
+
+/* ============================
+   운동기구 상세
+============================ */
+
+.exercise-info {
+    margin-top: 20px;
+}
+
+
+/* ============================
+   모바일
+============================ */
+
+@media (max-width: 700px) {
+
+    .detail-buttons {
+        margin-top: 25px;
+    }
+
+    .detail-buttons a {
+        padding: 14px 16px;
+    }
+
+}
+
+</style>
 
 </head>
 
@@ -19,770 +227,869 @@ href="style.css?v=20260813">
 <body>
 
 
-<!-- ===========================
-     헤더
-=========================== -->
+<!-- ==================================================
+     편의시설 메뉴
+================================================== -->
+
+<div class="facility-menu">
+
 
 <header>
 
-    <h1>☕ 편의시설</h1>
+<h1>☕ 편의시설 안내</h1>
 
-    <p>태조산공원의 편의시설을 확인하세요</p>
+<p>
+필요한 편의시설을 선택하면 해당 시설의 자세한 정보를 확인할 수 있습니다.
+</p>
 
 </header>
-
 
 
 <div class="container">
 
 
-<!-- ===========================
-     편의시설 메인 메뉴
-=========================== -->
+<!-- ============================
+     ① 화장실
+============================ -->
 
-<div id="facility-menu">
+<a href="convenience.html?view=toilet"
+class="facility-card">
 
+<div class="facility-icon">
+🚻
+</div>
 
-    <!-- 안내 카드 -->
+<div>
+<h3>화장실</h3>
+<p>공원 내 화장실 위치 및 편의시설 안내</p>
+</div>
 
-    <div class="card">
+<span class="facility-arrow">
+→
+</span>
 
-        <div class="card-content">
+</a>
 
-            <h2 class="facility-title">
-                편의시설 안내
-            </h2>
 
-            <p>
-                필요한 편의시설을 선택하면
-                해당 시설의 자세한 정보를 확인할 수 있습니다.
-            </p>
 
-        </div>
+<!-- ============================
+     ② 카페
+============================ -->
 
-    </div>
+<a href="convenience.html?view=cafe"
+class="facility-card">
 
+<div class="facility-icon">
+☕
+</div>
 
+<div>
+<h3>카페</h3>
+<p>카페 위치 및 운영시간 안내</p>
+</div>
 
-    <!-- ===========================
-         편의시설 6개 메뉴
-    =========================== -->
+<span class="facility-arrow">
+→
+</span>
 
-    <div class="facility-grid">
+</a>
 
 
-        <!-- 01 화장실 -->
 
-        <a href="convenience.html?view=toilet"
-           class="facility-card">
+<!-- ============================
+     ③ 먼지털이개
+============================ -->
 
-            <div class="facility-icon">
-                🚻
-            </div>
+<a href="convenience.html?view=dust"
+class="facility-card">
 
-            <div>
+<div class="facility-icon">
+🧹
+</div>
 
-                <h3>화장실</h3>
+<div>
+<h3>먼지털이개</h3>
+<p>공원 내 설치 위치 안내</p>
+</div>
 
-                <p>
-                    공원 내 화장실 위치 및 편의시설 안내
-                </p>
+<span class="facility-arrow">
+→
+</span>
 
-            </div>
+</a>
 
-            <span class="facility-arrow">
-                →
-            </span>
 
-        </a>
 
+<!-- ============================
+     ④ 숲속쉼터
+============================ -->
 
+<a href="convenience.html?view=forest"
+class="facility-card">
 
-        <!-- 02 카페 -->
+<div class="facility-icon">
+🌲
+</div>
 
-        <a href="convenience.html?view=cafe"
-           class="facility-card">
+<div>
+<h3>숲속쉼터</h3>
+<p>숲속 휴식공간 및 이용 안내</p>
+</div>
 
-            <div class="facility-icon">
-                ☕
-            </div>
+<span class="facility-arrow">
+→
+</span>
 
-            <div>
+</a>
 
-                <h3>카페</h3>
 
-                <p>
-                    카페 위치 및 운영시간 안내
-                </p>
 
-            </div>
+<!-- ============================
+     ⑤ 해충기피제
+============================ -->
 
-            <span class="facility-arrow">
-                →
-            </span>
+<a href="convenience.html?view=repellent"
+class="facility-card">
 
-        </a>
+<div class="facility-icon">
+🦟
+</div>
 
+<div>
+<h3>해충기피제</h3>
+<p>자동분사기 설치 위치 안내</p>
+</div>
 
+<span class="facility-arrow">
+→
+</span>
 
-        <!-- 03 먼지털이개 -->
+</a>
 
-        <a href="convenience.html?view=dust"
-           class="facility-card">
 
-            <div class="facility-icon">
-                🧹
-            </div>
 
-            <div>
+<!-- ============================
+     ⑥ 운동기구
+============================ -->
 
-                <h3>먼지털이개</h3>
+<a href="convenience.html?view=exercise"
+class="facility-card">
 
-                <p>
-                    공원 내 설치 위치 안내
-                </p>
+<div class="facility-icon">
+🏃
+</div>
 
-            </div>
+<div>
+<h3>운동기구</h3>
+<p>산책로 주변 야외 운동기구 안내</p>
+</div>
 
-            <span class="facility-arrow">
-                →
-            </span>
+<span class="facility-arrow">
+→
+</span>
 
-        </a>
+</a>
 
 
 
-        <!-- 04 숲속쉼터 -->
+<!-- 메인으로 돌아가기 -->
 
-        <a href="convenience.html?view=forest"
-           class="facility-card">
+<div class="detail-buttons">
 
-            <div class="facility-icon">
-                🌲
-            </div>
+<a href="index.html">
+🏠 메인으로 돌아가기
+</a>
 
-            <div>
+</div>
 
-                <h3>숲속쉼터</h3>
 
-                <p>
-                    숲속 휴식공간 및 이용 안내
-                </p>
-
-            </div>
-
-            <span class="facility-arrow">
-                →
-            </span>
-
-        </a>
-
-
-
-        <!-- 05 해충기피제 -->
-
-        <a href="convenience.html?view=repellent"
-           class="facility-card">
-
-            <div class="facility-icon">
-                🦟
-            </div>
-
-            <div>
-
-                <h3>해충기피제</h3>
-
-                <p>
-                    자동분사기 설치 위치 안내
-                </p>
-
-            </div>
-
-            <span class="facility-arrow">
-                →
-            </span>
-
-        </a>
-
-
-
-        <!-- 06 운동기구 -->
-
-        <a href="exercise.html"
-           class="facility-card">
-
-            <div class="facility-icon">
-                🏃
-            </div>
-
-            <div>
-
-                <h3>운동기구</h3>
-
-                <p>
-                    산책로 주변 야외 운동기구 안내
-                </p>
-
-            </div>
-
-            <span class="facility-arrow">
-                →
-            </span>
-
-        </a>
-
-
-    </div>
+</div>
 
 </div>
 
 
 
-<!-- ===========================
-     카페
-=========================== -->
+<!-- ==================================================
+     ① 화장실 상세
+================================================== -->
 
-<div class="facility-detail"
-     data-view="cafe">
+<section class="detail-page"
+data-view="toilet">
 
-
-    <div class="card">
-
-
-        <div class="card-content">
-
-            <h2 class="facility-title">
-                ☕ 카페
-            </h2>
-
-        </div>
+<div class="container">
 
 
+<div class="card">
 
-        <div class="photo-gallery">
+<div class="card-content">
 
-            <div class="gallery-track">
+<h1 class="detail-title">
+🚻 화장실
+</h1>
 
-                <img
-                src="images/cafe-outside.JPG"
-                alt="카페 외부 전경">
+<p class="detail-description">
+태조산공원 내 이용 가능한 화장실 위치를 안내합니다.
+가까운 화장실을 확인하고 편리하게 이용해 주세요.
+</p>
 
-                <img
-                src="images/cafe-inside.jpg"
-                alt="카페 내부 전경">
-
-            </div>
-
-
-            <div class="gallery-dots">
-
-                <span class="gallery-dot active"></span>
-                <span class="gallery-dot"></span>
-
-            </div>
-
-        </div>
+</div>
 
 
-
-        <div class="card-content">
-
-            <p>
-                태조산공원 이용 중 잠시 쉬어가며
-                음료와 휴식을 즐길 수 있는 공간입니다.
-            </p>
+<img
+src="images/toilet-1.jpg"
+alt="태조산공원 화장실"
+class="detail-photo">
 
 
-            <ul>
-
-                <li>
-                    🕐 평소 운영시간 :
-                    <strong>08:00 AM ~ 05:30 PM</strong>
-                </li>
-
-                <li>
-                    🌙 야간개장 운영시간 :
-                    <strong>08:30 AM ~ 09:00 PM</strong>
-                </li>
-
-            </ul>
+<img
+src="images/toilet-2.jpg"
+alt="태조산공원 화장실"
+class="detail-photo">
 
 
-            <p class="photo-guide">
-                사진을 좌우로 넘겨 카페의 외부와 내부 모습을 확인해보세요.
-            </p>
+<div class="card-content">
 
-        </div>
 
-    </div>
+<!-- 제1주차장 -->
+
+<div class="notice-card">
+
+<h3>🚻 제1주차장 화장실</h3>
+
+<p>📍 제1주차장과 제2주차장 사이 올라가는 길 초입</p>
+
+<p>🚶 어울림센터 기준 약 800m · 도보 12~15분</p>
+
+<p>♿ 장애인화장실 있음</p>
+
+<p>🔔 안심벨 설치</p>
+
+<p>🕐 24시간 이용 가능</p>
+
+</div>
+
+
+<!-- 초화원 옆 -->
+
+<div class="notice-card">
+
+<h3>🌸 초화원 옆 화장실</h3>
+
+<p>📍 초화원과 유아숲놀이터 사잇길</p>
+
+<p>🚶 어울림센터 기준 약 100m · 도보 2~3분</p>
+
+<p>🔔 안심벨 설치</p>
+
+<p>🕐 24시간 이용 가능</p>
+
+</div>
+
+
+<!-- 어울림센터 -->
+
+<div class="notice-card">
+
+<h3>🏠 어울림센터 화장실</h3>
+
+<p>📍 어울림센터 1층</p>
+
+<p>♿ 장애인화장실 있음</p>
+
+<p>👶 2층 기저귀교환대 이용 가능</p>
+
+<p>🔔 안심벨 설치</p>
+
+<p>🕐 시설 운영시간 내 이용 가능</p>
+
+</div>
+
+
+<!-- 출발지 교육장 -->
+
+<div class="notice-card">
+
+<h3>🎓 출발지 교육장 화장실</h3>
+
+<p>📍 무장애나눔길 출발지 교육장</p>
+
+<p>🚶 어울림센터 기준 약 600m · 도보 8~10분</p>
+
+<p>🔔 안심벨 설치</p>
+
+<p>🕐 시설 운영시간 내 이용 가능</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<!-- 버튼 -->
+
+<div class="detail-buttons">
+
+<a href="convenience.html">
+← 편의시설로 돌아가기
+</a>
+
+<a href="index.html">
+🏠 메인으로 돌아가기
+</a>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- ==================================================
+     ② 카페 상세
+================================================== -->
+
+<section class="detail-page"
+data-view="cafe">
+
+<div class="container">
+
+
+<div class="card">
+
+<div class="card-content">
+
+<h1 class="detail-title">
+☕ 카페
+</h1>
+
+</div>
+
+
+<div class="photo-gallery">
+
+<div class="gallery-track">
+
+<img
+src="images/cafe-outside.JPG"
+alt="카페 외부 전경">
+
+<img
+src="images/cafe-inside.jpg"
+alt="카페 내부 전경">
+
+</div>
+
+
+<div class="gallery-dots">
+
+<span class="gallery-dot active"></span>
+
+<span class="gallery-dot"></span>
+
+</div>
+
+</div>
+
+
+<div class="card-content">
+
+<p>
+태조산공원 이용 중 잠시 쉬어가며
+음료와 휴식을 즐길 수 있는 공간입니다.
+</p>
+
+
+<ul>
+
+<li>
+🕐 평소 운영시간 :
+<strong>08:00 AM ~ 05:30 PM</strong>
+</li>
+
+<li>
+🌙 야간개장 운영시간 :
+<strong>08:30 AM ~ 09:00 PM</strong>
+</li>
+
+</ul>
+
+
+<p>
+사진을 좌우로 넘겨 카페의 외부와 내부 모습을 확인해보세요.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="detail-buttons">
+
+<a href="convenience.html">
+← 편의시설로 돌아가기
+</a>
+
+<a href="index.html">
+🏠 메인으로 돌아가기
+</a>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- ==================================================
+     ③ 먼지털이개 상세
+================================================== -->
+
+<section class="detail-page"
+data-view="dust">
+
+<div class="container">
+
+
+<div class="card">
+
+<div class="card-content">
+
+<h1 class="detail-title">
+🧹 먼지털이개
+</h1>
+
+</div>
+
+
+<div class="photo-gallery">
+
+<div class="gallery-track">
+
+<img
+src="images/dust-1.jpg"
+alt="주차장 화장실 앞 먼지털이개">
+
+<img
+src="images/dust-2.jpg"
+alt="무장애나눔길 초입 먼지털이개">
+
+</div>
+
+
+<div class="gallery-dots">
+
+<span class="gallery-dot active"></span>
+
+<span class="gallery-dot"></span>
+
+</div>
+
+</div>
+
+
+<div class="card-content">
+
+<p>
+산책 및 야외활동 후 신발과 의류에 묻은
+먼지를 털어낼 수 있습니다.
+</p>
+
+
+<ul>
+
+<li>
+📍 <strong>주차장 화장실 앞</strong>
+</li>
+
+<li>
+📍 <strong>무장애나눔길 출발지점</strong>
+</li>
+
+</ul>
+
+
+<p>
+사진을 좌우로 넘겨 설치 위치를 확인해보세요.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="detail-buttons">
+
+<a href="convenience.html">
+← 편의시설로 돌아가기
+</a>
+
+<a href="index.html">
+🏠 메인으로 돌아가기
+</a>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- ==================================================
+     ④ 숲속쉼터 상세
+================================================== -->
+
+<section class="detail-page"
+data-view="forest">
+
+<div class="container">
+
+
+<div class="card">
+
+<div class="card-content">
+
+<h1 class="detail-title">
+🌲 숲속쉼터
+</h1>
+
+</div>
+
+
+<div class="photo-gallery">
+
+<div class="gallery-track">
+
+<img
+src="images/forest-rest.jpg"
+alt="숲속쉼터">
+
+<img
+src="images/forest-shelter-1.jpg"
+alt="숲속쉼터 내부">
+
+<img
+src="images/forest-shelter-2.jpg"
+alt="숲속쉼터 내부 전경">
+
+</div>
+
+
+<div class="gallery-dots">
+
+<span class="gallery-dot active"></span>
+
+<span class="gallery-dot"></span>
+
+<span class="gallery-dot"></span>
+
+</div>
+
+</div>
+
+
+<div class="card-content">
+
+<p>
+숲속에서 잠시 쉬어가며
+책을 읽고 여유로운 시간을 보낼 수 있는
+작은 도서관 형태의 휴식공간입니다.
+</p>
+
+
+<ul>
+
+<li>
+🕙 이용시간 :
+<strong>10:00 AM ~ 05:30 PM</strong>
+</li>
+
+<li>
+🌙 야간개장 시 확대 운영
+</li>
+
+<li>
+🚫 음식물 취식 금지
+</li>
+
+<li>
+🥤 물 및 음료 섭취 가능
+</li>
+
+</ul>
+
+
+<p>
+사진을 좌우로 넘겨 숲속쉼터의 모습을 확인해보세요.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="detail-buttons">
+
+<a href="convenience.html">
+← 편의시설로 돌아가기
+</a>
+
+<a href="index.html">
+🏠 메인으로 돌아가기
+</a>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- ==================================================
+     ⑤ 해충기피제 상세
+================================================== -->
+
+<section class="detail-page"
+data-view="repellent">
+
+<div class="container">
+
+
+<div class="card">
+
+<div class="card-content">
+
+<h1 class="detail-title">
+🦟 해충기피제 자동분사기
+</h1>
+
+</div>
+
+
+<div class="photo-gallery">
+
+<div class="gallery-track">
+
+<img
+src="images/repellent-1.jpg"
+alt="무장애나눔길 해충기피제 자동분사기">
+
+<img
+src="images/repellent-2.jpg"
+alt="공원입구 산책로 해충기피제 자동분사기">
+
+</div>
+
+
+<div class="gallery-dots">
+
+<span class="gallery-dot active"></span>
+
+<span class="gallery-dot"></span>
+
+</div>
+
+</div>
+
+
+<div class="card-content">
+
+<p>
+야외활동 시 이용할 수 있는
+해충기피제 자동분사기입니다.
+</p>
+
+
+<ul>
+
+<li>
+📍 <strong>무장애나눔길 도착지점</strong>
+</li>
+
+<li>
+📍 <strong>공원입구 산책로 운동기구 인근</strong>
+</li>
+
+<li>
+ℹ️ 이용 시 기기 안내사항을 확인해주세요.
+</li>
+
+</ul>
+
+
+<p>
+사진을 좌우로 넘겨 설치 위치를 확인해보세요.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="detail-buttons">
+
+<a href="convenience.html">
+← 편의시설로 돌아가기
+</a>
+
+<a href="index.html">
+🏠 메인으로 돌아가기
+</a>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- ==================================================
+     ⑥ 운동기구 상세
+================================================== -->
+
+<section class="detail-page"
+data-view="exercise">
+
+<div class="container">
+
+
+<div class="card">
+
+
+<div class="card-content">
+
+<h1 class="detail-title">
+🏃 운동기구
+</h1>
+
+</div>
+
+
+<div class="photo-gallery">
+
+<div class="gallery-track">
+
+<img
+src="images/exercise-1.jpg"
+alt="태조산공원 야외 운동기구">
+
+<img
+src="images/exercise-2.jpg"
+alt="태조산공원 야외 운동기구">
+
+</div>
+
+
+<div class="gallery-dots">
+
+<span class="gallery-dot active"></span>
+
+<span class="gallery-dot"></span>
+
+</div>
+
+</div>
+
+
+<div class="card-content">
+
+<p>
+태조산공원 산책로 주변에서 이용할 수 있는
+야외 운동기구입니다.
+</p>
+
+
+<ul>
+
+<li>
+🏃 <strong>야외 운동기구 이용 가능</strong>
+</li>
+
+<li>
+🌲 <strong>숲속 산책로 주변에 설치</strong>
+</li>
+
+<li>
+🪑 <strong>운동기구 주변 휴식공간 이용 가능</strong>
+</li>
+
+<li>
+⚠️ 이용 전 운동기구의 상태를 확인해주세요.
+</li>
+
+</ul>
+
+
+<p>
+사진을 좌우로 넘겨 운동기구 설치 모습을 확인해보세요.
+</p>
+
+</div>
 
 </div>
 
 
 
-<!-- ===========================
-     숲속쉼터
-=========================== -->
+<!-- 이용 시 참고사항 -->
 
-<div class="facility-detail"
-     data-view="forest">
+<div class="info-box">
 
+<h2>
+ℹ️ 이용 시 참고사항
+</h2>
 
-    <div class="card">
+<p>
+운동기구는 이용자의 신체 상태와 운동 능력에 맞게
+무리하지 않는 범위에서 이용해주세요.
+</p>
 
+<ul>
 
-        <div class="card-content">
+<li>
+운동기구 사용 전 주변을 확인해주세요.
+</li>
 
-            <h2 class="facility-title">
-                🌲 숲속쉼터
-            </h2>
+<li>
+기구에 표시된 이용방법을 확인해주세요.
+</li>
 
-        </div>
+<li>
+어린이 이용 시 보호자의 주의가 필요합니다.
+</li>
 
+<li>
+시설 이상 발견 시 이용을 중지하고 관리자에게 알려주세요.
+</li>
 
-
-        <div class="photo-gallery">
-
-            <div class="gallery-track">
-
-                <img
-                src="images/forest-rest.jpg"
-                alt="숲속쉼터">
-
-                <img
-                src="images/forest-shelter-1.jpg"
-                alt="숲속쉼터 내부">
-
-                <img
-                src="images/forest-shelter-2.jpg"
-                alt="숲속쉼터 내부 전경">
-
-            </div>
-
-
-            <div class="gallery-dots">
-
-                <span class="gallery-dot active"></span>
-                <span class="gallery-dot"></span>
-                <span class="gallery-dot"></span>
-
-            </div>
-
-        </div>
-
-
-
-        <div class="card-content">
-
-            <p>
-                숲속에서 잠시 쉬어가며
-                책을 읽고 여유로운 시간을 보낼 수 있는
-                작은 도서관 형태의 휴식공간입니다.
-            </p>
-
-
-            <ul>
-
-                <li>
-                    🕙 이용시간 :
-                    <strong>10:00 AM ~ 05:30 PM</strong>
-                </li>
-
-                <li>
-                    🌙 야간개장 시 확대 운영
-                </li>
-
-                <li>
-                    🚫 음식물 취식 금지
-                </li>
-
-                <li>
-                    🥤 물 및 음료 섭취 가능
-                </li>
-
-            </ul>
-
-
-            <p class="photo-guide">
-                사진을 좌우로 넘겨 숲속쉼터의 모습을 확인해보세요.
-            </p>
-
-        </div>
-
-    </div>
+</ul>
 
 </div>
 
 
 
-<!-- ===========================
-     화장실
-=========================== -->
+<!-- 위치 안내 -->
 
-<div class="facility-detail"
-     data-view="toilet">
+<div class="info-box">
 
+<h2>
+📍 위치 안내
+</h2>
 
-    <div class="card">
-
-
-        <div class="card-content">
-
-            <h2 class="facility-title">
-                🚻 화장실
-            </h2>
-
-            <p>
-                태조산공원 내 이용 가능한 화장실 위치를 안내합니다.
-                가까운 화장실을 확인하고 편리하게 이용해 주세요.
-            </p>
-
-        </div>
-
-
-
-        <img
-        src="images/toilet-1.jpg"
-        alt="태조산공원 화장실">
-
-
-        <img
-        src="images/toilet-2.jpg"
-        alt="태조산공원 화장실">
-
-
-
-        <div class="card-content">
-
-
-            <div class="notice-card">
-
-                <h3>
-                    🚻 제1주차장 화장실
-                </h3>
-
-                <p>
-                    📍 제1주차장과 제2주차장 사이 올라가는 길 초입
-                </p>
-
-                <p>
-                    🚶 어울림센터 기준 약 800m · 도보 12~15분
-                </p>
-
-                <p>
-                    ♿ 장애인화장실 있음
-                </p>
-
-                <p>
-                    🔔 안심벨 설치
-                </p>
-
-                <p>
-                    🕐 24시간 이용 가능
-                </p>
-
-            </div>
-
-
-
-            <div class="notice-card">
-
-                <h3>
-                    🌸 초화원 옆 화장실
-                </h3>
-
-                <p>
-                    📍 초화원과 유아숲놀이터 사잇길
-                </p>
-
-                <p>
-                    🚶 어울림센터 기준 약 100m · 도보 2~3분
-                </p>
-
-                <p>
-                    🔔 안심벨 설치
-                </p>
-
-                <p>
-                    🕐 24시간 이용 가능
-                </p>
-
-            </div>
-
-
-
-            <div class="notice-card">
-
-                <h3>
-                    🏠 어울림센터 화장실
-                </h3>
-
-                <p>
-                    📍 어울림센터 1층
-                </p>
-
-                <p>
-                    ♿ 장애인화장실 있음
-                </p>
-
-                <p>
-                    👶 2층 기저귀교환대 이용 가능
-                </p>
-
-                <p>
-                    🔔 안심벨 설치
-                </p>
-
-                <p>
-                    🕐 시설 운영시간 내 이용 가능
-                </p>
-
-            </div>
-
-
-
-            <div class="notice-card">
-
-                <h3>
-                    🎓 출발지 교육장 화장실
-                </h3>
-
-                <p>
-                    📍 무장애나눔길 출발지 교육장
-                </p>
-
-                <p>
-                    🚶 어울림센터 기준 약 600m · 도보 8~10분
-                </p>
-
-                <p>
-                    🔔 안심벨 설치
-                </p>
-
-                <p>
-                    🕐 시설 운영시간 내 이용 가능
-                </p>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</div>
-
-
-
-<!-- ===========================
-     해충기피제
-=========================== -->
-
-<div class="facility-detail"
-     data-view="repellent">
-
-
-    <div class="card">
-
-
-        <div class="card-content">
-
-            <h2 class="facility-title">
-                🦟 해충기피제 자동분사기
-            </h2>
-
-        </div>
-
-
-
-        <div class="photo-gallery">
-
-            <div class="gallery-track">
-
-                <img
-                src="images/repellent-1.jpg"
-                alt="무장애나눔길 해충기피제 자동분사기">
-
-                <img
-                src="images/repellent-2.jpg"
-                alt="공원입구 산책로 해충기피제 자동분사기">
-
-            </div>
-
-
-            <div class="gallery-dots">
-
-                <span class="gallery-dot active"></span>
-                <span class="gallery-dot"></span>
-
-            </div>
-
-        </div>
-
-
-
-        <div class="card-content">
-
-            <p>
-                야외활동 시 이용할 수 있는
-                해충기피제 자동분사기입니다.
-            </p>
-
-
-            <ul>
-
-                <li>
-                    📍 <strong>무장애나눔길 도착지점</strong>
-                </li>
-
-                <li>
-                    📍 <strong>공원입구 산책로 운동기구 인근</strong>
-                </li>
-
-                <li>
-                    ℹ️ 이용 시 기기 안내사항을 확인해주세요.
-                </li>
-
-            </ul>
-
-
-            <p class="photo-guide">
-                사진을 좌우로 넘겨 설치 위치를 확인해보세요.
-            </p>
-
-        </div>
-
-    </div>
-
-</div>
-
-
-
-<!-- ===========================
-     먼지털이개
-=========================== -->
-
-<div class="facility-detail"
-     data-view="dust">
-
-
-    <div class="card">
-
-
-        <div class="card-content">
-
-            <h2 class="facility-title">
-                🧹 먼지털이개
-            </h2>
-
-        </div>
-
-
-
-        <div class="photo-gallery">
-
-            <div class="gallery-track">
-
-                <img
-                src="images/dust-1.jpg"
-                alt="주차장 화장실 앞 먼지털이개">
-
-                <img
-                src="images/dust-2.jpg"
-                alt="무장애나눔길 초입 먼지털이개">
-
-            </div>
-
-
-            <div class="gallery-dots">
-
-                <span class="gallery-dot active"></span>
-                <span class="gallery-dot"></span>
-
-            </div>
-
-        </div>
-
-
-
-        <div class="card-content">
-
-            <p>
-                산책 및 야외활동 후 신발과 의류에 묻은
-                먼지를 털어낼 수 있습니다.
-            </p>
-
-
-            <ul>
-
-                <li>
-                    📍 <strong>주차장 화장실 앞</strong>
-                </li>
-
-                <li>
-                    📍 <strong>무장애나눔길 출발지점</strong>
-                </li>
-
-            </ul>
-
-
-            <p class="photo-guide">
-                사진을 좌우로 넘겨 설치 위치를 확인해보세요.
-            </p>
-
-        </div>
-
-    </div>
-
-</div>
-
-
-
-<!-- ===========================
-     상세페이지 하단 버튼
-=========================== -->
-
-<div id="detail-buttons"
-     style="
-        display:none;
-        flex-direction:column;
-        gap:10px;
-        margin-top:25px;
-        margin-bottom:20px;
-     ">
-
-
-    <a href="convenience.html"
-       class="back-button">
-
-        ← 편의시설로 돌아가기
-
-    </a>
-
-
-    <a href="index.html"
-       class="back-button">
-
-        🏠 메인으로 돌아가기
-
-    </a>
-
-</div>
-
-
-
-<!-- ===========================
-     편의시설 메인 하단 버튼
-=========================== -->
-
-<div id="main-back-button">
-
-    <a href="index.html"
-       class="back-button">
-
-        🏠 메인으로 돌아가기
-
-    </a>
+<p>
+태조산공원 산책로 주변에 설치되어 있어
+공원 산책과 함께 이용할 수 있습니다.
+</p>
 
 </div>
 
@@ -791,162 +1098,137 @@ href="style.css?v=20260813">
 </div>
 
 
+<!-- 버튼 -->
 
-<!-- ===========================
-     JavaScript
-=========================== -->
+<div class="detail-buttons">
 
-<script>
+<a href="convenience.html">
+← 편의시설로 돌아가기
+</a>
 
+<a href="index.html">
+🏠 메인으로 돌아가기
+</a>
 
-/* URL에서 현재 선택된 시설 확인 */
+</div>
 
-const params =
-new URLSearchParams(window.location.search);
 
-const view =
-params.get("view");
+</section>
 
 
-/* 메뉴 및 상세 영역 */
 
-const menu =
-document.getElementById("facility-menu");
-
-const details =
-document.querySelectorAll(".facility-detail");
-
-const detailButtons =
-document.getElementById("detail-buttons");
-
-const mainBackButton =
-document.getElementById("main-back-button");
-
-
-
-/* ===========================
-   메인 / 상세 화면 전환
-=========================== */
-
-if (view) {
-
-
-    /* 편의시설 메뉴 숨기기 */
-
-    menu.style.display = "none";
-
-
-    /* 상세페이지 하단 버튼 표시 */
-
-    detailButtons.style.display = "flex";
-
-
-    /* 메인페이지용 버튼 숨기기 */
-
-    mainBackButton.style.display = "none";
-
-
-    /* 선택된 시설만 표시 */
-
-    details.forEach(function(detail) {
-
-        if (detail.dataset.view === view) {
-
-            detail.style.display = "block";
-
-        } else {
-
-            detail.style.display = "none";
-
-        }
-
-    });
-
-
-} else {
-
-
-    /* 편의시설 메인 메뉴 표시 */
-
-    menu.style.display = "block";
-
-
-    /* 상세페이지 버튼 숨기기 */
-
-    detailButtons.style.display = "none";
-
-
-    /* 메인으로 돌아가기 표시 */
-
-    mainBackButton.style.display = "block";
-
-
-    /* 모든 상세내용 숨기기 */
-
-    details.forEach(function(detail) {
-
-        detail.style.display = "none";
-
-    });
-
-}
-
-
-
-/* ===========================
-   사진 스와이프
-=========================== */
-
-document.querySelectorAll(".photo-gallery").forEach(function(gallery) {
-
-
-    const track =
-        gallery.querySelector(".gallery-track");
-
-
-    const dots =
-        gallery.querySelectorAll(".gallery-dot");
-
-
-    if (!track || !dots.length) return;
-
-
-    track.addEventListener("scroll", function() {
-
-
-        const index =
-            Math.round(
-                track.scrollLeft / track.clientWidth
-            );
-
-
-        dots.forEach(function(dot, i) {
-
-            dot.classList.toggle(
-                "active",
-                i === index
-            );
-
-        });
-
-    });
-
-});
-
-
-</script>
-
-
-
-<!-- ===========================
+<!-- ==================================================
      Footer
-=========================== -->
+================================================== -->
 
 <footer>
 
 © Cheonan Urban Corporation
 
 </footer>
+
+
+
+<!-- ==================================================
+     JavaScript
+================================================== -->
+
+<script>
+
+
+/* ============================
+   URL의 view 값 확인
+============================ */
+
+const params =
+new URLSearchParams(
+window.location.search
+);
+
+const view =
+params.get("view");
+
+
+/* ============================
+   상세 페이지 표시
+============================ */
+
+if (view) {
+
+    const target =
+    document.querySelector(
+        '.detail-page[data-view="' + view + '"]'
+    );
+
+    if (target) {
+
+        document.body.classList.add(
+            "detail-mode"
+        );
+
+        target.style.display = "block";
+
+    }
+
+}
+
+
+
+/* ============================
+   사진 스와이프
+============================ */
+
+document
+.querySelectorAll(".photo-gallery")
+.forEach(function(gallery) {
+
+
+    const track =
+    gallery.querySelector(
+        ".gallery-track"
+    );
+
+
+    const dots =
+    gallery.querySelectorAll(
+        ".gallery-dot"
+    );
+
+
+    if (!track || !dots.length) {
+        return;
+    }
+
+
+    track.addEventListener(
+        "scroll",
+        function() {
+
+
+            const index =
+            Math.round(
+                track.scrollLeft /
+                track.clientWidth
+            );
+
+
+            dots.forEach(
+                function(dot, i) {
+
+                    dot.classList.toggle(
+                        "active",
+                        i === index
+                    );
+
+                }
+            );
+
+        }
+    );
+
+});
+
+</script>
 
 
 </body>
