@@ -206,38 +206,6 @@ href="style.css?v=20260812">
 
 
 <!-- ===========================
-     상세페이지 돌아가기 버튼
-=========================== -->
-
-<div id="detail-buttons"
-     style="
-        display:none;
-        flex-direction:column;
-        gap:10px;
-        margin-top:20px;
-        margin-bottom:20px;
-     ">
-
-    <a href="convenience.html"
-       class="back-button">
-
-        ← 편의시설로 돌아가기
-
-    </a>
-
-
-    <a href="index.html"
-       class="back-button">
-
-        🏠 메인으로 돌아가기
-
-    </a>
-
-</div>
-
-
-
-<!-- ===========================
      카페
 =========================== -->
 
@@ -257,6 +225,8 @@ href="style.css?v=20260812">
         </div>
 
 
+
+        <!-- 카페 사진 -->
 
         <div class="photo-gallery">
 
@@ -339,6 +309,8 @@ href="style.css?v=20260812">
         </div>
 
 
+
+        <!-- 숲속쉼터 사진 -->
 
         <div class="photo-gallery">
 
@@ -440,6 +412,8 @@ href="style.css?v=20260812">
 
 
 
+        <!-- 화장실 사진 -->
+
         <img
         src="images/toilet-1.jpg"
         alt="태조산공원 화장실">
@@ -454,9 +428,13 @@ href="style.css?v=20260812">
         <div class="card-content">
 
 
+            <!-- 제1주차장 -->
+
             <div class="notice-card">
 
-                <h3>🚻 제1주차장 화장실</h3>
+                <h3>
+                    🚻 제1주차장 화장실
+                </h3>
 
                 <p>
                     📍 제1주차장과 제2주차장 사이 올라가는 길 초입
@@ -482,9 +460,13 @@ href="style.css?v=20260812">
 
 
 
+            <!-- 초화원 옆 -->
+
             <div class="notice-card">
 
-                <h3>🌸 초화원 옆 화장실</h3>
+                <h3>
+                    🌸 초화원 옆 화장실
+                </h3>
 
                 <p>
                     📍 초화원과 유아숲놀이터 사잇길
@@ -506,9 +488,13 @@ href="style.css?v=20260812">
 
 
 
+            <!-- 어울림센터 -->
+
             <div class="notice-card">
 
-                <h3>🏠 어울림센터 화장실</h3>
+                <h3>
+                    🏠 어울림센터 화장실
+                </h3>
 
                 <p>
                     📍 어울림센터 1층
@@ -534,9 +520,13 @@ href="style.css?v=20260812">
 
 
 
+            <!-- 출발지 교육장 -->
+
             <div class="notice-card">
 
-                <h3>🎓 출발지 교육장 화장실</h3>
+                <h3>
+                    🎓 출발지 교육장 화장실
+                </h3>
 
                 <p>
                     📍 무장애나눔길 출발지 교육장
@@ -585,6 +575,8 @@ href="style.css?v=20260812">
         </div>
 
 
+
+        <!-- 해충기피제 사진 -->
 
         <div class="photo-gallery">
 
@@ -670,6 +662,8 @@ href="style.css?v=20260812">
 
 
 
+        <!-- 먼지털이개 사진 -->
+
         <div class="photo-gallery">
 
             <div class="gallery-track">
@@ -730,7 +724,42 @@ href="style.css?v=20260812">
 
 
 <!-- ===========================
-     메인으로 돌아가기
+     하단 돌아가기 버튼
+=========================== -->
+
+<div id="detail-buttons"
+     style="
+        display:none;
+        flex-direction:column;
+        gap:10px;
+        margin-top:25px;
+        margin-bottom:20px;
+     ">
+
+
+    <!-- 상세페이지에서만 표시 -->
+
+    <a href="convenience.html"
+       class="back-button">
+
+        ← 편의시설로 돌아가기
+
+    </a>
+
+
+    <a href="index.html"
+       class="back-button">
+
+        🏠 메인으로 돌아가기
+
+    </a>
+
+</div>
+
+
+
+<!-- ===========================
+     편의시설 메인에서만 표시
 =========================== -->
 
 <div id="main-back-button">
@@ -753,12 +782,16 @@ href="style.css?v=20260812">
 <script>
 
 
+/* URL에서 현재 선택된 시설 확인 */
+
 const params =
 new URLSearchParams(window.location.search);
 
 const view =
 params.get("view");
 
+
+/* 메뉴 및 상세 영역 */
 
 const menu =
 document.getElementById("facility-menu");
@@ -786,17 +819,17 @@ if (view) {
     menu.style.display = "none";
 
 
-    /* 상세페이지 버튼 표시 */
+    /* 상세페이지 하단 버튼 표시 */
 
     detailButtons.style.display = "flex";
 
 
-    /* 메인으로 돌아가기 버튼은 숨김 */
+    /* 메인페이지용 버튼 숨기기 */
 
     mainBackButton.style.display = "none";
 
 
-    /* 선택한 상세 내용만 표시 */
+    /* 선택된 시설만 표시 */
 
     details.forEach(function(detail) {
 
@@ -816,22 +849,22 @@ if (view) {
 } else {
 
 
-    /* 편의시설 메뉴 표시 */
+    /* 편의시설 메인 메뉴 표시 */
 
     menu.style.display = "block";
 
 
-    /* 상세페이지 버튼 숨김 */
+    /* 상세페이지 버튼 숨기기 */
 
     detailButtons.style.display = "none";
 
 
-    /* 메인으로 돌아가기 버튼 표시 */
+    /* 메인으로 돌아가기 표시 */
 
     mainBackButton.style.display = "block";
 
 
-    /* 상세내용 모두 숨김 */
+    /* 모든 상세내용 숨기기 */
 
     details.forEach(function(detail) {
 
