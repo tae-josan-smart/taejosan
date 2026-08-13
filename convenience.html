@@ -16,29 +16,51 @@ href="style.css?v=20260812">
 
 <style>
 
-/* ============================
-   편의시설 상세 화면
-============================ */
+/* ==================================================
+   편의시설 상세 화면 기본
+================================================== */
 
 .detail-page {
     display: none;
 }
 
 
-/* 상세 화면일 때 */
+/* 상세 화면일 때 메뉴 숨김 */
 
 body.detail-mode .facility-menu {
     display: none;
 }
 
-body.detail-mode .detail-page {
+
+/* 선택된 상세 화면만 표시 */
+
+body.detail-mode .detail-page.active {
     display: block;
 }
 
 
-/* ============================
+/* ==================================================
+   편의시설 메뉴
+================================================== */
+
+.facility-menu .container {
+    width: min(90%, 900px);
+    margin: 0 auto;
+}
+
+
+/* 6개 편의시설 2열 배치 */
+
+.facility-menu .facility-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+
+/* ==================================================
    상세페이지 제목
-============================ */
+================================================== */
 
 .detail-title {
     color: #247b32;
@@ -51,9 +73,9 @@ body.detail-mode .detail-page {
 }
 
 
-/* ============================
+/* ==================================================
    사진
-============================ */
+================================================== */
 
 .detail-photo {
     width: 100%;
@@ -62,9 +84,9 @@ body.detail-mode .detail-page {
 }
 
 
-/* ============================
+/* ==================================================
    사진 갤러리
-============================ */
+================================================== */
 
 .photo-gallery {
     width: 100%;
@@ -90,9 +112,9 @@ body.detail-mode .detail-page {
 }
 
 
-/* ============================
+/* ==================================================
    사진 점
-============================ */
+================================================== */
 
 .gallery-dots {
     display: flex;
@@ -113,9 +135,9 @@ body.detail-mode .detail-page {
 }
 
 
-/* ============================
+/* ==================================================
    안내 카드
-============================ */
+================================================== */
 
 .notice-card {
     background: #fff;
@@ -136,9 +158,36 @@ body.detail-mode .detail-page {
 }
 
 
-/* ============================
+/* ==================================================
+   정보 박스
+================================================== */
+
+.info-box {
+    background: #fff;
+    border-radius: 14px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.05);
+}
+
+.info-box h2 {
+    color: #247b32;
+    margin-top: 0;
+}
+
+.info-box ul {
+    padding-left: 20px;
+}
+
+.info-box li {
+    margin: 9px 0;
+    line-height: 1.6;
+}
+
+
+/* ==================================================
    상세페이지 하단 버튼
-============================ */
+================================================== */
 
 .detail-buttons {
     display: flex;
@@ -167,47 +216,15 @@ body.detail-mode .detail-page {
 }
 
 
-/* ============================
-   위치 / 정보 박스
-============================ */
-
-.info-box {
-    background: #fff;
-    border-radius: 14px;
-    padding: 20px;
-    margin-top: 20px;
-    box-shadow: 0 5px 18px rgba(0,0,0,0.05);
-}
-
-.info-box h2 {
-    color: #247b32;
-    margin-top: 0;
-}
-
-.info-box ul {
-    padding-left: 20px;
-}
-
-.info-box li {
-    margin: 9px 0;
-    line-height: 1.6;
-}
-
-
-/* ============================
-   운동기구 상세
-============================ */
-
-.exercise-info {
-    margin-top: 20px;
-}
-
-
-/* ============================
+/* ==================================================
    모바일
-============================ */
+================================================== */
 
 @media (max-width: 700px) {
+
+    .facility-menu .facility-grid {
+        grid-template-columns: 1fr;
+    }
 
     .detail-buttons {
         margin-top: 25px;
@@ -228,7 +245,7 @@ body.detail-mode .detail-page {
 
 
 <!-- ==================================================
-     편의시설 메뉴
+     편의시설 메인 메뉴
 ================================================== -->
 
 <div class="facility-menu">
@@ -246,6 +263,9 @@ body.detail-mode .detail-page {
 
 
 <div class="container">
+
+
+<div class="facility-grid">
 
 
 <!-- ============================
@@ -391,6 +411,8 @@ class="facility-card">
 </a>
 
 
+</div>
+
 
 <!-- 메인으로 돌아가기 -->
 
@@ -450,8 +472,6 @@ class="detail-photo">
 <div class="card-content">
 
 
-<!-- 제1주차장 -->
-
 <div class="notice-card">
 
 <h3>🚻 제1주차장 화장실</h3>
@@ -469,8 +489,6 @@ class="detail-photo">
 </div>
 
 
-<!-- 초화원 옆 -->
-
 <div class="notice-card">
 
 <h3>🌸 초화원 옆 화장실</h3>
@@ -485,8 +503,6 @@ class="detail-photo">
 
 </div>
 
-
-<!-- 어울림센터 -->
 
 <div class="notice-card">
 
@@ -504,8 +520,6 @@ class="detail-photo">
 
 </div>
 
-
-<!-- 출발지 교육장 -->
 
 <div class="notice-card">
 
@@ -526,8 +540,6 @@ class="detail-photo">
 
 </div>
 
-
-<!-- 버튼 -->
 
 <div class="detail-buttons">
 
@@ -587,7 +599,6 @@ alt="카페 내부 전경">
 <div class="gallery-dots">
 
 <span class="gallery-dot active"></span>
-
 <span class="gallery-dot"></span>
 
 </div>
@@ -685,7 +696,6 @@ alt="무장애나눔길 초입 먼지털이개">
 <div class="gallery-dots">
 
 <span class="gallery-dot active"></span>
-
 <span class="gallery-dot"></span>
 
 </div>
@@ -785,9 +795,7 @@ alt="숲속쉼터 내부 전경">
 <div class="gallery-dots">
 
 <span class="gallery-dot active"></span>
-
 <span class="gallery-dot"></span>
-
 <span class="gallery-dot"></span>
 
 </div>
@@ -893,7 +901,6 @@ alt="공원입구 산책로 해충기피제 자동분사기">
 <div class="gallery-dots">
 
 <span class="gallery-dot active"></span>
-
 <span class="gallery-dot"></span>
 
 </div>
@@ -966,7 +973,6 @@ data-view="exercise">
 
 <div class="card">
 
-
 <div class="card-content">
 
 <h1 class="detail-title">
@@ -994,7 +1000,6 @@ alt="태조산공원 야외 운동기구">
 <div class="gallery-dots">
 
 <span class="gallery-dot active"></span>
-
 <span class="gallery-dot"></span>
 
 </div>
@@ -1041,7 +1046,7 @@ alt="태조산공원 야외 운동기구">
 
 
 
-<!-- 이용 시 참고사항 -->
+<!-- 운동기구 이용 참고사항 -->
 
 <div class="info-box">
 
@@ -1078,7 +1083,7 @@ alt="태조산공원 야외 운동기구">
 
 
 
-<!-- 위치 안내 -->
+<!-- 운동기구 위치 -->
 
 <div class="info-box">
 
@@ -1095,11 +1100,6 @@ alt="태조산공원 야외 운동기구">
 
 
 
-</div>
-
-
-<!-- 버튼 -->
-
 <div class="detail-buttons">
 
 <a href="convenience.html">
@@ -1112,6 +1112,8 @@ alt="태조산공원 야외 운동기구">
 
 </div>
 
+
+</div>
 
 </section>
 
@@ -1136,27 +1138,24 @@ alt="태조산공원 야외 운동기구">
 <script>
 
 
-/* ============================
+/* ==================================================
    URL의 view 값 확인
-============================ */
+================================================== */
 
-const params =
-new URLSearchParams(
-window.location.search
+const params = new URLSearchParams(
+    window.location.search
 );
 
-const view =
-params.get("view");
+const view = params.get("view");
 
 
-/* ============================
-   상세 페이지 표시
-============================ */
+/* ==================================================
+   해당 상세페이지 표시
+================================================== */
 
 if (view) {
 
-    const target =
-    document.querySelector(
+    const target = document.querySelector(
         '.detail-page[data-view="' + view + '"]'
     );
 
@@ -1166,51 +1165,43 @@ if (view) {
             "detail-mode"
         );
 
-        target.style.display = "block";
+        target.classList.add(
+            "active"
+        );
 
     }
 
 }
 
 
-
-/* ============================
+/* ==================================================
    사진 스와이프
-============================ */
+================================================== */
 
 document
 .querySelectorAll(".photo-gallery")
 .forEach(function(gallery) {
 
-
-    const track =
-    gallery.querySelector(
+    const track = gallery.querySelector(
         ".gallery-track"
     );
 
-
-    const dots =
-    gallery.querySelectorAll(
+    const dots = gallery.querySelectorAll(
         ".gallery-dot"
     );
-
 
     if (!track || !dots.length) {
         return;
     }
 
-
     track.addEventListener(
         "scroll",
         function() {
 
-
-            const index =
-            Math.round(
+            const index = Math.round(
                 track.scrollLeft /
                 track.clientWidth
             );
-
 
             dots.forEach(
                 function(dot, i) {
