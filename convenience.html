@@ -21,7 +21,11 @@ href="style.css?v=20260812">
 ================================================== */
 
 .detail-page {
-    display: none;
+    display: none !important;
+}
+
+.detail-page.active {
+    display: block !important;
 }
 
 
@@ -1135,12 +1139,12 @@ alt="태조산공원 야외 운동기구">
      JavaScript
 ================================================== -->
 
+
 <script>
 
-
-/* ==================================================
-   URL의 view 값 확인
-================================================== */
+/* =========================================
+   URL에서 view 값 가져오기
+========================================= */
 
 const params = new URLSearchParams(
     window.location.search
@@ -1149,59 +1153,136 @@ const params = new URLSearchParams(
 const view = params.get("view");
 
 
-/* ==================================================
-   해당 상세페이지 표시
-================================================== */
+/* =========================================
+   편의시설 메뉴
+========================================= */
+
+const facilityMenu =
+    document.querySelector(".facility-menu");
+
+
+/* =========================================
+   모든 상세페이지
+========================================= */
+
+const detailPages =
+    document.querySelectorAll(".detail-page");
+
+
+/* =========================================
+   1. 처음에는 모든 상세페이지 강제 숨김
+========================================= */
+
+detailPages.forEach(function(page) {
+
+    page.classList.remove("active");
+
+    page.style.display = "none";
+
+});
+
+
+/* =========================================
+   2. view가 있는 경우
+========================================= */
 
 if (view) {
 
-    const target = document.querySelector(
-        '.detail-page[data-view="' + view + '"]'
+    /* 편의시설 메인 메뉴 숨김 */
+
+    if (facilityMenu) {
+
+        facilityMenu.style.display = "none";
+
+    }
+
+
+    /* 상세페이지 모드 */
+
+    document.body.classList.add(
+        "detail-mode"
     );
+
+
+    /* 선택한 상세페이지 찾기 */
+
+    const target =
+        document.querySelector(
+            '.detail-page[data-view="' + view + '"]'
+        );
+
+
+    /* 선택한 페이지만 표시 */
 
     if (target) {
 
-        document.body.classList.add(
-            "detail-mode"
-        );
+        target.classList.add("active");
 
-        target.classList.add(
-            "active"
-        );
+        target.style.display = "block";
 
     }
 
 }
 
 
-/* ==================================================
+/* =========================================
+   3. view가 없는 경우
+========================================= */
+
+else {
+
+    document.body.classList.remove(
+        "detail-mode"
+    );
+
+
+    /* 편의시설 메뉴 표시 */
+
+    if (facilityMenu) {
+
+        facilityMenu.style.display = "block";
+
+    }
+
+}
+
+
+/* =========================================
    사진 스와이프
-================================================== */
+========================================= */
 
 document
 .querySelectorAll(".photo-gallery")
 .forEach(function(gallery) {
 
-    const track = gallery.querySelector(
-        ".gallery-track"
-    );
+    const track =
+        gallery.querySelector(
+            ".gallery-track"
+        );
 
-    const dots = gallery.querySelectorAll(
-        ".gallery-dot"
-    );
+    const dots =
+        gallery.querySelectorAll(
+            ".gallery-dot"
+        );
+
 
     if (!track || !dots.length) {
+
         return;
+
     }
+
 
     track.addEventListener(
         "scroll",
         function() {
 
-            const index = Math.round(
-                track.scrollLeft /
-                track.clientWidth
-            );
+            const index =
+                Math.round(
+                    track.scrollLeft /
+                    track.clientWidth
+                );
+
 
             dots.forEach(
                 function(dot, i) {
@@ -1220,7 +1301,6 @@ document
 });
 
 </script>
-
 
 </body>
 
