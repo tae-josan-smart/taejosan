@@ -16,1544 +16,170 @@
 </head>
 
 
-<body class="nearby-page">
+<body>
 
 
-<!-- ===========================
-     상단 헤더
-=========================== -->
+    <!-- =========================
+         Header
+    ========================= -->
 
-<header class="park-header">
+    <header class="park-header">
 
-    <div class="header-inner">
+        <div class="header-inner">
 
-        <a href="park.html"
-           class="back-btn">
-            ←
-        </a>
+            <!-- 항상 메인으로 이동 -->
+            <a href="index.html"
+               class="back-btn">
+                ←
+            </a>
 
-        <div class="header-text">
+            <div class="header-text">
 
-            <h1>
-                🍴 주변 볼거리·먹거리
-            </h1>
-
-            <p>
-                태조산공원 주변에서 함께 즐길 수 있는
-                먹거리와 볼거리를 소개합니다.
-            </p>
-
-        </div>
-
-    </div>
-
-</header>
-
-
-
-<main class="nearby-container">
-
-
-<!-- ==================================================
-     01 카테고리 선택
-================================================== -->
-
-<section id="category-section"
-         class="nearby-category-section">
-
-
-    <div class="nearby-intro">
-
-        <p>
-            태조산공원 주변에서 함께 즐길 수 있는
-            맛집과 볼거리를 확인해보세요.
-        </p>
-
-    </div>
-
-
-
-    <!-- 카테고리 2 × 2 -->
-
-    <div class="nearby-category-grid">
-
-
-        <!-- 먹거리 -->
-
-        <button
-            type="button"
-            class="nearby-category-card"
-            onclick="showCategory('food')">
-
-
-            <div class="category-icon">
-                🍴
-            </div>
-
-
-            <div class="category-text">
-
-                <h2>
-                    먹거리
-                </h2>
+                <h1>
+                    📍 주변 볼거리·먹거리
+                </h1>
 
                 <p>
-                    태조산공원 주변의
-                    맛집을 소개합니다.
+                    태조산공원 주변에서 함께 즐길 수 있는 장소를 확인하세요.
                 </p>
 
             </div>
 
-
-            <span class="category-arrow">
-                →
-            </span>
-
-
-        </button>
-
-
-
-        <!-- 볼거리 -->
-
-        <button
-            type="button"
-            class="nearby-category-card"
-            onclick="showCategory('sight')">
-
-
-            <div class="category-icon">
-                🌳
-            </div>
-
-
-            <div class="category-text">
-
-                <h2>
-                    볼거리
-                </h2>
-
-                <p>
-                    주변 명소와 즐길거리를
-                    소개합니다.
-                </p>
-
-            </div>
-
-
-            <span class="category-arrow">
-                →
-            </span>
-
-
-        </button>
-
-
-    </div>
-
-
-</section>
-
-
-
-<!-- ==================================================
-     02 먹거리
-================================================== -->
-
-<section id="food-section"
-         class="nearby-content-section"
-         style="display:none;">
-
-
-    <!-- 상단 카테고리 헤더 -->
-
-    <div class="nearby-category-header">
-
-
-        <button
-            type="button"
-            class="category-back-button"
-            onclick="showCategory('menu')">
-
-            ←
-
-        </button>
-
-
-        <div>
-
-            <span class="category-label">
-                🍴 먹거리
-            </span>
-
-            <h2>
-                태조산공원 주변 맛집
-            </h2>
-
-            <p>
-                공원 방문 전후 함께 들러보기 좋은
-                주변 맛집을 소개합니다.
-            </p>
-
         </div>
 
-
-    </div>
-
-
-
-    <!-- ===========================
-         맛집 2 × 2 그리드
-    =========================== -->
-
-    <div class="nearby-grid">
+    </header>
 
 
 
-        <!-- ==================================================
-             01 장터식당
-        ================================================== -->
-
-        <article class="nearby-card">
+    <main class="park-guide">
 
 
-            <!-- 번호 + 제목 -->
+        <!-- =========================
+             안내
+        ========================= -->
 
-            <div class="nearby-card-title">
+        <section class="nearby-intro">
 
-                <span class="nearby-number">
+            <div class="section-title">
+
+                <span class="section-number">
                     01
                 </span>
 
-                <div class="nearby-title-text">
+                <div>
 
                     <h2>
-                        장터식당
+                        무엇을 찾아볼까요?
                     </h2>
 
-                    <span>
-                        김치찌개 맛집 · 동태탕(겨울 한정)
+                    <p>
+                        주변의 먹거리와 볼거리를 선택해 확인할 수 있습니다.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             카테고리
+        ========================= -->
+
+        <section class="nearby-category">
+
+
+            <div class="nearby-category-grid">
+
+
+                <!-- 먹거리 -->
+
+                <a href="food.html"
+                   class="nearby-category-card">
+
+                    <div class="nearby-category-icon">
+                        🍴
+                    </div>
+
+                    <div class="nearby-category-text">
+
+                        <h2>
+                            먹거리
+                        </h2>
+
+                        <p>
+                            태조산공원 주변 맛집과 추천 음식점을 만나보세요.
+                        </p>
+
+                    </div>
+
+                    <span class="nearby-category-arrow">
+                        →
                     </span>
 
-                </div>
-
-            </div>
+                </a>
 
 
 
-            <!-- 사진 슬라이드 -->
+                <!-- 볼거리 -->
 
-            <div class="nearby-slider"
-                 data-slider="jangteo">
+                <a href="viewsight.html"
+                   class="nearby-category-card">
 
-                <div class="nearby-slides">
+                    <div class="nearby-category-icon">
+                        👀
+                    </div>
 
-                    <img
-                        src="images/nearby/jangteo-01.jpeg"
-                        alt="장터식당 외관"
-                        class="nearby-slide active"
-                    >
+                    <div class="nearby-category-text">
 
-                    <img
-                        src="images/nearby/jangteo-02.jpeg"
-                        alt="장터식당 김치찌개"
-                        class="nearby-slide"
-                    >
+                        <h2>
+                            볼거리
+                        </h2>
 
-                </div>
+                        <p>
+                            공원 주변에서 함께 둘러볼 수 있는 명소를 확인하세요.
+                        </p>
 
+                    </div>
 
-                <button
-                    type="button"
-                    class="slider-btn slider-prev"
-                    onclick="moveSlide('jangteo', -1)">
-
-                    ‹
-
-                </button>
-
-
-                <button
-                    type="button"
-                    class="slider-btn slider-next"
-                    onclick="moveSlide('jangteo', 1)">
-
-                    ›
-
-                </button>
-
-
-                <div class="slider-dots">
-
-                    <button
-                        type="button"
-                        class="slider-dot active"
-                        onclick="showSlide('jangteo', 0)">
-                    </button>
-
-                    <button
-                        type="button"
-                        class="slider-dot"
-                        onclick="showSlide('jangteo', 1)">
-                    </button>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- 핵심 정보 -->
-
-            <div class="nearby-info-row">
-
-                <span>
-                    📍 거리 1.5km
-                </span>
-
-                <span>
-                    🚗 약 3분
-                </span>
-
-                <span>
-                    🍲 김치찌개
-                </span>
-
-            </div>
-
-
-
-            <!-- 설명 -->
-
-            <p class="nearby-description">
-
-                얼큰하고 푸짐한 김치찌개를 즐길 수 있는
-                태조산공원 인근 맛집입니다.
-
-            </p>
-
-
-
-            <!-- 상세 버튼 -->
-
-            <a
-                href="https://map.naver.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="nearby-detail-button">
-
-                위치 및 상세정보 보기
-
-                <span>
-                    →
-                </span>
-
-            </a>
-
-
-        </article>
-
-
-
-
-        <!-- ==================================================
-             02 이고집만두
-        ================================================== -->
-
-        <article class="nearby-card">
-
-
-            <!-- 번호 + 제목 -->
-
-            <div class="nearby-card-title">
-
-                <span class="nearby-number">
-                    02
-                </span>
-
-                <div class="nearby-title-text">
-
-                    <h2>
-                        이고집만두
-                    </h2>
-
-                    <span>
-                        만두전골 · 튀김만두
+                    <span class="nearby-category-arrow">
+                        →
                     </span>
 
-                </div>
+                </a>
+
 
             </div>
 
+        </section>
 
 
-            <!-- 사진 슬라이드 -->
 
-            <div class="nearby-slider"
-                 data-slider="igojip">
+        <!-- =========================
+             메인으로
+        ========================= -->
 
-                <div class="nearby-slides">
+        <a href="index.html"
+           class="back-button">
 
-                    <img
-                        src="images/nearby/igojip-01.jpeg"
-                        alt="이고집만두 외관"
-                        class="nearby-slide active"
-                    >
+            🏠 메인으로 돌아가기
 
-                    <img
-                        src="images/nearby/igojip-02.jpeg"
-                        alt="이고집만두 음식"
-                        class="nearby-slide"
-                    >
+        </a>
 
-                </div>
 
+    </main>
 
-                <button
-                    type="button"
-                    class="slider-btn slider-prev"
-                    onclick="moveSlide('igojip', -1)">
 
-                    ‹
 
-                </button>
-
-
-                <button
-                    type="button"
-                    class="slider-btn slider-next"
-                    onclick="moveSlide('igojip', 1)">
-
-                    ›
-
-                </button>
-
-
-                <div class="slider-dots">
-
-                    <button
-                        type="button"
-                        class="slider-dot active"
-                        onclick="showSlide('igojip', 0)">
-                    </button>
-
-                    <button
-                        type="button"
-                        class="slider-dot"
-                        onclick="showSlide('igojip', 1)">
-                    </button>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- 핵심 정보 -->
-
-            <div class="nearby-info-row">
-
-                <span>
-                    📍 거리 700m
-                </span>
-
-                <span>
-                    🚗 약 1분
-                </span>
-
-                <span>
-                    🥟 만두전골
-                </span>
-
-            </div>
-
-
-
-            <!-- 설명 -->
-
-            <p class="nearby-description">
-
-                시원하고 담백한 국물의 만두전골과
-                바삭한 튀김만두가 일품입니다.
-
-            </p>
-
-
-
-            <!-- 주의사항 -->
-
-            <div class="nearby-warning">
-
-                <span>
-                    ●
-                </span>
-
-                손님이 많아 웨이팅이 있을 수 있어
-                일찍 방문하는 것을 추천합니다.
-
-            </div>
-
-
-
-            <!-- 상세 버튼 -->
-
-            <a
-                href="https://pcmap.place.naver.com/restaurant/33793005/home"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="nearby-detail-button">
-
-                위치 및 상세정보 보기
-
-                <span>
-                    →
-                </span>
-
-            </a>
-
-
-        </article>
-
-
-
-
-        <!-- ==================================================
-             03 진돗가비불쭈꾸미
-        ================================================== -->
-
-        <article class="nearby-card">
-
-
-            <!-- 번호 + 제목 -->
-
-            <div class="nearby-card-title">
-
-                <span class="nearby-number">
-                    03
-                </span>
-
-                <div class="nearby-title-text">
-
-                    <h2>
-                        진돗가비불쭈꾸미
-                    </h2>
-
-                    <span>
-                        불쭈꾸미 · 들깨수제비
-                    </span>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- 사진 슬라이드 -->
-
-            <div class="nearby-slider"
-                 data-slider="jindotgabi">
-
-                <div class="nearby-slides">
-
-                    <img
-                        src="images/nearby/jindotgabi-01.jpeg"
-                        alt="진돗가비불쭈꾸미 외관"
-                        class="nearby-slide active"
-                    >
-
-                    <img
-                        src="images/nearby/jindotgabi-02.jpeg"
-                        alt="진돗가비불쭈꾸미 내부"
-                        class="nearby-slide"
-                    >
-
-                </div>
-
-
-                <button
-                    type="button"
-                    class="slider-btn slider-prev"
-                    onclick="moveSlide('jindotgabi', -1)">
-
-                    ‹
-
-                </button>
-
-
-                <button
-                    type="button"
-                    class="slider-btn slider-next"
-                    onclick="moveSlide('jindotgabi', 1)">
-
-                    ›
-
-                </button>
-
-
-                <div class="slider-dots">
-
-                    <button
-                        type="button"
-                        class="slider-dot active"
-                        onclick="showSlide('jindotgabi', 0)">
-                    </button>
-
-                    <button
-                        type="button"
-                        class="slider-dot"
-                        onclick="showSlide('jindotgabi', 1)">
-                    </button>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- 핵심 정보 -->
-
-            <div class="nearby-info-row">
-
-                <span>
-                    📍 거리 1.6km
-                </span>
-
-                <span>
-                    🚗 약 4분
-                </span>
-
-                <span>
-                    🌶️ 불쭈꾸미
-                </span>
-
-            </div>
-
-
-
-            <!-- 설명 -->
-
-            <p class="nearby-description">
-
-                불향이 일품인 쭈꾸미와 들깨수제비의 조화.
-                쾌적한 매장에서 깔끔하게 한 끼를 즐길 수 있습니다.
-
-            </p>
-
-
-
-            <!-- 상세 버튼 -->
-
-            <a
-                href="https://pcmap.place.naver.com/restaurant/2022261323/home"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="nearby-detail-button">
-
-                위치 및 상세정보 보기
-
-                <span>
-                    →
-                </span>
-
-            </a>
-
-
-        </article>
-
-
-
-
-        <!-- ==================================================
-             04 추가 예정
-        ================================================== -->
-
-        <div class="nearby-empty-card">
-
-            <div class="empty-icon">
-                📍
-            </div>
-
-            <h2>
-                더 많은 맛집을 준비 중입니다
-            </h2>
-
-            <p>
-                태조산공원 주변의 다양한 맛집을
-                계속 추가할 예정입니다.
-            </p>
-
-        </div>
-
-
-    </div>
-
-
-
-    <!-- 먹거리에서 카테고리로 -->
-
-    <button
-        type="button"
-        class="nearby-category-return"
-        onclick="showCategory('menu')">
-
-        ← 먹거리·볼거리 선택으로 돌아가기
-
-    </button>
-
-
-</section>
-
-
-
-<!-- ==================================================
-     03 볼거리
-================================================== -->
-
-<section id="sight-section"
-         class="nearby-content-section"
-         style="display:none;">
-
-
-    <div class="nearby-category-header">
-
-
-        <button
-            type="button"
-            class="category-back-button"
-            onclick="showCategory('menu')">
-
-            ←
-
-        </button>
-
-
-        <div>
-
-            <span class="category-label">
-                🌳 볼거리
-            </span>
-
-            <h2>
-                태조산공원 주변 볼거리
-            </h2>
-
-            <p>
-                공원 주변의 명소와 즐길거리를
-                순차적으로 소개할 예정입니다.
-            </p>
-
-        </div>
-
-
-    </div>
-
-
-
-    <!-- 준비중 -->
-
-    <div class="nearby-coming-soon">
-
-        <div class="coming-soon-icon">
-            🌿
-        </div>
-
-        <h2>
-            볼거리를 준비하고 있습니다
-        </h2>
+    <footer class="park-footer">
 
         <p>
-            태조산공원 주변에서 함께 즐길 수 있는
-            다양한 명소와 볼거리를
-            순차적으로 소개할 예정입니다.
+            태조산공원 · 천안도시공사
         </p>
 
-        <button
-            type="button"
-            onclick="showCategory('menu')">
-
-            ← 이전으로 돌아가기
-
-        </button>
-
-    </div>
-
-
-</section>
-
-
-
-<!-- ==================================================
-     공원안내로 돌아가기
-================================================== -->
-
-<a
-    href="park.html"
-    class="nearby-back-button">
-
-    🗺️ 공원안내로 돌아가기
-
-</a>
-
-
-</main>
-
-
-
-<!-- ===========================
-     Footer
-=========================== -->
-
-<footer class="park-footer">
-
-    <p>
-        태조산공원 · 천안도시공사
-    </p>
-
-</footer>
-
-
-
-<!-- ==================================================
-     페이지 전용 CSS
-     기존 style.css는 그대로 유지
-================================================== -->
-
-<style>
-
-/* ==================================================
-   카테고리 선택
-================================================== */
-
-.nearby-category-section {
-    width: 100%;
-}
-
-
-.nearby-category-grid {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(2, minmax(0, 1fr));
-
-    gap: 18px;
-
-    margin-top: 24px;
-
-}
-
-
-.nearby-category-card {
-
-    position: relative;
-
-    width: 100%;
-
-    min-height: 170px;
-
-    padding: 26px 24px;
-
-    border: 1px solid #e1e7e2;
-
-    border-radius: 22px;
-
-    background: #ffffff;
-
-    box-shadow:
-        0 8px 24px rgba(0, 0, 0, 0.05);
-
-    text-align: left;
-
-    cursor: pointer;
-
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease,
-        border-color 0.2s ease;
-
-}
-
-
-.nearby-category-card:hover {
-
-    transform: translateY(-3px);
-
-    box-shadow:
-        0 12px 28px rgba(0, 0, 0, 0.08);
-
-    border-color: #c8d9cc;
-
-}
-
-
-.category-icon {
-
-    width: 52px;
-
-    height: 52px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    border-radius: 16px;
-
-    background: #eef5ef;
-
-    font-size: 27px;
-
-    margin-bottom: 18px;
-
-}
-
-
-.category-text h2 {
-
-    margin: 0 0 7px;
-
-    font-size: 21px;
-
-    color: #26352b;
-
-}
-
-
-.category-text p {
-
-    margin: 0;
-
-    padding-right: 35px;
-
-    font-size: 14px;
-
-    line-height: 1.6;
-
-    color: #777;
-
-}
-
-
-.category-arrow {
-
-    position: absolute;
-
-    right: 22px;
-
-    top: 50%;
-
-    transform: translateY(-50%);
-
-    font-size: 24px;
-
-    color: #8b9c90;
-
-}
-
-
-
-/* ==================================================
-   카테고리 내부 헤더
-================================================== */
-
-.nearby-category-header {
-
-    display: flex;
-
-    align-items: flex-start;
-
-    gap: 16px;
-
-    margin-bottom: 24px;
-
-}
-
-
-.category-back-button {
-
-    flex: 0 0 auto;
-
-    width: 42px;
-
-    height: 42px;
-
-    border: 1px solid #dfe6e1;
-
-    border-radius: 50%;
-
-    background: #fff;
-
-    color: #53635a;
-
-    font-size: 20px;
-
-    cursor: pointer;
-
-}
-
-
-.category-label {
-
-    display: inline-block;
-
-    margin-bottom: 5px;
-
-    font-size: 14px;
-
-    font-weight: 700;
-
-    color: #4d7c59;
-
-}
-
-
-.nearby-category-header h2 {
-
-    margin: 0 0 6px;
-
-    font-size: 25px;
-
-    color: #253229;
-
-}
-
-
-.nearby-category-header p {
-
-    margin: 0;
-
-    color: #777;
-
-    line-height: 1.5;
-
-    font-size: 14px;
-
-}
-
-
-
-/* ==================================================
-   카테고리로 돌아가기
-================================================== */
-
-.nearby-category-return {
-
-    display: block;
-
-    width: 100%;
-
-    max-width: 520px;
-
-    margin: 28px auto 0;
-
-    padding: 14px 18px;
-
-    border: 1px solid #dfe6e1;
-
-    border-radius: 14px;
-
-    background: #fff;
-
-    color: #526158;
-
-    font-size: 14px;
-
-    cursor: pointer;
-
-}
-
-
-
-/* ==================================================
-   볼거리 준비중
-================================================== */
-
-.nearby-coming-soon {
-
-    margin-top: 30px;
-
-    padding: 55px 25px;
-
-    border: 1px solid #e1e7e2;
-
-    border-radius: 22px;
-
-    background: #fff;
-
-    text-align: center;
-
-}
-
-
-.coming-soon-icon {
-
-    width: 68px;
-
-    height: 68px;
-
-    margin: 0 auto 18px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    border-radius: 20px;
-
-    background: #eef5ef;
-
-    font-size: 32px;
-
-}
-
-
-.nearby-coming-soon h2 {
-
-    margin: 0 0 12px;
-
-    color: #2d3c32;
-
-    font-size: 21px;
-
-}
-
-
-.nearby-coming-soon p {
-
-    max-width: 430px;
-
-    margin: 0 auto 24px;
-
-    color: #777;
-
-    line-height: 1.7;
-
-    font-size: 14px;
-
-}
-
-
-.nearby-coming-soon button {
-
-    padding: 12px 18px;
-
-    border: none;
-
-    border-radius: 12px;
-
-    background: #eef5ef;
-
-    color: #4d7156;
-
-    font-weight: 600;
-
-    cursor: pointer;
-
-}
-
-
-
-/* ==================================================
-   모바일
-================================================== */
-
-@media (max-width: 700px) {
-
-
-    .nearby-category-grid {
-
-        grid-template-columns: 1fr;
-
-        gap: 14px;
-
-    }
-
-
-    .nearby-category-card {
-
-        min-height: 145px;
-
-        padding: 22px;
-
-    }
-
-
-    .category-icon {
-
-        width: 46px;
-
-        height: 46px;
-
-        margin-bottom: 14px;
-
-        font-size: 24px;
-
-    }
-
-
-    .category-text h2 {
-
-        font-size: 19px;
-
-    }
-
-
-    .nearby-category-header h2 {
-
-        font-size: 21px;
-
-    }
-
-
-}
-
-</style>
-
-
-
-<!-- ==================================================
-     JavaScript
-================================================== -->
-
-<script>
-
-
-/* ==================================================
-   현재 슬라이드 상태
-================================================== */
-
-const sliderStates = {
-
-    jangteo: 0,
-
-    igohouse: 0,
-
-    jindotgabi: 0
-
-};
-
-
-
-/* ==================================================
-   카테고리 전환
-================================================== */
-
-function showCategory(category) {
-
-
-    const categorySection =
-        document.getElementById(
-            "category-section"
-        );
-
-
-    const foodSection =
-        document.getElementById(
-            "food-section"
-        );
-
-
-    const sightSection =
-        document.getElementById(
-            "sight-section"
-        );
-
-
-
-    /* 전부 숨김 */
-
-    categorySection.style.display = "none";
-
-    foodSection.style.display = "none";
-
-    sightSection.style.display = "none";
-
-
-
-    /* 선택 화면 */
-
-    if (category === "menu") {
-
-        categorySection.style.display = "block";
-
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
-
-        return;
-
-    }
-
-
-
-    /* 먹거리 */
-
-    if (category === "food") {
-
-        foodSection.style.display = "block";
-
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
-
-        return;
-
-    }
-
-
-
-    /* 볼거리 */
-
-    if (category === "sight") {
-
-        sightSection.style.display = "block";
-
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
-
-        return;
-
-    }
-
-}
-
-
-
-/* ==================================================
-   슬라이드 표시
-================================================== */
-
-function showSlide(sliderName, index) {
-
-
-    const slider =
-        document.querySelector(
-            `[data-slider="${sliderName}"]`
-        );
-
-
-    if (!slider) {
-        return;
-    }
-
-
-
-    const slides =
-        slider.querySelectorAll(
-            ".nearby-slide"
-        );
-
-
-    const dots =
-        slider.querySelectorAll(
-            ".slider-dot"
-        );
-
-
-
-    if (!slides.length) {
-        return;
-    }
-
-
-
-    /* 마지막 → 첫 번째 */
-
-    if (index < 0) {
-
-        index =
-            slides.length - 1;
-
-    }
-
-
-
-    /* 첫 번째 → 마지막 */
-
-    if (index >= slides.length) {
-
-        index = 0;
-
-    }
-
-
-
-    /* 현재 상태 저장 */
-
-    sliderStates[sliderName] =
-        index;
-
-
-
-    /* 이미지 */
-
-    slides.forEach(
-        function(slide, i) {
-
-            slide.classList.toggle(
-                "active",
-                i === index
-            );
-
-        }
-    );
-
-
-
-    /* 점 */
-
-    dots.forEach(
-        function(dot, i) {
-
-            dot.classList.toggle(
-                "active",
-                i === index
-            );
-
-        }
-    );
-
-}
-
-
-
-/* ==================================================
-   이전 / 다음
-================================================== */
-
-function moveSlide(
-    sliderName,
-    direction
-) {
-
-
-    const current =
-        sliderStates[sliderName] || 0;
-
-
-    showSlide(
-        sliderName,
-        current + direction
-    );
-
-}
-
-
-
-/* ==================================================
-   모바일 스와이프
-================================================== */
-
-document
-.querySelectorAll(".nearby-slider")
-.forEach(
-    function(slider) {
-
-
-        let startX = 0;
-
-        let endX = 0;
-
-
-
-        /* 터치 시작 */
-
-        slider.addEventListener(
-            "touchstart",
-            function(e) {
-
-                startX =
-                    e.touches[0].clientX;
-
-            },
-            {
-                passive: true
-            }
-        );
-
-
-
-        /* 터치 종료 */
-
-        slider.addEventListener(
-            "touchend",
-            function(e) {
-
-
-                endX =
-                    e.changedTouches[0].clientX;
-
-
-
-                const difference =
-                    startX - endX;
-
-
-
-                /* 작은 움직임 무시 */
-
-                if (
-                    Math.abs(difference) < 50
-                ) {
-
-                    return;
-
-                }
-
-
-
-                const sliderName =
-                    slider.dataset.slider;
-
-
-
-                /* 왼쪽 스와이프 */
-
-                if (difference > 0) {
-
-                    moveSlide(
-                        sliderName,
-                        1
-                    );
-
-                }
-
-
-                /* 오른쪽 스와이프 */
-
-                else {
-
-                    moveSlide(
-                        sliderName,
-                        -1
-                    );
-
-                }
-
-            },
-            {
-                passive: true
-            }
-        );
-
-    }
-);
-
-
-
-/* ==================================================
-   페이지 최초 상태
-================================================== */
-
-showCategory("menu");
-
-</script>
+    </footer>
 
 
 </body>
