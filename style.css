@@ -21,10 +21,11 @@ body {
 
 
 /* ===========================
-   헤더
+   메인페이지 헤더
+   ※ 상세페이지 .park-header와 분리
 =========================== */
 
-header {
+body > header:not(.park-header) {
     background: linear-gradient(
         135deg,
         #2e7d32,
@@ -36,12 +37,12 @@ header {
     padding: 40px 20px;
 }
 
-header h1 {
+body > header:not(.park-header) h1 {
     font-size: 32px;
     margin-bottom: 10px;
 }
 
-header p {
+body > header:not(.park-header) p {
     font-size: 16px;
     opacity: 0.9;
 }
@@ -57,24 +58,24 @@ header p {
     padding: 20px;
 }
 
+
 /* ===========================
    현재 위치
 =========================== */
 
 .location-card {
     background: white;
-    border-radius: 20px;
+    border-radius: 18px;
     padding: 20px;
     margin-bottom: 20px;
 
     box-shadow:
-        0 5px 20px
-        rgba(0, 0, 0, 0.06);
+        0 5px 20px rgba(0, 0, 0, 0.06);
 }
 
 .location-card h2 {
-    color: #333;
-    margin-bottom: 8px;
+    color: #2e7d32;
+    margin-bottom: 10px;
 }
 
 .location-card h3 {
@@ -82,11 +83,12 @@ header p {
 }
 
 .location-card p {
-    margin: 2px 0;
+    margin: 3px 0;
 }
 
 .location-card .phone {
-    margin-top: 5px;
+    margin-top: 8px;
+    color: #555;
 }
 
 
@@ -96,40 +98,38 @@ header p {
 
 .menu-grid {
     display: grid;
-
-    grid-template-columns:
-        repeat(2, 1fr);
-
-    gap: 15px;
-
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
     margin-bottom: 20px;
 }
 
+
+/* 메뉴 카드 */
+
 .menu-card {
     display: flex;
-
-    flex-direction: column;
-
     align-items: center;
     justify-content: center;
 
-    min-height: 110px;
+    gap: 8px;
+
+    min-height: 70px;
+
+    padding: 15px;
 
     background: white;
 
-    border-radius: 18px;
-
-    padding: 18px;
-
-    text-decoration: none;
+    border-radius: 16px;
 
     color: #333;
 
-    font-size: 30px;
+    text-decoration: none;
+
+    font-size: 16px;
+    font-weight: bold;
 
     box-shadow:
-        0 5px 20px
-        rgba(0, 0, 0, 0.06);
+        0 5px 15px rgba(0, 0, 0, 0.06);
 
     transition:
         transform 0.2s ease,
@@ -137,49 +137,38 @@ header p {
 }
 
 .menu-card span {
-    margin-top: 8px;
-
-    font-size: 15px;
-
-    font-weight: bold;
-
+    display: inline-block;
     color: #333;
 }
 
 .menu-card:hover {
-    transform: translateY(-3px);
+    transform: translateY(-2px);
 
     box-shadow:
-        0 8px 25px
-        rgba(0, 0, 0, 0.10);
+        0 8px 18px rgba(0, 0, 0, 0.10);
 }
 
 
 /* ===========================
-   모바일
+   메인 홈페이지 모바일
 =========================== */
 
 @media (max-width: 600px) {
 
     .menu-grid {
-        grid-template-columns:
-            repeat(2, 1fr);
-
-        gap: 12px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
     }
 
     .menu-card {
-        min-height: 100px;
-
-        font-size: 26px;
-
-        padding: 15px;
-    }
-
-    .menu-card span {
+        min-height: 65px;
+        padding: 12px 8px;
         font-size: 14px;
     }
 
+    .location-card {
+        padding: 18px;
+    }
 }
 
 
@@ -194,8 +183,7 @@ header p {
     margin-bottom: 25px;
 
     box-shadow:
-        0 10px 30px
-        rgba(0, 0, 0, 0.08);
+        0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
 .card-content {
@@ -274,9 +262,6 @@ header p {
 .gallery-track::-webkit-scrollbar {
     display: none;
 }
-
-
-/* 사진 */
 
 .gallery-track img {
     flex: 0 0 100%;
@@ -371,8 +356,7 @@ header p {
     margin-top: 18px;
 
     box-shadow:
-        0 5px 15px
-        rgba(0, 0, 0, 0.06);
+        0 5px 15px rgba(0, 0, 0, 0.06);
 }
 
 .notice-card p {
@@ -418,9 +402,7 @@ header p {
 .time-box {
     display: flex;
     flex-direction: column;
-
     gap: 10px;
-
     margin-top: 15px;
 }
 
@@ -428,9 +410,7 @@ header p {
     display: grid;
 
     grid-template-columns:
-        70px
-        1fr
-        70px;
+        70px 1fr 70px;
 
     align-items: center;
 
@@ -499,7 +479,7 @@ header p {
 
 
 /* ===========================
-   예약 / 돌아가기 버튼
+   돌아가기 버튼
 =========================== */
 
 .back-button {
@@ -527,8 +507,7 @@ header p {
     font-weight: bold;
 
     box-shadow:
-        0 5px 15px
-        rgba(0, 0, 0, 0.08);
+        0 5px 15px rgba(0, 0, 0, 0.08);
 
     transition:
         all 0.25s ease;
@@ -537,8 +516,7 @@ header p {
 .back-button:hover {
     background: #43a047;
 
-    transform:
-        translateY(-2px);
+    transform: translateY(-2px);
 }
 
 
@@ -548,24 +526,22 @@ header p {
 
 footer {
     text-align: center;
-
     color: #777;
-
     padding: 30px;
 }
 
 
 /* ===========================
-   모바일
+   일반 페이지 모바일
 =========================== */
 
 @media (max-width: 600px) {
 
-    header {
+    body > header:not(.park-header) {
         padding: 32px 15px;
     }
 
-    header h1 {
+    body > header:not(.park-header) h1 {
         font-size: 28px;
     }
 
@@ -596,15 +572,12 @@ footer {
 
     .time-item {
         grid-template-columns:
-            65px
-            1fr;
+            65px 1fr;
     }
 
     .time-item small {
         grid-column: 2;
-
         text-align: left;
-
         margin-top: -5px;
     }
 
@@ -613,176 +586,111 @@ footer {
     }
 }
 
-/* ===========================
-   메인 홈페이지 - 현재 위치
-=========================== */
-
-.location-card {
-    background: white;
-    border-radius: 18px;
-    padding: 20px;
-    margin-bottom: 20px;
-
-    box-shadow:
-        0 5px 15px
-        rgba(0, 0, 0, 0.06);
-}
-
-.location-card h2 {
-    color: #2e7d32;
-    margin-bottom: 10px;
-}
-
-.location-card h3 {
-    margin-bottom: 3px;
-}
-
-.location-card p {
-    margin: 3px 0;
-}
-
-.location-card .phone {
-    margin-top: 8px;
-    color: #555;
-}
-
-
-/* ===========================
-   메인 홈페이지 - 메뉴
-=========================== */
-
-.menu-grid {
-    display: grid;
-
-    grid-template-columns:
-        repeat(2, 1fr);
-
-    gap: 12px;
-
-    margin-bottom: 20px;
-}
-
-
-/* 메뉴 카드 */
-
-.menu-card {
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    gap: 8px;
-
-    min-height: 70px;
-
-    padding: 15px;
-
-    background: white;
-
-    border-radius: 16px;
-
-    color: #333;
-
-    text-decoration: none;
-
-    font-size: 16px;
-
-    font-weight: bold;
-
-    box-shadow:
-        0 5px 15px
-        rgba(0, 0, 0, 0.06);
-
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
-}
-
-.menu-card span {
-    display: inline-block;
-}
-
-.menu-card:hover {
-    transform: translateY(-2px);
-
-    box-shadow:
-        0 8px 18px
-        rgba(0, 0, 0, 0.10);
-}
-
-
-/* ===========================
-   메인 홈페이지 모바일
-=========================== */
-
-@media (max-width: 600px) {
-
-    .menu-grid {
-        grid-template-columns:
-            repeat(2, 1fr);
-
-        gap: 10px;
-    }
-
-    .menu-card {
-        min-height: 65px;
-
-        padding: 12px 8px;
-
-        font-size: 14px;
-    }
-
-    .location-card {
-        padding: 18px;
-    }
-}
 
 /* =========================================
    태조산공원 안내
 ========================================= */
 
 .park-header {
-    background: #ffffff;
-    border-bottom: 1px solid #e5e7eb;
+    width: 100%;
+    box-sizing: border-box;
+
+    background: #f4f8f4;
+
+    border-top: 1px solid #dfe7df;
+    border-bottom: 1px solid #dfe7df;
+
     padding: 22px 20px;
 }
 
-.header-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    gap: 18px;
-}
+.park-header .header-inner {
+    position: relative;
 
-.back-btn {
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    background: #f1f5f2;
-    color: #245c35;
+    max-width: 1000px;
+    min-height: 100px;
+
+    margin: 0 auto;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
+    padding: 18px 70px;
+
+    box-sizing: border-box;
+}
+
+.park-header .header-text {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+}
+
+.park-header .back-btn {
+    position: absolute;
+
+    left: 20px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #e8f1e9;
+    color: #1f6b3a;
+
     text-decoration: none;
-    font-size: 22px;
-    flex-shrink: 0;
+
+    font-size: 20px;
+    line-height: 1;
+}
+
+.park-header .back-btn:hover {
+    background: #d5e6d8;
+    transform: translateY(-50%) translateX(-2px);
 }
 
 .park-header h1 {
     margin: 0;
-    color: #214d2d;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    color: #075b32;
+
     font-size: 28px;
+    font-weight: 700;
+
+    line-height: 1.25;
 }
 
 .park-header p {
     margin: 6px 0 0;
-    color: #6b7280;
+
+    color: #718078;
+
     font-size: 14px;
+    line-height: 1.5;
 }
 
 
-/* 전체 */
+/* =========================================
+   공원 안내 전체
+========================================= */
 
 .park-guide {
     max-width: 1100px;
@@ -791,7 +699,9 @@ footer {
 }
 
 
-/* 섹션 제목 */
+/* =========================================
+   섹션 제목
+========================================= */
 
 .section-title {
     display: flex;
@@ -821,26 +731,36 @@ footer {
 
 .section-title h2 {
     margin: 0;
+
     color: #1f2937;
+
     font-size: 23px;
 }
 
 .section-title p {
     margin: 5px 0 0;
+
     color: #6b7280;
+
     font-size: 14px;
 }
 
 
-/* 지도 */
+/* =========================================
+   지도
+========================================= */
 
 .map-card {
     background: #fff;
+
     border-radius: 20px;
+
     overflow: hidden;
+
     border: 1px solid #e5e7eb;
 
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.06);
 }
 
 .park-map {
@@ -849,12 +769,12 @@ footer {
     height: auto;
 }
 
-
 .map-notice {
     margin-top: 12px;
 
     display: flex;
     align-items: flex-start;
+
     gap: 9px;
 
     padding: 14px 16px;
@@ -862,6 +782,7 @@ footer {
     border-radius: 12px;
 
     background: #f4f8f4;
+
     color: #526158;
 
     font-size: 13px;
@@ -874,7 +795,9 @@ footer {
 }
 
 
-/* 이동 동선 */
+/* =========================================
+   이동 동선
+========================================= */
 
 .route-section {
     margin-top: 55px;
@@ -883,7 +806,8 @@ footer {
 .route-flow {
     display: grid;
 
-    grid-template-columns: repeat(6, minmax(0, 1fr));
+    grid-template-columns:
+        repeat(6, minmax(0, 1fr));
 
     gap: 12px;
 
@@ -894,6 +818,7 @@ footer {
 
 .route-item {
     min-width: 0;
+
     height: 112px;
 
     padding: 14px;
@@ -907,6 +832,7 @@ footer {
     background: #ffffff;
 
     display: flex;
+
     flex-direction: column;
 
     justify-content: flex-start;
@@ -965,26 +891,19 @@ footer {
     background: #ffffff;
 }
 
-
-/* 화살표 제거 */
-
-.route-arrow {
-    display: none;
-}
-
 .route-highlight span {
     background: #2d8a45;
     color: white;
 }
 
 .route-arrow {
-    color: #9ca3af;
-    font-size: 20px;
-    flex-shrink: 0;
+    display: none;
 }
 
 
-/* 시설 */
+/* =========================================
+   시설
+========================================= */
 
 .facility-section {
     margin-top: 55px;
@@ -992,18 +911,24 @@ footer {
 
 .facility-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
     gap: 12px;
 }
 
 .facility-card {
     display: flex;
+
     align-items: center;
+
     gap: 14px;
 
     padding: 18px;
 
     border: 1px solid #e5e7eb;
+
     border-radius: 16px;
 
     background: white;
@@ -1016,8 +941,11 @@ footer {
 
 .facility-card:hover {
     transform: translateY(-2px);
+
     border-color: #83a98b;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+
+    box-shadow:
+        0 6px 18px rgba(0, 0, 0, 0.06);
 }
 
 .facility-icon {
@@ -1041,6 +969,7 @@ footer {
     margin: 0;
 
     font-size: 16px;
+
     color: #26382b;
 }
 
@@ -1048,6 +977,7 @@ footer {
     margin: 5px 0 0;
 
     color: #777;
+
     font-size: 13px;
 }
 
@@ -1055,11 +985,14 @@ footer {
     margin-left: auto;
 
     color: #9ca3af;
+
     font-size: 20px;
 }
 
 
-/* 하부시설 */
+/* =========================================
+   하부시설
+========================================= */
 
 .lower-section {
     margin-top: 55px;
@@ -1067,8 +1000,11 @@ footer {
 
 .lower-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 16px;
 }
 
 .lower-card {
@@ -1077,6 +1013,7 @@ footer {
     border-radius: 15px;
 
     background: #f7f8f7;
+
     border: 1px solid #e5e7eb;
 }
 
@@ -1084,6 +1021,7 @@ footer {
     margin: 0 0 7px;
 
     color: #2b5736;
+
     font-size: 16px;
 }
 
@@ -1091,12 +1029,46 @@ footer {
     margin: 0;
 
     color: #666;
+
     font-size: 13px;
+
     line-height: 1.6;
 }
 
 
-/* 푸터 */
+/* =========================================
+   공원 안내 섹션 간격
+========================================= */
+
+.park-guide > section {
+    margin-bottom: 56px;
+}
+
+.park-guide > section + section {
+    margin-top: 56px !important;
+}
+
+.park-guide > section:last-of-type {
+    margin-bottom: 32px;
+}
+
+
+/* =========================================
+   하부 카드 간격
+========================================= */
+
+.lower-section .lower-card {
+    margin-bottom: 12px;
+}
+
+.lower-section .lower-card:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================
+   공원 안내 Footer
+========================================= */
 
 .park-footer {
     padding: 25px 20px;
@@ -1106,20 +1078,32 @@ footer {
     text-align: center;
 
     color: #777;
+
     font-size: 12px;
 }
 
 
-/* 모바일 */
+/* =========================================
+   공원 안내 모바일
+========================================= */
+
+@media (max-width: 900px) {
+
+    .route-flow {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+    }
+
+}
 
 @media (max-width: 700px) {
 
-    .park-header h1 {
-        font-size: 22px;
-    }
-
     .park-guide {
         padding: 25px 14px 50px;
+    }
+
+    .park-header h1 {
+        font-size: 22px;
     }
 
     .section-title h2 {
@@ -1141,184 +1125,24 @@ footer {
 
 }
 
-@media (max-width: 900px) {
-
-    .route-flow {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-}
-
-
-@media (max-width: 600px) {
-
-    .route-flow {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-}
-
-/* =========================================
-   보훈공원 상세페이지 섹션 간격 보정
-========================================= */
-
-/* 각 섹션 사이에 충분한 여백 */
-.park-guide > section {
-    margin-bottom: 56px;
-}
-
-/* 마지막 섹션은 불필요한 하단 여백 제거 */
-.park-guide > section:last-of-type {
-    margin-bottom: 32px;
-}
-
-
-/* =========================================
-   보훈공원 이야기 카드 간격
-========================================= */
-
-.lower-section .lower-card {
-    margin-bottom: 12px;
-}
-
-.lower-section .lower-card:last-child {
-    margin-bottom: 0;
-}
-
-
-/* =========================================
-   주요 시설 카드 간격
-========================================= */
-
-.lower-grid {
-    gap: 16px;
-}
-
-
-/* =========================================
-   모바일에서 조금 더 자연스럽게
-========================================= */
-
-@media (max-width: 600px) {
-
-    .park-guide > section {
-        margin-bottom: 44px;
-    }
-
-    .lower-section .lower-card {
-        margin-bottom: 12px;
-    }
-
-}
-
-/* =========================================
-   보훈공원 섹션 간 확실한 간격
-========================================= */
-
-.park-guide > section + section {
-    margin-top: 56px !important;
-}
-
-
-/* 모바일 */
-@media (max-width: 600px) {
-
-    .park-guide > section + section {
-        margin-top: 48px !important;
-    }
-
-}
-
-/* ===========================
-   공통 페이지 헤더
-=========================== */
-
-.park-header {
-    background: #f3f8f3;
-    border-bottom: 1px solid #dce8de;
-    padding: 22px 20px;
-}
-
-.header-inner {
-    max-width: 1000px;
-    margin: 0 auto;
-
-    display: flex;
-    align-items: center;
-    gap: 18px;
-}
-
-.header-text {
-    flex: 1;
-}
-
-.park-header h1 {
-    margin: 0 0 7px;
-
-    color: #165b32;
-
-    font-size: 28px;
-    font-weight: 700;
-
-    line-height: 1.3;
-}
-
-.park-header p {
-    margin: 0;
-
-    color: #68756d;
-
-    font-size: 14px;
-    line-height: 1.5;
-}
-
-
-/* ===========================
-   상단 뒤로가기 버튼
-=========================== */
-
-.park-header .back-btn {
-    width: 42px;
-    height: 42px;
-
-    flex-shrink: 0;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background: #e7f0e8;
-
-    border-radius: 50%;
-
-    color: #165b32;
-
-    text-decoration: none;
-
-    font-size: 21px;
-    font-weight: 600;
-
-    transition: all 0.2s ease;
-}
-
-.park-header .back-btn:hover {
-    background: #d5e6d8;
-    transform: translateX(-2px);
-}
-
-
-/* ===========================
-   모바일
-=========================== */
-
 @media (max-width: 600px) {
 
     .park-header {
         padding: 18px 16px;
     }
 
-    .header-inner {
-        gap: 13px;
+    .park-header .header-inner {
+        min-height: 95px;
+        padding: 16px 55px;
+    }
+
+    .park-header .back-btn {
+        left: 15px;
+
+        width: 42px;
+        height: 42px;
+
+        font-size: 18px;
     }
 
     .park-header h1 {
@@ -1329,140 +1153,21 @@ footer {
         font-size: 13px;
     }
 
-    .park-header .back-btn {
-        width: 40px;
-        height: 40px;
-
-        font-size: 19px;
+    .route-flow {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
     }
 
-}
-
-/* =================================
-   공통 상단 헤더
-================================= */
-
-.park-header,
-header {
-    position: relative;
-    width: 100%;
-    box-sizing: border-box;
-    background: #f4f8f4;
-    border-top: 1px solid #dfe7df;
-    border-bottom: 1px solid #dfe7df;
-}
-
-
-/* 헤더 내부 */
-
-.header-inner {
-    position: relative;
-
-    min-height: 100px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    padding: 18px 70px;
-    box-sizing: border-box;
-}
-
-
-/* 뒤로가기 버튼 */
-
-.header-inner .back-btn {
-    position: absolute;
-    left: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-
-    width: 44px;
-    height: 44px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 50%;
-
-    background: #e8f1e9;
-    color: #1f6b3a;
-
-    text-decoration: none;
-
-    font-size: 20px;
-    line-height: 1;
-}
-
-
-/* 제목 + 설명 전체 */
-
-.header-text {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    text-align: center;
-
-    width: 100%;
-}
-
-
-/* 제목 */
-
-.header-text h1 {
-    margin: 0;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    gap: 8px;
-
-    font-size: 28px;
-    line-height: 1.25;
-
-    color: #075b32;
-}
-
-
-/* 설명 */
-
-.header-text p {
-    margin: 6px 0 0;
-
-    font-size: 14px;
-    line-height: 1.5;
-
-    color: #718078;
-}
-
-
-/* 모바일 */
-
-@media (max-width: 600px) {
-
-    .header-inner {
-        min-height: 95px;
-        padding: 16px 55px;
+    .park-guide > section {
+        margin-bottom: 44px;
     }
 
-    .header-inner .back-btn {
-        left: 15px;
-
-        width: 42px;
-        height: 42px;
-
-        font-size: 18px;
+    .park-guide > section + section {
+        margin-top: 48px !important;
     }
 
-    .header-text h1 {
-        font-size: 24px;
-    }
-
-    .header-text p {
-        font-size: 13px;
+    .lower-section .lower-card {
+        margin-bottom: 12px;
     }
 
 }
