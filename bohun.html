@@ -13,63 +13,311 @@
     <link rel="stylesheet"
           href="style.css?v=20260821">
 
+
+    <!-- ===========================
+         보훈공원 페이지 전용 스타일
+         기존 style.css와 관계없이
+         섹션 간격을 확실하게 적용
+    =========================== -->
+
+    <style>
+
+        /* 전체 페이지 */
+
+        .bohun-page {
+            padding-bottom: 60px;
+        }
+
+
+        /* ===========================
+           각 섹션
+        =========================== */
+
+        .bohun-section {
+            display: block;
+            width: 100%;
+            margin: 0 0 56px 0 !important;
+            padding: 0 !important;
+        }
+
+
+        /* 섹션 사이 간격을 강제로 확보 */
+
+        .bohun-section + .bohun-section {
+            margin-top: 56px !important;
+        }
+
+
+        /* 마지막 섹션 */
+
+        .bohun-section:last-of-type {
+            margin-bottom: 50px !important;
+        }
+
+
+        /* ===========================
+           이야기 카드
+        =========================== */
+
+        .bohun-story-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, minmax(0, 1fr));
+
+            gap: 16px;
+
+            width: 100%;
+
+        }
+
+
+        .bohun-story-card {
+
+            box-sizing: border-box;
+
+            padding: 22px;
+
+            border: 1px solid #dce3df;
+
+            border-radius: 16px;
+
+            background: #ffffff;
+
+            min-height: 118px;
+
+        }
+
+
+        .bohun-story-card h3 {
+
+            margin: 0 0 10px 0;
+
+            font-size: 16px;
+
+            font-weight: 700;
+
+            color: #164f30;
+
+            line-height: 1.4;
+
+        }
+
+
+        .bohun-story-card p {
+
+            margin: 0;
+
+            font-size: 14px;
+
+            line-height: 1.7;
+
+            color: #68736d;
+
+        }
+
+
+        /* ===========================
+           주요 시설
+        =========================== */
+
+        .bohun-facility-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, minmax(0, 1fr));
+
+            gap: 16px;
+
+            width: 100%;
+
+        }
+
+
+        .bohun-facility-card {
+
+            box-sizing: border-box;
+
+            padding: 22px;
+
+            border: 1px solid #dce3df;
+
+            border-radius: 16px;
+
+            background: #ffffff;
+
+            min-height: 118px;
+
+        }
+
+
+        .bohun-facility-card h3 {
+
+            margin: 0 0 10px 0;
+
+            font-size: 16px;
+
+            font-weight: 700;
+
+            color: #164f30;
+
+            line-height: 1.4;
+
+        }
+
+
+        .bohun-facility-card p {
+
+            margin: 0;
+
+            font-size: 14px;
+
+            line-height: 1.7;
+
+            color: #68736d;
+
+        }
+
+
+        /* ===========================
+           이미지
+        =========================== */
+
+        .bohun-image-card {
+
+            overflow: hidden;
+
+            border-radius: 18px;
+
+            border: 1px solid #dce3df;
+
+            background: #ffffff;
+
+        }
+
+
+        .bohun-image-card img {
+
+            display: block;
+
+            width: 100%;
+
+            height: auto;
+
+            max-height: 520px;
+
+            object-fit: cover;
+
+        }
+
+
+        /* ===========================
+           이미지 설명
+        =========================== */
+
+        .bohun-image-caption {
+
+            padding: 14px 18px;
+
+            font-size: 13px;
+
+            line-height: 1.6;
+
+            color: #68736d;
+
+            background: #ffffff;
+
+        }
+
+
+        /* ===========================
+           모바일
+        =========================== */
+
+        @media (max-width: 700px) {
+
+            .bohun-section {
+
+                margin-bottom: 44px !important;
+
+            }
+
+
+            .bohun-section + .bohun-section {
+
+                margin-top: 44px !important;
+
+            }
+
+
+            .bohun-story-grid {
+
+                grid-template-columns: 1fr;
+
+                gap: 12px;
+
+            }
+
+
+            .bohun-facility-grid {
+
+                grid-template-columns: 1fr;
+
+                gap: 12px;
+
+            }
+
+
+            .bohun-story-card,
+            .bohun-facility-card {
+
+                padding: 18px;
+
+                min-height: auto;
+
+            }
+
+
+            .bohun-image-card img {
+
+                max-height: 360px;
+
+            }
+
+        }
+
+    </style>
+
 </head>
+
 
 
 <body>
 
 
-<!-- ===========================
-     상단 헤더
-=========================== -->
-
-<header class="park-header">
-
-    <div class="header-inner">
-
-        <a href="park.html"
-           class="back-btn">
-            ←
-        </a>
-
-        <div>
-
-            <h1>
-                보훈공원
-            </h1>
-
-            <p>
-                호국보훈의 의미를 담은 공간
-            </p>
-
-        </div>
-
-    </div>
-
-</header>
-
-
-
-<main class="park-guide">
-
-
     <!-- ===========================
-         01 보훈공원
+         상단 헤더
     =========================== -->
 
-    <section class="map-section">
+    <header class="park-header">
 
-        <div class="section-title">
+        <div class="header-inner">
 
-            <span class="section-number">
-                01
-            </span>
+            <a href="park.html"
+               class="back-btn">
+
+                ←
+
+            </a>
+
 
             <div>
 
-                <h2>
+                <h1>
                     보훈공원
-                </h2>
+                </h1>
 
                 <p>
                     호국보훈의 의미를 담은 공간
@@ -79,282 +327,297 @@
 
         </div>
 
-
-        <div class="map-card">
-
-            <img
-                src="images/bohun-park-01.jpg"
-                alt="태조산 보훈공원"
-                class="park-map"
-            >
-
-        </div>
+    </header>
 
 
-        <div class="map-notice">
 
-            <span>
-                ⓘ
-            </span>
+    <main class="park-guide bohun-page">
 
-            <p>
-                태조산공원 하부에 위치한 보훈공원은
-                호국보훈의 의미를 되새길 수 있는 공간입니다.
-            </p>
 
-        </div>
+        <!-- ===========================
+             01 보훈공원
+        =========================== -->
 
-    </section>
+        <section class="bohun-section map-section">
+
+            <div class="section-title">
+
+                <span class="section-number">
+                    01
+                </span>
+
+
+                <div>
+
+                    <h2>
+                        보훈공원
+                    </h2>
+
+                    <p>
+                        호국보훈의 의미를 담은 공간
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="bohun-image-card">
+
+                <img
+                    src="images/bohun-park-01.jpg"
+                    alt="태조산 보훈공원"
+                >
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ===========================
+             02 보훈공원 이야기
+        =========================== -->
+
+        <section class="bohun-section">
+
+
+            <div class="section-title">
+
+                <span class="section-number">
+                    02
+                </span>
+
+
+                <div>
+
+                    <h2>
+                        보훈공원 이야기
+                    </h2>
+
+                    <p>
+                        보훈공원이 담고 있는 의미를 알아보세요.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="bohun-story-grid">
+
+
+                <!-- 기억하고 기리는 공간 -->
+
+                <div class="bohun-story-card">
+
+                    <h3>
+                        🇰🇷 기억하고 기리는 공간
+                    </h3>
+
+                    <p>
+                        나라를 위해 헌신한 분들을
+                        기억하고 추모하는 공간입니다.
+                    </p>
+
+                </div>
+
+
+
+                <!-- 천안의 호국 인물 -->
+
+                <div class="bohun-story-card">
+
+                    <h3>
+                        🏛️ 천안의 호국 인물을 만나는 공간
+                    </h3>
+
+                    <p>
+                        천안과 관련된 호국 인물의 뜻을
+                        되새겨볼 수 있습니다.
+                    </p>
+
+                </div>
+
+
+
+                <!-- 시민과 함께하는 공간 -->
+
+                <div class="bohun-story-card">
+
+                    <h3>
+                        🌳 시민과 함께하는 공간
+                    </h3>
+
+                    <p>
+                        추모와 기념뿐 아니라 시민들이
+                        산책하고 휴식할 수 있는 공간으로 이용됩니다.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ===========================
+             03 주요 시설
+        =========================== -->
+
+        <section class="bohun-section">
+
+
+            <div class="section-title">
+
+                <span class="section-number">
+                    03
+                </span>
+
+
+                <div>
+
+                    <h2>
+                        주요 시설
+                    </h2>
+
+                    <p>
+                        보훈공원에서 만나볼 수 있는 주요 시설입니다.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="bohun-facility-grid">
+
+
+                <!-- 천안인의 상 -->
+
+                <div class="bohun-facility-card">
+
+                    <h3>
+                        🏛️ 천안인의 상
+                    </h3>
+
+                    <p>
+                        천안의 호국보훈을 상징하는
+                        주요 기념시설입니다.
+                    </p>
+
+                </div>
+
+
+
+                <!-- 천안함 관련 시설 -->
+
+                <div class="bohun-facility-card">
+
+                    <h3>
+                        ⚓ 천안함 관련 시설
+                    </h3>
+
+                    <p>
+                        천안함 희생 장병들을 기억하고
+                        추모할 수 있는 공간입니다.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ===========================
+             04 보훈공원 둘러보기
+        =========================== -->
+
+        <section class="bohun-section">
+
+
+            <div class="section-title">
+
+                <span class="section-number">
+                    04
+                </span>
+
+
+                <div>
+
+                    <h2>
+                        보훈공원 둘러보기
+                    </h2>
+
+                    <p>
+                        보훈공원의 모습을 확인해보세요.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- 전경 -->
+
+            <div class="bohun-image-card">
+
+                <img
+                    src="images/bohun-park-02.jpg"
+                    alt="태조산 보훈공원 전경"
+                >
+
+                <div class="bohun-image-caption">
+
+                    보훈공원 전경과 기념시설을
+                    한눈에 확인할 수 있습니다.
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ===========================
+             공원 안내로 돌아가기
+        =========================== -->
+
+        <a
+            href="park.html"
+            class="back-button"
+        >
+
+            🗺 공원 안내로 돌아가기
+
+        </a>
+
+
+    </main>
 
 
 
     <!-- ===========================
-         02 보훈공원 이야기
+         Footer
     =========================== -->
 
-    <section class="lower-section">
+    <footer class="park-footer">
 
+        <p>
+            태조산공원 · 천안도시공사
+        </p>
 
-        <div class="section-title">
-
-            <span class="section-number">
-                02
-            </span>
-
-            <div>
-
-                <h2>
-                    보훈공원 이야기
-                </h2>
-
-                <p>
-                    보훈공원이 담고 있는 의미를 알아보세요.
-                </p>
-
-            </div>
-
-        </div>
-
-
-
-        <div class="lower-grid">
-
-
-            <!-- 기억하고 기리는 공간 -->
-
-            <div class="lower-card">
-
-                <h3>
-                    🇰🇷 기억하고 기리는 공간
-                </h3>
-
-                <p>
-                    나라를 위해 헌신한 분들을
-                    기억하고 추모하는 공간입니다.
-                </p>
-
-            </div>
-
-
-
-            <!-- 천안의 호국 인물 -->
-
-            <div class="lower-card">
-
-                <h3>
-                    🏛️ 천안의 호국 인물을 만나는 공간
-                </h3>
-
-                <p>
-                    천안과 관련된 호국 인물의 뜻을
-                    되새겨볼 수 있습니다.
-                </p>
-
-            </div>
-
-
-
-            <!-- 시민과 함께하는 공간 -->
-
-            <div class="lower-card">
-
-                <h3>
-                    🌳 시민과 함께하는 공간
-                </h3>
-
-                <p>
-                    추모와 기념뿐 아니라
-                    시민들의 산책과 휴식 공간으로
-                    이용됩니다.
-                </p>
-
-            </div>
-
-
-        </div>
-
-    </section>
-
-
-
-    <!-- ===========================
-         03 주요 시설
-    =========================== -->
-
-    <section class="lower-section">
-
-
-        <div class="section-title">
-
-            <span class="section-number">
-                03
-            </span>
-
-            <div>
-
-                <h2>
-                    주요 시설
-                </h2>
-
-                <p>
-                    보훈공원에서 만나볼 수 있는 주요 시설입니다.
-                </p>
-
-            </div>
-
-        </div>
-
-
-
-        <div class="lower-grid">
-
-
-            <!-- 천안인의 상 -->
-
-            <div class="lower-card">
-
-                <h3>
-                    🏛️ 천안인의 상
-                </h3>
-
-                <p>
-                    호국보훈의 의미를 담은
-                    주요 기념시설입니다.
-                </p>
-
-            </div>
-
-
-
-            <!-- 천안함 관련 시설 -->
-
-            <div class="lower-card">
-
-                <h3>
-                    ⚓ 천안함 관련 시설
-                </h3>
-
-                <p>
-                    천안함 희생 장병들을 기억하고
-                    추모하는 공간입니다.
-                </p>
-
-            </div>
-
-
-        </div>
-
-    </section>
-
-
-
-    <!-- ===========================
-         04 둘러보기
-    =========================== -->
-
-    <section class="map-section">
-
-
-        <div class="section-title">
-
-            <span class="section-number">
-                04
-            </span>
-
-            <div>
-
-                <h2>
-                    둘러보기
-                </h2>
-
-                <p>
-                    보훈공원의 모습을 확인해보세요.
-                </p>
-
-            </div>
-
-        </div>
-
-
-
-        <div class="map-card">
-
-            <img
-                src="images/bohun-park-02.jpg"
-                alt="태조산 보훈공원 전경"
-                class="park-map"
-            >
-
-        </div>
-
-
-
-        <div class="map-notice">
-
-            <span>
-                ⓘ
-            </span>
-
-            <p>
-                보훈공원의 기념시설과
-                주변 공간을 둘러볼 수 있습니다.
-            </p>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- ===========================
-         공원 안내로 돌아가기
-    =========================== -->
-
-    <a
-        href="park.html"
-        class="back-button"
-    >
-
-        🗺 공원 안내로 돌아가기
-
-    </a>
-
-
-</main>
-
-
-
-<!-- ===========================
-     Footer
-=========================== -->
-
-<footer class="park-footer">
-
-    <p>
-        태조산공원 · 천안도시공사
-    </p>
-
-</footer>
+    </footer>
 
 
 </body>
