@@ -1210,3 +1210,21 @@ footer {
     }
 
 }
+
+/* =========================================
+   보훈공원 섹션 간 확실한 간격
+========================================= */
+
+.park-guide > section + section {
+    margin-top: 56px !important;
+}
+
+
+/* 모바일 */
+@media (max-width: 600px) {
+
+    .park-guide > section + section {
+        margin-top: 48px !important;
+    }
+
+}
