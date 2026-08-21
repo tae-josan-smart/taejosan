@@ -1337,3 +1337,132 @@ footer {
     }
 
 }
+
+/* =================================
+   공통 상단 헤더
+================================= */
+
+.park-header,
+header {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    background: #f4f8f4;
+    border-top: 1px solid #dfe7df;
+    border-bottom: 1px solid #dfe7df;
+}
+
+
+/* 헤더 내부 */
+
+.header-inner {
+    position: relative;
+
+    min-height: 100px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 18px 70px;
+    box-sizing: border-box;
+}
+
+
+/* 뒤로가기 버튼 */
+
+.header-inner .back-btn {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #e8f1e9;
+    color: #1f6b3a;
+
+    text-decoration: none;
+
+    font-size: 20px;
+    line-height: 1;
+}
+
+
+/* 제목 + 설명 전체 */
+
+.header-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+
+    width: 100%;
+}
+
+
+/* 제목 */
+
+.header-text h1 {
+    margin: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    font-size: 28px;
+    line-height: 1.25;
+
+    color: #075b32;
+}
+
+
+/* 설명 */
+
+.header-text p {
+    margin: 6px 0 0;
+
+    font-size: 14px;
+    line-height: 1.5;
+
+    color: #718078;
+}
+
+
+/* 모바일 */
+
+@media (max-width: 600px) {
+
+    .header-inner {
+        min-height: 95px;
+        padding: 16px 55px;
+    }
+
+    .header-inner .back-btn {
+        left: 15px;
+
+        width: 42px;
+        height: 42px;
+
+        font-size: 18px;
+    }
+
+    .header-text h1 {
+        font-size: 24px;
+    }
+
+    .header-text p {
+        font-size: 13px;
+    }
+
+}
