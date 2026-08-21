@@ -225,9 +225,19 @@
         </p>
 
         <p>
-            셔틀버스 운행시간은
-            <strong>주차장 안내</strong>에서 확인할 수 있습니다.
+            운행시간과 운행일정은 아래에서 확인할 수 있습니다.
         </p>
+
+
+        <!-- 셔틀버스 시간표 바로가기 -->
+
+        <a href="parking.html"
+           class="office-shuttle-button">
+
+            🚌 셔틀버스 시간표 확인
+            <span>→</span>
+
+        </a>
 
     </div>
 
@@ -368,14 +378,28 @@
         <div class="info-highlight">
 
             <div>
-                <strong>약 200m</strong>
-                <span>관리사무소에서 약 200m</span>
+
+                <strong>
+                    약 200m
+                </strong>
+
+                <span>
+                    관리사무소에서 약 200m
+                </span>
+
             </div>
 
 
             <div>
-                <strong>도보 약 2분</strong>
-                <span>도보로 약 2분 거리</span>
+
+                <strong>
+                    도보 약 2분
+                </strong>
+
+                <span>
+                    도보로 약 2분 거리
+                </span>
+
             </div>
 
         </div>
@@ -383,51 +407,6 @@
 
         <p class="small-notice">
             ※ 이동 시 공원 내 안내표지판을 참고해 주세요.
-        </p>
-
-    </div>
-
-</section>
-
-
-
-<!-- ===========================
-     관리사무소 안내
-=========================== -->
-
-<section class="map-section">
-
-    <div class="section-title">
-
-        <span class="section-number">
-            06
-        </span>
-
-        <div>
-
-            <h2>
-                관리사무소 이용 안내
-            </h2>
-
-            <p>
-                방문 전 참고해주세요.
-            </p>
-
-        </div>
-
-    </div>
-
-
-    <div class="map-notice">
-
-        <span>
-            ℹ️
-        </span>
-
-        <p>
-            관리사무소는 공원 이용객의 현장 문의와
-            간단한 이용 안내를 지원하는 공간입니다.
-            필요한 사항이 있을 경우 직원에게 문의해 주세요.
         </p>
 
     </div>
@@ -480,7 +459,7 @@
 
 
 <!-- ===========================
-     관리사무소 사진 영역 스타일
+     관리사무소 전용 스타일
 =========================== -->
 
 <style>
@@ -533,6 +512,58 @@
 .office-photo-card {
 
     margin-top: 20px;
+}
+
+
+/* ===========================
+   셔틀버스 시간표 버튼
+=========================== */
+
+.office-shuttle-button {
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+
+    margin-top: 20px;
+
+    padding: 16px 18px;
+
+    background: #eaf4ec;
+
+    color: #2e7d32;
+
+    border: 1px solid #d4e7d7;
+
+    border-radius: 15px;
+
+    text-decoration: none;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    box-sizing: border-box;
+
+    transition: all 0.2s ease;
+}
+
+
+.office-shuttle-button span {
+
+    font-size: 20px;
+
+}
+
+
+.office-shuttle-button:hover {
+
+    background: #dceede;
+
+    transform: translateY(-1px);
 }
 
 
