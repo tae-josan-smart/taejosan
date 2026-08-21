@@ -8,6 +8,7 @@
     box-sizing: border-box;
 }
 
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     background: #f5f8f4;
@@ -15,257 +16,29 @@ body {
     line-height: 1.6;
 }
 
-/* ===========================
-   헤더
-=========================== */
-
-header {
-    background: linear-gradient(135deg, #2e7d32, #43a047);
-    color: white;
-    text-align: center;
-    padding: 40px 20px;
-}
-
-header h1 {
-    font-size: 32px;
-    margin-bottom: 10px;
-}
-
-header p {
-    font-size: 16px;
-    opacity: 0.9;
-}
 
 /* ===========================
-   전체 영역
+   공통 상단 헤더
 =========================== */
-
-.container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-/* ===========================
-   현재 위치
-=========================== */
-
-.location-card {
-    background: white;
-    border-radius: 24px;
-    padding: 25px;
-    margin-bottom: 25px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-    text-align: center;
-}
-
-.location-card h2 {
-    color: #2e7d32;
-    margin-bottom: 10px;
-}
-
-.location-card h3 {
-    font-size: 28px;
-    margin-bottom: 10px;
-}
-
-/* ===========================
-   긴급신고 카드
-=========================== */
-
-.emergency-card {
-    background: white;
-    border-radius: 24px;
-    overflow: hidden;
-    margin-bottom: 20px;
-    border-left: 6px solid #d32f2f;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-}
-
-.card-content {
-    padding: 25px;
-}
-
-.emergency-card h2 {
-    color: #d32f2f;
-    margin-bottom: 12px;
-}
-
-.emergency-description {
-    margin-bottom: 20px;
-}
-
-/* ===========================
-   119 / 112 버튼
-=========================== */
-
-.emergency-button {
-    display: block;
-    width: 100%;
-    padding: 16px 20px;
-
-    background: #d32f2f;
-    color: white;
-
-    text-align: center;
-    text-decoration: none;
-
-    border-radius: 14px;
-
-    font-size: 18px;
-    font-weight: bold;
-
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
-
-    transition: all 0.25s ease;
-}
-
-.emergency-button:hover {
-    background: #b71c1c;
-    transform: translateY(-2px);
-}
-
-/* ===========================
-   신고 전 확인사항
-=========================== */
-
-.notice-card {
-    background: white;
-    border-radius: 20px;
-    padding: 25px;
-    margin-top: 25px;
-
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-}
-
-.emergency-notice h2 {
-    color: #d32f2f;
-    margin-bottom: 15px;
-}
-
-.emergency-notice ul {
-    padding-left: 20px;
-}
-
-.emergency-notice li {
-    margin-bottom: 10px;
-}
-
-/* ===========================
-   메인으로 돌아가기
-=========================== */
-
-.back-button {
-    display: block;
-    width: 100%;
-    max-width: 500px;
-
-    margin: 30px auto 10px;
-    padding: 16px 20px;
-
-    background: #2e7d32;
-    color: white;
-
-    text-align: center;
-    text-decoration: none;
-
-    border-radius: 15px;
-
-    font-size: 17px;
-    font-weight: bold;
-
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-
-    transition: all 0.25s ease;
-}
-
-.back-button:hover {
-    background: #43a047;
-    transform: translateY(-2px);
-}
-
-/* ===========================
-   Footer
-=========================== */
-
-footer {
-    text-align: center;
-    color: #777;
-    padding: 30px;
-}
-
-/* ===========================
-   모바일
-=========================== */
-
-@media (max-width: 600px) {
-
-    header h1 {
-        font-size: 28px;
-    }
-
-    .location-card h3 {
-        font-size: 24px;
-    }
-
-    .container {
-        padding: 15px;
-    }
-
-    .card-content {
-        padding: 20px;
-    }
-
-    .emergency-button {
-        font-size: 17px;
-    }
-}
-
-/* ===========================
-   119 / 112 색상 구분
-=========================== */
-
-/* 119 */
-.emergency-card:not(.emergency-112) {
-    border-left: 6px solid #d32f2f;
-}
-
-.emergency-card:not(.emergency-112) h2 {
-    color: #d32f2f;
-}
-
-a.emergency-button.emergency-119-button {
-    background-color: #d32f2f !important;
-    color: #ffffff !important;
-}
-
-
-/* 112 */
-.emergency-card.emergency-112 {
-    border-left: 6px solid #1565c0;
-}
-
-.emergency-card.emergency-112 h2 {
-    color: #1565c0;
-}
-
-a.emergency-button.emergency-112-button {
-    background-color: #1565c0 !important;
-    color: #ffffff !important;
-}
-
-a.emergency-button.emergency-112-button:hover {
-    background-color: #0d47a1 !important;
-}
 
 .park-header {
     width: 100%;
     box-sizing: border-box;
+
+    background: #f4f8f4;
+    color: #075b32;
+
+    border-top: 1px solid #dfe7df;
+    border-bottom: 1px solid #dfe7df;
+
     text-align: left;
 }
 
+
 .park-header .header-inner {
+
     position: relative;
+
     min-height: 100px;
 
     display: flex;
@@ -273,21 +46,427 @@ a.emergency-button.emergency-112-button:hover {
     justify-content: center;
 
     padding: 18px 70px;
+
     box-sizing: border-box;
 }
 
+
+/* ===========================
+   뒤로가기 버튼
+=========================== */
+
+.park-header .back-btn {
+
+    position: absolute;
+
+    left: 20px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #e8f1e9;
+    color: #1f6b3a;
+
+    text-decoration: none;
+
+    font-size: 20px;
+    line-height: 1;
+}
+
+
+/* ===========================
+   헤더 제목 영역
+=========================== */
+
 .park-header .header-text {
+
     width: 100%;
+
     display: flex;
     flex-direction: column;
     align-items: center;
+
     text-align: center;
 }
 
+
 .park-header .header-text h1 {
+
     margin: 0;
+
+    font-size: 28px;
+    line-height: 1.25;
+
+    color: #075b32;
 }
 
+
 .park-header .header-text p {
+
     margin: 6px 0 0;
+
+    font-size: 14px;
+    line-height: 1.5;
+
+    color: #718078;
+}
+
+
+/* ===========================
+   전체 영역
+=========================== */
+
+.container {
+
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    padding: 20px;
+}
+
+
+/* ===========================
+   현재 위치
+=========================== */
+
+.location-card {
+
+    background: white;
+
+    border-radius: 24px;
+
+    padding: 25px;
+
+    margin-bottom: 25px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.08);
+
+    text-align: center;
+}
+
+
+.location-card h2 {
+
+    color: #2e7d32;
+
+    margin-bottom: 10px;
+}
+
+
+.location-card h3 {
+
+    font-size: 28px;
+
+    margin-bottom: 10px;
+}
+
+
+/* ===========================
+   긴급신고 카드
+=========================== */
+
+.emergency-card {
+
+    background: white;
+
+    border-radius: 24px;
+
+    overflow: hidden;
+
+    margin-bottom: 20px;
+
+    border-left: 6px solid #d32f2f;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+
+.card-content {
+
+    padding: 25px;
+}
+
+
+.emergency-card h2 {
+
+    color: #d32f2f;
+
+    margin-bottom: 12px;
+}
+
+
+.emergency-description {
+
+    margin-bottom: 20px;
+}
+
+
+/* ===========================
+   119 / 112 버튼
+=========================== */
+
+.emergency-button {
+
+    display: block;
+
+    width: 100%;
+
+    padding: 16px 20px;
+
+    background: #d32f2f;
+
+    color: white;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    border-radius: 14px;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.12);
+
+    transition: all 0.25s ease;
+}
+
+
+.emergency-button:hover {
+
+    background: #b71c1c;
+
+    transform: translateY(-2px);
+}
+
+
+/* ===========================
+   신고 전 확인사항
+=========================== */
+
+.notice-card {
+
+    background: white;
+
+    border-radius: 20px;
+
+    padding: 25px;
+
+    margin-top: 25px;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+
+.emergency-notice h2 {
+
+    color: #d32f2f;
+
+    margin-bottom: 15px;
+}
+
+
+.emergency-notice ul {
+
+    padding-left: 20px;
+}
+
+
+.emergency-notice li {
+
+    margin-bottom: 10px;
+}
+
+
+/* ===========================
+   메인으로 돌아가기
+=========================== */
+
+.back-button {
+
+    display: block;
+
+    width: 100%;
+
+    max-width: 500px;
+
+    margin: 30px auto 10px;
+
+    padding: 16px 20px;
+
+    background: #2e7d32;
+
+    color: white;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    border-radius: 15px;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.08);
+
+    transition: all 0.25s ease;
+}
+
+
+.back-button:hover {
+
+    background: #43a047;
+
+    transform: translateY(-2px);
+}
+
+
+/* ===========================
+   Footer
+=========================== */
+
+footer {
+
+    text-align: center;
+
+    color: #777;
+
+    padding: 30px;
+}
+
+
+/* ===========================
+   119 / 112 색상 구분
+=========================== */
+
+
+/* 119 */
+
+.emergency-card:not(.emergency-112) {
+
+    border-left: 6px solid #d32f2f;
+}
+
+
+.emergency-card:not(.emergency-112) h2 {
+
+    color: #d32f2f;
+}
+
+
+a.emergency-button.emergency-119-button {
+
+    background-color: #d32f2f !important;
+
+    color: #ffffff !important;
+}
+
+
+/* ===========================
+   112
+=========================== */
+
+.emergency-card.emergency-112 {
+
+    border-left: 6px solid #1565c0;
+}
+
+
+.emergency-card.emergency-112 h2 {
+
+    color: #1565c0;
+}
+
+
+a.emergency-button.emergency-112-button {
+
+    background-color: #1565c0 !important;
+
+    color: #ffffff !important;
+}
+
+
+a.emergency-button.emergency-112-button:hover {
+
+    background-color: #0d47a1 !important;
+}
+
+
+/* ===========================
+   모바일
+=========================== */
+
+@media (max-width: 600px) {
+
+    .park-header .header-inner {
+
+        min-height: 95px;
+
+        padding: 16px 55px;
+    }
+
+
+    .park-header .back-btn {
+
+        left: 15px;
+
+        width: 42px;
+        height: 42px;
+
+        font-size: 18px;
+    }
+
+
+    .park-header .header-text h1 {
+
+        font-size: 24px;
+    }
+
+
+    .park-header .header-text p {
+
+        font-size: 13px;
+    }
+
+
+    .location-card h3 {
+
+        font-size: 24px;
+    }
+
+
+    .container {
+
+        padding: 15px;
+    }
+
+
+    .card-content {
+
+        padding: 20px;
+    }
+
+
+    .emergency-button {
+
+        font-size: 17px;
+    }
+
 }
