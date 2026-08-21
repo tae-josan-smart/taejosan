@@ -13,468 +13,947 @@
     <link rel="stylesheet"
           href="style.css?v=20260821">
 
+    <style>
+
+        /* ===========================
+           주변 먹거리 전용
+        =========================== */
+
+        .food-page {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+
+        /* ===========================
+           안내 문구
+        =========================== */
+
+        .food-intro {
+            margin-bottom: 25px;
+        }
+
+
+        /* ===========================
+           맛집 2×2 그리드
+        =========================== */
+
+        .food-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, minmax(0, 1fr));
+
+            gap: 20px;
+
+        }
+
+
+        /* ===========================
+           맛집 카드
+        =========================== */
+
+        .food-card {
+
+            background: #ffffff;
+
+            border-radius: 22px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 8px 25px rgba(0, 0, 0, 0.08);
+
+            display: flex;
+
+            flex-direction: column;
+
+            min-width: 0;
+
+        }
+
+
+        /* ===========================
+           사진 슬라이드
+        =========================== */
+
+        .food-slider {
+
+            position: relative;
+
+            width: 100%;
+
+            overflow: hidden;
+
+            background: #f1f4f1;
+
+        }
+
+
+        .food-slider-track {
+
+            display: flex;
+
+            width: 200%;
+
+            transition:
+                transform 0.3s ease;
+
+        }
+
+
+        .food-slider-track img {
+
+            width: 50%;
+
+            height: 240px;
+
+            object-fit: cover;
+
+            flex-shrink: 0;
+
+            display: block;
+
+        }
+
+
+        /* ===========================
+           좌우 버튼
+        =========================== */
+
+        .slider-btn {
+
+            position: absolute;
+
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            width: 38px;
+
+            height: 38px;
+
+            border: none;
+
+            border-radius: 50%;
+
+            background: rgba(0, 0, 0, 0.45);
+
+            color: white;
+
+            font-size: 22px;
+
+            cursor: pointer;
+
+            z-index: 5;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+        }
+
+
+        .slider-prev {
+            left: 10px;
+        }
+
+
+        .slider-next {
+            right: 10px;
+        }
+
+
+        .slider-btn:hover {
+            background: rgba(0, 0, 0, 0.65);
+        }
+
+
+        /* ===========================
+           사진 번호
+        =========================== */
+
+        .slider-indicator {
+
+            position: absolute;
+
+            bottom: 10px;
+
+            left: 50%;
+
+            transform:
+                translateX(-50%);
+
+            padding: 5px 10px;
+
+            border-radius: 20px;
+
+            background:
+                rgba(0, 0, 0, 0.45);
+
+            color: white;
+
+            font-size: 12px;
+
+        }
+
+
+        /* ===========================
+           맛집 내용
+        =========================== */
+
+        .food-content {
+
+            padding: 20px;
+
+        }
+
+
+        .food-content h2 {
+
+            margin: 0 0 8px;
+
+            color: #2e7d32;
+
+            font-size: 22px;
+
+        }
+
+
+        .food-description {
+
+            margin: 0 0 15px;
+
+            color: #555;
+
+            line-height: 1.6;
+
+        }
+
+
+        /* ===========================
+           거리 / 시간
+        =========================== */
+
+        .food-meta {
+
+            display: flex;
+
+            gap: 8px;
+
+            flex-wrap: wrap;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .food-meta span {
+
+            background: #edf5ef;
+
+            color: #2e7d32;
+
+            border-radius: 20px;
+
+            padding: 6px 10px;
+
+            font-size: 13px;
+
+            font-weight: bold;
+
+        }
+
+
+        /* ===========================
+           주소
+        =========================== */
+
+        .food-address {
+
+            background: #f5f7f5;
+
+            border-radius: 12px;
+
+            padding: 12px;
+
+            margin-bottom: 12px;
+
+            font-size: 14px;
+
+            color: #555;
+
+            line-height: 1.5;
+
+        }
+
+
+        .food-address strong {
+
+            display: block;
+
+            margin-bottom: 3px;
+
+            color: #333;
+
+        }
+
+
+        /* ===========================
+           추천 / 주의사항
+        =========================== */
+
+        .food-note {
+
+            margin-top: 10px;
+
+            padding: 12px;
+
+            background: #fff8e8;
+
+            border-radius: 12px;
+
+            color: #6b5b2a;
+
+            font-size: 13px;
+
+            line-height: 1.5;
+
+        }
+
+
+        /* ===========================
+           장소 확인 버튼
+        =========================== */
+
+        .food-link {
+
+            display: block;
+
+            margin-top: 15px;
+
+            padding: 13px;
+
+            border-radius: 12px;
+
+            background: #2e7d32;
+
+            color: white;
+
+            text-align: center;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+        }
+
+
+        .food-link:hover {
+
+            background: #43a047;
+
+        }
+
+
+        /* ===========================
+           하단 버튼
+        =========================== */
+
+        .food-bottom {
+
+            margin-top: 30px;
+
+        }
+
+
+        /* ===========================
+           모바일
+        =========================== */
+
+        @media (max-width: 700px) {
+
+            .food-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .food-slider-track img {
+
+                height: 220px;
+
+            }
+
+
+            .food-content h2 {
+
+                font-size: 20px;
+
+            }
+
+        }
+
+    </style>
+
 </head>
 
 
 <body>
 
 
-    <!-- =========================
-         Header
-    ========================= -->
+<!-- ===========================
+     헤더
+=========================== -->
 
-    <header class="park-header">
+<header class="park-header">
 
-        <div class="header-inner">
+    <div class="header-inner">
 
-            <a href="nearby.html"
-               class="back-btn">
-                ←
-            </a>
 
-            <div class="header-text">
+        <!-- 주변 볼거리·먹거리로 돌아가기 -->
 
-                <h1>
-                    🍴 주변 먹거리
-                </h1>
+        <a href="nearby.html"
+           class="back-btn">
 
-                <p>
-                    태조산공원 주변에서 즐길 수 있는 맛집을 소개합니다.
-                </p>
+            ←
+
+        </a>
+
+
+        <div class="header-text">
+
+            <h1>
+                🍴 주변 먹거리
+            </h1>
+
+            <p>
+                태조산공원 주변에서 함께 즐길 수 있는 맛집을 소개합니다.
+            </p>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<main class="food-page">
+
+
+<!-- ===========================
+     안내
+=========================== -->
+
+<section class="food-intro">
+
+    <div class="section-title">
+
+        <span class="section-number">
+            01
+        </span>
+
+        <div>
+
+            <h2>
+                주변 맛집
+            </h2>
+
+            <p>
+                태조산공원 방문 전후로 함께 이용하기 좋은
+                주변 음식점을 확인해보세요.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ===========================
+     맛집 목록
+=========================== -->
+
+<section class="food-grid">
+
+
+
+    <!-- ===========================
+         01 장터식당
+    =========================== -->
+
+    <article class="food-card">
+
+
+        <!-- 사진 -->
+
+        <div class="food-slider"
+             data-slider="0">
+
+            <div class="food-slider-track">
+
+                <img
+                    src="images/jangteo-1.jpeg"
+                    alt="장터식당 음식 사진 1"
+                >
+
+                <img
+                    src="images/jangteo-2.jpeg"
+                    alt="장터식당 음식 사진 2"
+                >
+
+            </div>
+
+
+            <button
+                class="slider-btn slider-prev"
+                type="button"
+                onclick="moveSlide(0, -1)">
+
+                ‹
+
+            </button>
+
+
+            <button
+                class="slider-btn slider-next"
+                type="button"
+                onclick="moveSlide(0, 1)">
+
+                ›
+
+            </button>
+
+
+            <div class="slider-indicator"
+                 id="indicator-0">
+
+                1 / 2
 
             </div>
 
         </div>
 
-    </header>
 
 
+        <!-- 내용 -->
 
-    <main class="park-guide">
+        <div class="food-content">
+
+            <h2>
+                장터식당
+            </h2>
 
 
-        <!-- =========================
-             안내
-        ========================= -->
+            <p class="food-description">
 
-        <section class="nearby-intro">
+                김치찌개가 일품인 태조산공원 주변
+                숨은 맛집입니다.
+                겨울에는 동태탕도 맛볼 수 있습니다.
 
-            <div class="section-title">
+            </p>
 
-                <span class="section-number">
-                    01
+
+            <div class="food-meta">
+
+                <span>
+                    📍 약 1.5km
                 </span>
 
-                <div>
-
-                    <h2>
-                        주변 맛집
-                    </h2>
-
-                    <p>
-                        태조산공원 방문 전후 함께 들러보기 좋은 음식점입니다.
-                    </p>
-
-                </div>
+                <span>
+                    🚗 약 3분
+                </span>
 
             </div>
 
-        </section>
 
+            <div class="food-address">
 
+                <strong>
+                    📌 주소
+                </strong>
 
-        <!-- =========================
-             맛집 목록
-        ========================= -->
-
-        <section class="food-section">
-
-
-            <div class="food-grid">
-
-
-                <!-- =================================================
-                     01 장터식당
-                ================================================== -->
-
-                <article class="food-card">
-
-
-                    <!-- 사진 슬라이드 -->
-
-                    <div class="food-image-slider">
-
-                        <div class="food-slides">
-
-                            <img src="images/jangteo-01.jpeg"
-                                 alt="장터식당 외관">
-
-                            <img src="images/jangteo-02.jpeg"
-                                 alt="장터식당 음식">
-
-                        </div>
-
-                        <button class="food-slide-btn prev"
-                                onclick="moveSlide(this, -1)">
-                            ‹
-                        </button>
-
-                        <button class="food-slide-btn next"
-                                onclick="moveSlide(this, 1)">
-                            ›
-                        </button>
-
-                        <div class="food-slide-count">
-                            1 / 2
-                        </div>
-
-                    </div>
-
-
-                    <!-- 내용 -->
-
-                    <div class="food-content">
-
-                        <div class="food-title-row">
-
-                            <h2>
-                                장터식당
-                            </h2>
-
-                            <span class="food-distance">
-                                1.5km · 약 3분
-                            </span>
-
-                        </div>
-
-
-                        <p class="food-description">
-
-                            김치찌개와 동태탕이 유명한
-                            태조산공원 주변의 음식점입니다.
-
-                        </p>
-
-
-                        <div class="food-tags">
-
-                            <span>
-                                🍲 김치찌개
-                            </span>
-
-                            <span>
-                                🐟 동태탕
-                            </span>
-
-                            <span>
-                                ❄️ 겨울 한정
-                            </span>
-
-                        </div>
-
-
-                        <div class="food-address">
-
-                            📍 충남 천안시 동남구 유량동 130-2
-
-                        </div>
-
-
-                        <a href="https://map.naver.com/"
-                           target="_blank"
-                           class="food-map-btn">
-
-                            🗺️ 위치 확인
-
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- =================================================
-                     02 이고집만두
-                ================================================== -->
-
-                <article class="food-card">
-
-
-                    <div class="food-image-slider">
-
-                        <div class="food-slides">
-
-                            <img src="images/igojip-01.jpeg"
-                                 alt="이고집만두 외관">
-
-                            <img src="images/igojip-02.jpeg"
-                                 alt="이고집만두 음식">
-
-                        </div>
-
-                        <button class="food-slide-btn prev"
-                                onclick="moveSlide(this, -1)">
-                            ‹
-                        </button>
-
-                        <button class="food-slide-btn next"
-                                onclick="moveSlide(this, 1)">
-                            ›
-                        </button>
-
-                        <div class="food-slide-count">
-                            1 / 2
-                        </div>
-
-                    </div>
-
-
-                    <div class="food-content">
-
-                        <div class="food-title-row">
-
-                            <h2>
-                                이고집만두
-                            </h2>
-
-                            <span class="food-distance">
-                                700m · 약 1분
-                            </span>
-
-                        </div>
-
-
-                        <p class="food-description">
-
-                            시원하고 담백한 국물의 만두전골과
-                            튀김만두가 일품인 맛집입니다.
-
-                        </p>
-
-
-                        <div class="food-tags">
-
-                            <span>
-                                🥟 만두전골
-                            </span>
-
-                            <span>
-                                🥟 튀김만두
-                            </span>
-
-                            <span>
-                                ⏰ 웨이팅 주의
-                            </span>
-
-                        </div>
-
-
-                        <div class="food-address">
-
-                            📍 충남 천안시 동남구 태조산길 258
-
-                        </div>
-
-
-                        <p class="food-notice">
-
-                            💡 손님이 많은 편으로 웨이팅이 발생할 수 있어
-                            일찍 방문하는 것을 추천합니다.
-
-                        </p>
-
-
-                        <a href="https://map.naver.com/"
-                           target="_blank"
-                           class="food-map-btn">
-
-                            🗺️ 위치 확인
-
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- =================================================
-                     03 진돗가비 불쭈꾸미
-                ================================================== -->
-
-                <article class="food-card">
-
-
-                    <div class="food-image-slider">
-
-                        <div class="food-slides">
-
-                            <img src="images/jindotgabi-01.jpeg"
-                                 alt="진돗가비 불쭈꾸미 외관">
-
-                            <img src="images/jindotgabi-02.jpeg"
-                                 alt="진돗가비 불쭈꾸미 음식">
-
-                        </div>
-
-                        <button class="food-slide-btn prev"
-                                onclick="moveSlide(this, -1)">
-                            ‹
-                        </button>
-
-                        <button class="food-slide-btn next"
-                                onclick="moveSlide(this, 1)">
-                            ›
-                        </button>
-
-                        <div class="food-slide-count">
-                            1 / 2
-                        </div>
-
-                    </div>
-
-
-                    <div class="food-content">
-
-                        <div class="food-title-row">
-
-                            <h2>
-                                진돗가비 불쭈꾸미
-                            </h2>
-
-                            <span class="food-distance">
-                                1.6km · 약 4분
-                            </span>
-
-                        </div>
-
-
-                        <p class="food-description">
-
-                            불향 가득한 쭈꾸미와
-                            고소한 들깨수제비의 조화가 좋은 음식점입니다.
-
-                        </p>
-
-
-                        <div class="food-tags">
-
-                            <span>
-                                🔥 불쭈꾸미
-                            </span>
-
-                            <span>
-                                🥣 들깨수제비
-                            </span>
-
-                        </div>
-
-
-                        <div class="food-address">
-
-                            📍 충남 천안시 동남구 태조산길 142-4
-
-                        </div>
-
-
-                        <p class="food-notice">
-
-                            💡 쾌적한 매장 환경에서
-                            깔끔하게 식사하기 좋은 곳입니다.
-
-                        </p>
-
-
-                        <a href="https://map.naver.com/"
-                           target="_blank"
-                           class="food-map-btn">
-
-                            🗺️ 위치 확인
-
-                        </a>
-
-                    </div>
-
-                </article>
-
+                충남 천안시 동남구 유량동 130-2
 
             </div>
 
-        </section>
+
+            <div class="food-note">
+
+                🍲 추천 메뉴 :
+                김치찌개
+
+                <br>
+
+                ❄️ 동태탕 :
+                겨울철 한정
+
+            </div>
+
+        </div>
+
+    </article>
 
 
 
-        <!-- =========================
-             주변 카테고리로
-        ========================= -->
+    <!-- ===========================
+         02 이고집만두
+    =========================== -->
 
-        <a href="nearby.html"
-           class="back-button">
-
-            ← 주변 볼거리·먹거리
-
-        </a>
+    <article class="food-card">
 
 
-    </main>
+        <!-- 사진 -->
+
+        <div class="food-slider"
+             data-slider="1">
+
+            <div class="food-slider-track">
+
+                <img
+                    src="images/igogjip-1.jpeg"
+                    alt="이고집만두 음식 사진 1"
+                >
+
+                <img
+                    src="images/igogjip-2.jpeg"
+                    alt="이고집만두 음식 사진 2"
+                >
+
+            </div>
+
+
+            <button
+                class="slider-btn slider-prev"
+                type="button"
+                onclick="moveSlide(1, -1)">
+
+                ‹
+
+            </button>
+
+
+            <button
+                class="slider-btn slider-next"
+                type="button"
+                onclick="moveSlide(1, 1)">
+
+                ›
+
+            </button>
+
+
+            <div class="slider-indicator"
+                 id="indicator-1">
+
+                1 / 2
+
+            </div>
+
+        </div>
 
 
 
-    <footer class="park-footer">
+        <!-- 내용 -->
 
-        <p>
-            태조산공원 · 천안도시공사
-        </p>
+        <div class="food-content">
 
-    </footer>
+            <h2>
+                이고집만두
+            </h2>
+
+
+            <p class="food-description">
+
+                시원하고 담백한 국물의 만두전골과
+                바삭한 튀김만두가 일품인 맛집입니다.
+
+            </p>
+
+
+            <div class="food-meta">
+
+                <span>
+                    📍 약 700m
+                </span>
+
+                <span>
+                    🚗 약 1분
+                </span>
+
+            </div>
+
+
+            <div class="food-address">
+
+                <strong>
+                    📌 주소
+                </strong>
+
+                충남 천안시 동남구 태조산길 258
+
+            </div>
+
+
+            <div class="food-note">
+
+                ⏰ 방문 TIP :
+                손님이 많은 편으로
+                웨이팅이 발생할 수 있습니다.
+                가능하면 일찍 방문하는 것을 추천합니다.
+
+            </div>
+
+
+            <a
+                href="https://pcmap.place.naver.com/restaurant/33793005/home"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="food-link">
+
+                📍 장소 확인하기
+
+            </a>
+
+        </div>
+
+    </article>
 
 
 
-    <!-- =========================
-         슬라이드 기능
-    ========================= -->
+    <!-- ===========================
+         03 진돗가비불쭈꾸미
+    =========================== -->
 
-    <script>
+    <article class="food-card">
 
-        function moveSlide(button, direction) {
 
-            const slider =
-                button.closest(".food-image-slider");
+        <!-- 사진 -->
 
-            const slides =
-                slider.querySelector(".food-slides");
+        <div class="food-slider"
+             data-slider="2">
 
-            const images =
-                slides.querySelectorAll("img");
+            <div class="food-slider-track">
 
-            let current =
-                parseInt(slider.dataset.current || "0");
+                <img
+                    src="images/jindotgabi-1.jpeg"
+                    alt="진돗가비불쭈꾸미 음식 사진 1"
+                >
 
-            current += direction;
+                <img
+                    src="images/jindotgabi-2.jpeg"
+                    alt="진돗가비불쭈꾸미 음식 사진 2"
+                >
 
-            if (current < 0) {
-                current = images.length - 1;
-            }
+            </div>
 
-            if (current >= images.length) {
-                current = 0;
-            }
 
-            slides.style.transform =
-                `translateX(-${current * 100}%)`;
+            <button
+                class="slider-btn slider-prev"
+                type="button"
+                onclick="moveSlide(2, -1)">
 
-            slider.dataset.current = current;
+                ‹
 
-            const count =
-                slider.querySelector(".food-slide-count");
+            </button>
 
-            count.textContent =
-                `${current + 1} / ${images.length}`;
+
+            <button
+                class="slider-btn slider-next"
+                type="button"
+                onclick="moveSlide(2, 1)">
+
+                ›
+
+            </button>
+
+
+            <div class="slider-indicator"
+                 id="indicator-2">
+
+                1 / 2
+
+            </div>
+
+        </div>
+
+
+
+        <!-- 내용 -->
+
+        <div class="food-content">
+
+            <h2>
+                진돗가비불쭈꾸미
+            </h2>
+
+
+            <p class="food-description">
+
+                불향이 일품인 쭈꾸미와
+                들깨수제비의 조화가 좋은 맛집입니다.
+                쾌적한 매장에서 깔끔하게 식사하기 좋습니다.
+
+            </p>
+
+
+            <div class="food-meta">
+
+                <span>
+                    📍 약 1.6km
+                </span>
+
+                <span>
+                    🚗 약 4분
+                </span>
+
+            </div>
+
+
+            <div class="food-address">
+
+                <strong>
+                    📌 주소
+                </strong>
+
+                충남 천안시 동남구 태조산길 142-4
+
+            </div>
+
+
+            <div class="food-note">
+
+                🔥 추천 :
+                불향 가득한 쭈꾸미와
+                들깨수제비 조합
+
+            </div>
+
+
+            <a
+                href="https://pcmap.place.naver.com/restaurant/2022261323/home"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="food-link">
+
+                📍 장소 확인하기
+
+            </a>
+
+        </div>
+
+    </article>
+
+
+
+</section>
+
+
+
+<!-- ===========================
+     하단 버튼
+=========================== -->
+
+<div class="food-bottom">
+
+
+    <a href="nearby.html"
+       class="back-button">
+
+        📍 주변 볼거리·먹거리로 돌아가기
+
+    </a>
+
+
+    <a href="index.html"
+       class="back-button">
+
+        🏠 메인으로 돌아가기
+
+    </a>
+
+
+</div>
+
+
+</main>
+
+
+
+<footer class="park-footer">
+
+    <p>
+        태조산공원 · 천안도시공사
+    </p>
+
+</footer>
+
+
+
+<!-- ===========================
+     슬라이드 기능
+=========================== -->
+
+<script>
+
+    const sliderStates = [0, 0, 0];
+
+
+    function moveSlide(sliderIndex, direction) {
+
+        sliderStates[sliderIndex] += direction;
+
+
+        if (sliderStates[sliderIndex] < 0) {
+
+            sliderStates[sliderIndex] = 1;
 
         }
 
-    </script>
+
+        if (sliderStates[sliderIndex] > 1) {
+
+            sliderStates[sliderIndex] = 0;
+
+        }
+
+
+        const slider =
+            document.querySelectorAll(
+                '.food-slider'
+            )[sliderIndex];
+
+
+        const track =
+            slider.querySelector(
+                '.food-slider-track'
+            );
+
+
+        track.style.transform =
+            `translateX(-${sliderStates[sliderIndex] * 50}%)`;
+
+
+        const indicator =
+            document.getElementById(
+                `indicator-${sliderIndex}`
+            );
+
+
+        indicator.textContent =
+            `${sliderStates[sliderIndex] + 1} / 2`;
+
+    }
+
+</script>
 
 
 </body>
